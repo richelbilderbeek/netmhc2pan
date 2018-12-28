@@ -22,3 +22,5 @@ Suggests:
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 Language: en-US
+URL: https://github.com/richelbilderbeek/netmhc2pan
+BugReports: https://github.com/richelbilderbeek/netmhc2pan/issues
