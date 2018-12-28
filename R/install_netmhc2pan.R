@@ -8,13 +8,7 @@ install_netmhc2pan <- function(
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 ) {
-  if (!os %in% c("unix")) {
-    stop(
-      "'os' must be 'unix'. ",
-      "'mac' may be supported in the future. ",
-      "'windows' is not supported by NetMHC2pan, thus not by this package"
-    )
-  }
+  check_os(os) # nolint netmhc2pan function
   if (is.null(download_url)) { # nolint indeed long URL
     stop(
       "'download_url' is invalid. ",

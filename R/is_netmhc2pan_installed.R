@@ -7,5 +7,7 @@ is_netmhc2pan_installed <- function(
   folder_name = get_default_netmhc2pan_folder(),
   os = rappdirs::app_dir()$os
 ) {
-  TRUE
+  check_os(os) # nolint netmhc2pan function
+  bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  file.exists(bin_file_path)
 }
