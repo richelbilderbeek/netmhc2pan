@@ -4,7 +4,8 @@
 \alias{is_netmhc2pan_installed}
 \title{Measure if NetMHC2pan is installed locally}
 \usage{
-is_netmhc2pan_installed()
+is_netmhc2pan_installed(folder_name = get_default_netmhc2pan_folder(),
+  os = rappdirs::app_dir()$os)
 }
 \value{
 TRUE is NetMHC2pan is installed locally,

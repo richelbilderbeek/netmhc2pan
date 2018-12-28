@@ -4,7 +4,21 @@
 \alias{install_netmhc2pan}
 \title{Install NetMHC2pan to a local folder}
 \usage{
-install_netmhc2pan()
+install_netmhc2pan(download_url = NULL,
+  folder_name = get_default_netmhc2pan_folder(), verbose = FALSE,
+  os = rappdirs::app_dir()$os)
+}
+\arguments{
+\item{download_url}{NetMHC2pan download URL, for example,
+\code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
+
+\item{folder_name}{the folder to install NetMHC2pan, which is
+\code{"/home/[usename]/.local/share"} by default}
+
+\item{verbose}{set to TRUE for more output}
+
+\item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
+\code{netmhc2pan} supports Linux ('\code{unix}') only}
 }
 \description{
 Install NetMHC2pan to a local folder
