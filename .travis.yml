@@ -25,7 +25,7 @@ before_script:
   - find .
   - find ~/.local/share/ | head -n 30
   - find ~/.local/share/netMHCIIpan-3.2 | head -n 30
-  - /chmod +x ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
+  - chmod +x ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
   - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
   # proselint
   - sudo pip install proselint
