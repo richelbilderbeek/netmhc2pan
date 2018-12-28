@@ -1,0 +1,29 @@
+---
+title: "Demo"
+author: "Richel J.C. Bilderbeek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+library(netmhc2pan)
+```
+
+First we install NetMHC2pan, if and only if it is not installed yet:
+
+```{r}
+if (!is_netmhc2pan_installed()) {
+  install_netmhc2pan()
+}
+```
