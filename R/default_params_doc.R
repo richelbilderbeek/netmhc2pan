@@ -8,6 +8,7 @@
 #'   \code{"/home/[usename]/.local/share"} by default
 #' @param os the operating system as obtained by \code{rappdirs::app_dir()$os}.
 #'   \code{netmhc2pan} supports Linux ('\code{unix}') only
+#' @param temp_xls_filename name for a temporary \code{xls} filename
 #' @param verbose set to TRUE for more output
 #' @author Richel J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -19,6 +20,7 @@ default_params_doc <- function(
   fasta_filename,
   folder_name,
   os,
+  temp_xls_filename,
   verbose
 ) {
   # Nothing

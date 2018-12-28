@@ -5,7 +5,9 @@
 #' @export
 run_netmhc2pan <- function(
   fasta_filename,
-  do_filter = FALSE
+  folder_name = get_default_netmhc2pan_folder(),
+  do_filter = FALSE,
+  temp_xls_filename = tempfile(fileext = ".xls")
 ) {
   if (do_filter == TRUE) {
     do_filter <- 1
@@ -13,19 +15,20 @@ run_netmhc2pan <- function(
     do_filter <- 0 
   }
   testit::assert(file.exists(fasta_filename))
-  xls_filename <- "/home/richel/test.xls"
+  temp_xls_filename
+  bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   system2(
-    command = "/home/richel/netMHCIIpan",
+    command = bin_file_path,
     args = c(
       "-filter", do_filter,
       "-xls", "1",
-      "-xlsfile", xls_filename,
+      "-xlsfile", temp_xls_filename,
       "-f", fasta_filename
     ),
     stdout = NULL
   )
-  testit::assert(file.exists(xls_filename))
-  df_raw <- read.csv(xls_filename, sep = "\t", 
+  testit::assert(file.exists(temp_xls_filename))
+  df_raw <- read.csv(temp_xls_filename, sep = "\t", 
     col.names = c(
       "Pos", "Peptide", "ID", "one_minus_log50k", "nM", "Rank", "Ave", "NB"
     ),

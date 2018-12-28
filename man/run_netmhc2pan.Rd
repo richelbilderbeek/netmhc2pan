@@ -4,12 +4,19 @@
 \alias{run_netmhc2pan}
 \title{Run NetMHC2pan}
 \usage{
-run_netmhc2pan(fasta_filename, do_filter = FALSE)
+run_netmhc2pan(fasta_filename,
+  folder_name = get_default_netmhc2pan_folder(), do_filter = FALSE,
+  temp_xls_filename = tempfile(fileext = ".xls"))
 }
 \arguments{
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
 
+\item{folder_name}{the folder to install NetMHC2pan, which is
+\code{"/home/[usename]/.local/share"} by default}
+
 \item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
+
+\item{temp_xls_filename}{name for a temporary \code{xls} filename}
 }
 \value{
 a data frame with the NetMHC2pan results

@@ -6,7 +6,7 @@
 documentation.}
 \usage{
 default_params_doc(do_filter, download_url, fasta_filename, folder_name,
-  os, verbose)
+  os, temp_xls_filename, verbose)
 }
 \arguments{
 \item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
@@ -21,6 +21,8 @@ default_params_doc(do_filter, download_url, fasta_filename, folder_name,
 
 \item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
 \code{netmhc2pan} supports Linux ('\code{unix}') only}
+
+\item{temp_xls_filename}{name for a temporary \code{xls} filename}
 
 \item{verbose}{set to TRUE for more output}
 }
