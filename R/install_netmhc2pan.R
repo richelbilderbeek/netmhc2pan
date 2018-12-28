@@ -12,9 +12,6 @@ install_netmhc2pan <- function(
   is_bin_installed <- is_netmhc2pan_bin_installed(
     folder_name = folder_name, os = os
   )
-  is_data_installed <- is_netmhc2pan_data_installed(
-    folder_name = folder_name, os = os
-  )
   if (!is_bin_installed) {
     install_netmhc2pan_bin(
       download_url = download_url,
@@ -23,8 +20,21 @@ install_netmhc2pan <- function(
       os = os
     )
   }
+  is_data_installed <- is_netmhc2pan_data_installed(
+    folder_name = folder_name, os = os
+  )
   if (!is_data_installed) {
     install_netmhc2pan_data(
+      folder_name = folder_name,
+      verbose = verbose,
+      os = os
+    )
+  }
+  is_set_up <- is_netmhc2pan_set_up(
+    folder_name = folder_name, os = os
+  )
+  if (!is_set_up) {
+    set_up_netmhc2pan(
       folder_name = folder_name,
       verbose = verbose,
       os = os
@@ -129,4 +139,60 @@ install_netmhc2pan_data <- function(
     print(paste("NetMHC2pan data extracted at", data_folder_path))
   }
   testit::assert(file.exists(data_folder_path))
+}
+
+
+
+
+# Convert:
+#
+# # full path to the NetMHCIIpan 3.2 directory (mandatory)
+# setenv	NMHOME	/usr/cbs/bio/src/netMHCIIpan-3.2
+# 
+# # determine where to store temporary files (must be writable to all users)
+# 
+# if ( ${?TMPDIR} == 0 ) then
+# 	setenv  TMPDIR  /scratch
+# endif
+#
+# To:
+# 
+# # full path to the NetMHCIIpan 3.2 directory (mandatory)
+# setenv	NMHOME	/home/richel/.local/share/netMHCIIpan-3.2
+# 
+# # determine where to store temporary files (must be writable to all users)
+# 
+# if ( ${?TMPDIR} == 0 ) then
+# 	setenv  TMPDIR  /tmp
+# endif
+
+#' Install the NetMHC2pan binary to a local folder
+#' @inheritParams default_params_doc
+#' @author Richel J.C. Bilderbeek
+#' @export
+set_up_netmhc2pan <- function(
+  folder_name = rappdirs::user_data_dir(),
+  verbose = FALSE,
+  os = rappdirs::app_dir()$os
+) {
+  check_os(os) # nolint netmhc2pan function
+  bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  if (!file.exists(bin_path)) {
+    stop("NetMHC2pan binary is absent")
+  }
+  lines <- readLines(bin_path)
+  
+  # Change sentenv
+  setenv_line_idx <- which(
+    lines == "setenv\tNMHOME\t/usr/cbs/bio/src/netMHCIIpan-3.2"
+  )
+  lines[setenv_line_idx] <- paste0("setenv\tNMHOME\t", dirname(bin_path))
+  
+  # Change temp folder
+  tmpdir_line_idx <- which(
+    lines == "\tsetenv  TMPDIR  /scratch"
+  )
+  lines[tmpdir_line_idx] <- "\tsetenv  TMPDIR  /tmp"
+  
+  writeLines(text = lines, con = bin_path)
 }

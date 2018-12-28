@@ -2,7 +2,7 @@ context("test-is_netmhc2pan_installed")
 
 
 test_that("use", {
-
+  is_netmhc2pan_bin_installed()
   if (is_netmhc2pan_installed()) {
     uninstall_netmhc2pan()
     expect_false(is_netmhc2pan_installed())
