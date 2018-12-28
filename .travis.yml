@@ -23,9 +23,10 @@ before_script:
     install_netmhc2pan(get_download_url())"
   - pwd
   - find .
-  - find /home/travis/.local/share/ | head -n 30
-  - chmod +x /home/travis/.local/share/netMHCIIpan-3.2/netMHCIIpan
-  - /home/travis/.local/share/netMHCIIpan-3.2/netMHCIIpan
+  - find ~/.local/share/ | head -n 30
+  - find ~/.local/share/netMHCIIpan-3.2 | head -n 30
+  - /chmod +x ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
+  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
   # proselint
   - sudo pip install proselint
 
