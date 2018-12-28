@@ -1,7 +1,6 @@
 context("test-install_netmhc2pan")
 
 test_that("use", {
-  
   if (!is_netmhc2pan_installed()) {
     expect_silent(
       install_netmhc2pan(

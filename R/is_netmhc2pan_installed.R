@@ -9,7 +9,7 @@ is_netmhc2pan_installed <- function(
   os = rappdirs::app_dir()$os
 ) {
   check_os(os) # nolint netmhc2pan function
-  is_netmhc2pan_bin_installed(folder_name = folder_name, os = os) && 
+  is_netmhc2pan_bin_installed(folder_name = folder_name, os = os) &&
     is_netmhc2pan_data_installed(folder_name = folder_name, os = os) &&
     is_netmhc2pan_set_up(folder_name = folder_name, os = os)
 }

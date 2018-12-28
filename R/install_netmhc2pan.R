@@ -181,18 +181,18 @@ set_up_netmhc2pan <- function(
     stop("NetMHC2pan binary is absent")
   }
   lines <- readLines(bin_path)
-  
+
   # Change sentenv
   setenv_line_idx <- which(
     lines == "setenv\tNMHOME\t/usr/cbs/bio/src/netMHCIIpan-3.2"
   )
   lines[setenv_line_idx] <- paste0("setenv\tNMHOME\t", dirname(bin_path))
-  
+
   # Change temp folder
   tmpdir_line_idx <- which(
     lines == "\tsetenv  TMPDIR  /scratch"
   )
   lines[tmpdir_line_idx] <- "\tsetenv  TMPDIR  /tmp"
-  
+
   writeLines(text = lines, con = bin_path)
 }
