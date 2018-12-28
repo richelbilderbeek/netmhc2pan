@@ -1,4 +1,5 @@
 #' Measure if NetMHC2pan is installed locally
+#' @inheritParams default_params_doc
 #' @return TRUE is NetMHC2pan is installed locally,
 #'   FALSE otherwise 
 #' @author Richel J.C. Bilderbeek
