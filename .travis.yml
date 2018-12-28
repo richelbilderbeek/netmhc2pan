@@ -2,7 +2,7 @@ language: r
 cache: packages
 
 os: 
-  - osx
+  - # osx
   - linux
 
 r_packages:
