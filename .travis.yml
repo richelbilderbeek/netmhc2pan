@@ -16,7 +16,7 @@ r_github_packages:
   - ropensci/spelling
 
 before_script:
-  - # Rscript -e "source(\"R/install_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); install_beast2()"
+  - Rscript -e "source(\"R/install_netmhc2pan.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); install_netmhc2pan("http://www.cbs.dtu.dk/download/8BE4F714-0A7A-11E9-9257-2BC5B9CD16B5")"
   # proselint
   - sudo pip install proselint
 

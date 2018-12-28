@@ -23,7 +23,5 @@ library(netmhc2pan)
 First we install NetMHC2pan, if and only if it is not installed yet:
 
 ```{r}
-if (!is_netmhc2pan_installed()) {
-  install_netmhc2pan()
-}
+testit::assert(is_netmhc2pan_installed())
 ```
