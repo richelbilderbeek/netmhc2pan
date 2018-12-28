@@ -18,4 +18,8 @@ uninstall_netmhc2pan <- function(
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   testit::assert(file.exists(bin_file_path))
   file.remove(bin_file_path)
+  data_folder_path <- file.path(
+    folder_name, "netMHCIIpan-3.2", "data"
+  )
+  unlink(x = data_folder_path, recursive = TRUE)
 }
