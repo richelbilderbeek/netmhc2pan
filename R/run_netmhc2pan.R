@@ -17,7 +17,8 @@ run_netmhc2pan <- function(
   testit::assert(file.exists(fasta_filename))
   temp_xls_filename
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
-  system2(
+  testit::assert(file.exists(bin_file_path))
+  text <- system2(
     command = bin_file_path,
     args = c(
       "-filter", do_filter,
@@ -25,10 +26,13 @@ run_netmhc2pan <- function(
       "-xlsfile", temp_xls_filename,
       "-f", fasta_filename
     ),
-    stdout = NULL
+    stdout = TRUE
   )
+  if (!file.exists(temp_xls_filename)) {
+    stop("Error:\n\n", text)
+  }
   testit::assert(file.exists(temp_xls_filename))
-  df_raw <- read.csv(temp_xls_filename, sep = "\t", 
+  df_raw <- utils::read.csv(temp_xls_filename, sep = "\t", 
     col.names = c(
       "Pos", "Peptide", "ID", "one_minus_log50k", "nM", "Rank", "Ave", "NB"
     ),
