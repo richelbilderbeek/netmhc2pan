@@ -84,7 +84,7 @@ install_netmhc2pan_bin <- function(
         e
       )
     }
-  )  
+  )
 
   testit::assert(file.exists(local_path))
   # Linux has a tar file
