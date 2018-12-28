@@ -61,7 +61,7 @@ install_netmhc2pan_bin <- function(
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
   archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
-  url <- file.path(download_url, archive_filename) 
+  url <- file.path(download_url, archive_filename)
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
   }
@@ -117,7 +117,6 @@ install_netmhc2pan_data <- function(
 
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
-  archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
   url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
