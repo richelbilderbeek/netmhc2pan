@@ -26,6 +26,7 @@ before_script:
   - find ~/.local/share/ | head -n 30
   - find ~/.local/share/netMHCIIpan-3.2 | head -n 30
   - chmod +x ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
+  - sudo apt install tcsh
   - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
   # proselint
   - sudo pip install proselint
