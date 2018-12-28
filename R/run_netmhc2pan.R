@@ -11,8 +11,8 @@ run_netmhc2pan <- function(
 ) {
   if (do_filter == TRUE) {
     do_filter <- 1
-  } else { 
-    do_filter <- 0 
+  } else {
+    do_filter <- 0
   }
   testit::assert(file.exists(fasta_filename))
   temp_xls_filename
@@ -32,7 +32,7 @@ run_netmhc2pan <- function(
     stop("Error:\n\n", text)
   }
   testit::assert(file.exists(temp_xls_filename))
-  df_raw <- utils::read.csv(temp_xls_filename, sep = "\t", 
+  df_raw <- utils::read.csv(temp_xls_filename, sep = "\t",
     col.names = c(
       "Pos", "Peptide", "ID", "one_minus_log50k", "nM", "Rank", "Ave", "NB"
     ),
@@ -40,4 +40,5 @@ run_netmhc2pan <- function(
   )
   # Get rid of weird header
   df <- df_raw[c(-1, -2), ]
+  df
 }
