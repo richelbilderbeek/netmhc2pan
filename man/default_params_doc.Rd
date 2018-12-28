@@ -5,11 +5,16 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(download_url, folder_name, os, verbose)
+default_params_doc(do_filter, download_url, fasta_filename, folder_name,
+  os, verbose)
 }
 \arguments{
+\item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
+
 \item{download_url}{NetMHC2pan download URL, for example,
 \code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
+
+\item{fasta_filename}{the name of a FASTA file with protein sequences}
 
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}
