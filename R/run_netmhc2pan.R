@@ -6,27 +6,23 @@
 run_netmhc2pan <- function(
   fasta_filename,
   folder_name = get_default_netmhc2pan_folder(),
-  do_filter = FALSE,
   temp_xls_filename = tempfile(fileext = ".xls")
 ) {
-  if (do_filter == TRUE) {
-    do_filter <- 1
-  } else {
-    do_filter <- 0
-  }
   testit::assert(file.exists(fasta_filename))
   temp_xls_filename
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   testit::assert(file.exists(bin_file_path))
+  # Adding '-filter' and '1' top the args does not help: the XLS
+  # file is created without the desired filter. The text output does
+  # change.
   text <- system2(
     command = bin_file_path,
     args = c(
-      "-filter", do_filter,
       "-xls", "1",
       "-xlsfile", temp_xls_filename,
       "-f", fasta_filename
     ),
-    stdout = TRUE
+    stdout = NULL
   )
   if (!file.exists(temp_xls_filename)) {
     stop("Error:\n\n", text)
