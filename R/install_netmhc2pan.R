@@ -101,7 +101,7 @@ install_netmhc2pan_data <- function(
 
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
-  url <- get_netmhc2pan_url()
+  url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
   }
