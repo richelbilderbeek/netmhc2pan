@@ -16,6 +16,11 @@ a character vector with the NetMHC2pan alleles
 \description{
 Get a list of the alleles supported by NetMHC2pan
 }
+\examples{
+  alleles <- get_netmhc2pan_alleles()
+  testit::assert(length(alleles) > 5000)
+  testit::assert("DRB1_0101" \%in\% alleles)
+}
 \author{
 Richel J.C. Bilderbeek
 }
