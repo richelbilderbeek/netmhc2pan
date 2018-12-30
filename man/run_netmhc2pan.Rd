@@ -4,12 +4,15 @@
 \alias{run_netmhc2pan}
 \title{Run NetMHC2pan}
 \usage{
-run_netmhc2pan(fasta_filename,
+run_netmhc2pan(fasta_filename, alleles = "DRB1_0101",
   folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls"))
 }
 \arguments{
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
+
+\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
+See \link{get_netmhc2pan_alleles} for a full list}
 
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}

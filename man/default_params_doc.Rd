@@ -5,10 +5,13 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(do_filter, download_url, fasta_filename, folder_name,
-  os, temp_xls_filename, verbose)
+default_params_doc(alleles, do_filter, download_url, fasta_filename,
+  folder_name, os, temp_xls_filename, verbose)
 }
 \arguments{
+\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
+See \link{get_netmhc2pan_alleles} for a full list}
+
 \item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
 
 \item{download_url}{NetMHC2pan download URL, for example,

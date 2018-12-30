@@ -1,5 +1,7 @@
 #' This function does nothing. It is intended to inherit is parameters'
 #' documentation.
+#' @param alleles one or more alleles, e.g. \code{DRB1_0101}. 
+#'   See \link{get_netmhc2pan_alleles} for a full list
 #' @param do_filter set to TRUE if the results of NetMHC2pan must be filtered
 #' @param download_url NetMHC2pan download URL, for example,
 #'   \code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}
@@ -15,6 +17,7 @@
 #'   \code{@noRd}. This is not done, as this will disallow all
 #'   functions to find the documentation parameters
 default_params_doc <- function(
+  alleles,
   do_filter,
   download_url,
   fasta_filename,
