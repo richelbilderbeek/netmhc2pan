@@ -35,7 +35,7 @@ run_netmhc2pan <- function(
   df_raw <- utils::read.csv(temp_xls_filename, sep = "\t",
     col.names = c(
       "Pos", "Peptide", "ID", 
-      rep(c("one_minus_log50k", "nM", "Rank"), times = length(alleles)),   
+      rep(c("one_minus_log50k", "nM", "Rank"), times = length(alleles)),
       "Ave", "NB"
     ),
     header = FALSE
