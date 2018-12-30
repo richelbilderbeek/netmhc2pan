@@ -4,15 +4,11 @@
 \alias{is_netmhc2pan_set_up}
 \title{Measure if NetMHC2pan is set up}
 \usage{
-is_netmhc2pan_set_up(folder_name = get_default_netmhc2pan_folder(),
-  os = rappdirs::app_dir()$os)
+is_netmhc2pan_set_up(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}
-
-\item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
-\code{netmhc2pan} supports Linux ('\code{unix}') only}
 }
 \value{
 TRUE is NetMHC2pan is set up locally,

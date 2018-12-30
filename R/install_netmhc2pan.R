@@ -5,39 +5,28 @@
 install_netmhc2pan <- function(
   download_url = NULL,
   folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE,
-  os = rappdirs::app_dir()$os
+  verbose = FALSE
 ) {
-  check_os(os) # nolint netmhc2pan function
-  is_bin_installed <- is_netmhc2pan_bin_installed(
-    folder_name = folder_name, os = os
-  )
+  is_bin_installed <- is_netmhc2pan_bin_installed(folder_name)
   if (!is_bin_installed) {
     install_netmhc2pan_bin(
       download_url = download_url,
       folder_name = folder_name,
-      verbose = verbose,
-      os = os
+      verbose = verbose
     )
   }
-  is_data_installed <- is_netmhc2pan_data_installed(
-    folder_name = folder_name, os = os
-  )
+  is_data_installed <- is_netmhc2pan_data_installed(folder_name = folder_name)
   if (!is_data_installed) {
     install_netmhc2pan_data(
       folder_name = folder_name,
-      verbose = verbose,
-      os = os
+      verbose = verbose
     )
   }
-  is_set_up <- is_netmhc2pan_set_up(
-    folder_name = folder_name, os = os
-  )
+  is_set_up <- is_netmhc2pan_set_up(folder_name = folder_name)
   if (!is_set_up) {
     set_up_netmhc2pan(
       folder_name = folder_name,
-      verbose = verbose,
-      os = os
+      verbose = verbose
     )
   }
 }
@@ -49,10 +38,8 @@ install_netmhc2pan <- function(
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE,
-  os = rappdirs::app_dir()$os
+  verbose = FALSE
 ) {
-  check_os(os) # nolint netmhc2pan function
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (file.exists(bin_path)) {
     stop("NetMHC2pan binary is already installed")
@@ -105,11 +92,8 @@ install_netmhc2pan_bin <- function(
 #' @export
 install_netmhc2pan_data <- function(
   folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE,
-  os = rappdirs::app_dir()$os
+  verbose = FALSE
 ) {
-  check_os(os) # nolint netmhc2pan function
-
   data_folder_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
   if (file.exists(data_folder_path)) {
     stop("NetMHC2pan data already installed")
@@ -171,10 +155,8 @@ install_netmhc2pan_data <- function(
 #' @export
 set_up_netmhc2pan <- function(
   folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE,
-  os = rappdirs::app_dir()$os
+  verbose = FALSE
 ) {
-  check_os(os) # nolint netmhc2pan function
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (!file.exists(bin_path)) {
     stop("NetMHC2pan binary is absent")

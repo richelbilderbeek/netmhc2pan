@@ -7,11 +7,9 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(
-  folder_name = rappdirs::user_data_dir(),
-  os = rappdirs::app_dir()$os
+  folder_name = rappdirs::user_data_dir()
 ) {
-  check_os(os) # nolint netmhc2pan function
-  if (!is_netmhc2pan_installed(folder_name = folder_name, os = os)
+  if (!is_netmhc2pan_installed(folder_name = folder_name)
   ) {
     stop("Cannot uninstall absent NetMHC2pan at folder '", folder_name, "'")
   }

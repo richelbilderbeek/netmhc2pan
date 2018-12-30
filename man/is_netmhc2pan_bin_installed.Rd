@@ -5,15 +5,11 @@
 \title{Measure if NetMHC2pan binary is installed locally}
 \usage{
 
-  is_netmhc2pan_bin_installed(folder_name = get_default_netmhc2pan_folder(),
-  os = rappdirs::app_dir()$os)
+  is_netmhc2pan_bin_installed(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}
-
-\item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
-\code{netmhc2pan} supports Linux ('\code{unix}') only}
 }
 \value{
 TRUE is NetMHC2pan binary is installed locally,
