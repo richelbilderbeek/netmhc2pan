@@ -16,12 +16,50 @@ knitr::opts_chunk$set(
 )
 ```
 
+This demo shows how to determine which parts of proteins
+bind strongly to MHC2 alleles. NetMHC2pan is a tool that
+estimates the binding strength of protein epitopes
+to MHC2 alleles. `netmhc2pan` allows to do so from R.
+
 ```{r}
 library(netmhc2pan)
 ```
 
-First we install NetMHC2pan, if and only if it is not installed yet:
+This demo assumes NetMHC2pan is installed.
+Installation cannot be done `netmhc2pan`, as one needs
+to request a download link at 
+[http://www.cbs.dtu.dk/services/NetMHCIIpan/](http://www.cbs.dtu.dk/services/NetMHCIIpan).
 
 ```{r}
 testit::assert(is_netmhc2pan_installed())
+```
+
+We work on a protein:
+
+```{r}
+fasta_filename <- system.file(
+  "extdata", "example.fasta", package = "netmhc2pan"
+)
+readLines(fasta_filename)
+```
+
+We need to pick an allele. There are many alleles:
+
+```{r}
+all_alleles <- get_netmhc2pan_alleles()
+length(all_alleles)
+```
+
+We simply pick the first two alleles:
+
+```{r}
+alleles <- all_alleles[1:2]
+```
+
+```{r}
+bindings <- run_netmhc2pan(
+  fasta_filename = fasta_filename,
+  alleles = alleles
+)
+knitr::kable(bindings)
 ```
