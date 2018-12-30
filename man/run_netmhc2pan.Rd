@@ -5,7 +5,7 @@
 \title{Run NetMHC2pan}
 \usage{
 run_netmhc2pan(fasta_filename,
-  folder_name = get_default_netmhc2pan_folder(), do_filter = FALSE,
+  folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls"))
 }
 \arguments{
@@ -13,8 +13,6 @@ run_netmhc2pan(fasta_filename,
 
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}
-
-\item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
 
 \item{temp_xls_filename}{name for a temporary \code{xls} filename}
 }
