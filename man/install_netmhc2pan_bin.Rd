@@ -4,7 +4,7 @@
 \alias{install_netmhc2pan_bin}
 \title{Install the NetMHC2pan binary to a local folder}
 \usage{
-install_netmhc2pan_bin(download_url = get_download_url(),
+install_netmhc2pan_bin(download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir(), verbose = FALSE,
   os = rappdirs::app_dir()$os)
 }

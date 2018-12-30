@@ -47,7 +47,7 @@ install_netmhc2pan <- function(
 #' @author Richel J.C. Bilderbeek
 #' @export
 install_netmhc2pan_bin <- function(
-  download_url = get_download_url(),
+  download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir(),
   verbose = FALSE,
   os = rappdirs::app_dir()$os

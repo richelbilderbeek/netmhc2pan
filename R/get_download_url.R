@@ -3,6 +3,6 @@
 #' @return a download URL
 #' @author Richel J.C. Bilderbeek
 #' @export
-get_download_url <- function() {
+get_netmhc2pan_url <- function() {
   "http://richelbilderbeek.nl/tmp_tmhmm-2.0c.Linux.tar.gz"
 }

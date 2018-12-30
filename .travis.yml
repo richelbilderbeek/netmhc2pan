@@ -17,10 +17,10 @@ r_github_packages:
 before_script:
   - |
     Rscript -e "source(\"R/install_netmhc2pan.R\"); \
-    source(\"R/get_download_url.R\"); \
+    source(\"R/get_netmhc2pan_url.R\"); \
     source(\"R/is_netmhc2pan_installed.R\"); \
     source(\"R/check_os.R\"); \
-    install_netmhc2pan(get_download_url())"
+    install_netmhc2pan(get_netmhc2pan_url())"
   - sudo apt install tcsh
   - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
   # proselint
