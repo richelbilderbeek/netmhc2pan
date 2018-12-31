@@ -24,8 +24,9 @@ get_netmhc2pan_alleles <- function(
       stop(
         "Call to NetMHC2pan failed\n",
         "bin_file_path: ", bin_file_path, "\n",
-        "text:\n" , text, "\n",
-        "error:\n", msg
+        "error:\n", msg, "\n",
+        "\n",
+        "text:\n", text, "\n"
       )
     }
   )
