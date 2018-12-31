@@ -3,7 +3,7 @@ context("test-is_netmhc2pan_installed")
 
 test_that("use", {
   if (!is_on_travis()) return()
-  
+
   if (is_netmhc2pan_installed()) {
     uninstall_netmhc2pan()
     expect_false(is_netmhc2pan_installed())
