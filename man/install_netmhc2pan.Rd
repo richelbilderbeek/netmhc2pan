@@ -5,7 +5,7 @@
 \title{Install NetMHC2pan to a local folder}
 \usage{
 install_netmhc2pan(download_url = NULL,
-  folder_name = rappdirs::user_data_dir(), verbose = FALSE)
+  folder_name = rappdirs::user_data_dir())
 }
 \arguments{
 \item{download_url}{NetMHC2pan download URL, for example,
@@ -13,8 +13,6 @@ install_netmhc2pan(download_url = NULL,
 
 \item{folder_name}{the folder to install NetMHC2pan, which is
 \code{"/home/[usename]/.local/share"} by default}
-
-\item{verbose}{set to TRUE for more output}
 }
 \description{
 Install NetMHC2pan to a local folder

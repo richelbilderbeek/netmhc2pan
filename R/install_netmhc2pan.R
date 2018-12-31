@@ -4,29 +4,25 @@
 #' @export
 install_netmhc2pan <- function(
   download_url = NULL,
-  folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE
+  folder_name = rappdirs::user_data_dir()
 ) {
   is_bin_installed <- is_netmhc2pan_bin_installed(folder_name) # nolint netmhc2pan function
   if (!is_bin_installed) { # nolint netmhc2pan function
     install_netmhc2pan_bin( # nolint netmhc2pan function
       download_url = download_url,
-      folder_name = folder_name,
-      verbose = verbose
+      folder_name = folder_name
     )
   }
   is_data_installed <- is_netmhc2pan_data_installed(folder_name = folder_name) # nolint netmhc2pan function
   if (!is_data_installed) { # nolint netmhc2pan function
     install_netmhc2pan_data( # nolint netmhc2pan function
-      folder_name = folder_name,
-      verbose = verbose
+      folder_name = folder_name
     )
   }
   is_set_up <- is_netmhc2pan_set_up(folder_name = folder_name) # nolint netmhc2pan function
   if (!is_set_up) {
     set_up_netmhc2pan( # nolint netmhc2pan function
-      folder_name = folder_name,
-      verbose = verbose
+      folder_name = folder_name
     )
   }
 }
@@ -37,8 +33,7 @@ install_netmhc2pan <- function(
 #' @export
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
-  folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE
+  folder_name = rappdirs::user_data_dir()
 ) {
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (file.exists(bin_path)) {
@@ -49,9 +44,6 @@ install_netmhc2pan_bin <- function(
 
   archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
   url <- file.path(download_url)
-  if (verbose == TRUE) {
-    print(paste("Download from URL:", url))
-  }
   local_path <- file.path(folder_name, archive_filename)
   tryCatch(
     utils::download.file(
@@ -77,12 +69,8 @@ install_netmhc2pan_bin <- function(
   # Linux has a tar file
   utils::untar(
     tarfile = local_path,
-    exdir = path.expand(folder_name),
-    verbose = verbose
+    exdir = path.expand(folder_name)
   )
-  if (verbose == TRUE) {
-    print(paste("NetMHC2pan installed at", bin_path))
-  }
   testit::assert(file.exists(bin_path))
 }
 
@@ -91,8 +79,7 @@ install_netmhc2pan_bin <- function(
 #' @author Richel J.C. Bilderbeek
 #' @export
 install_netmhc2pan_data <- function(
-  folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE
+  folder_name = rappdirs::user_data_dir()
 ) {
   data_folder_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
   if (file.exists(data_folder_path)) {
@@ -102,9 +89,6 @@ install_netmhc2pan_data <- function(
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
   url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
-  if (verbose == TRUE) {
-    print(paste("Download from URL:", url))
-  }
   local_path <- file.path(folder_name, "netMHCIIpan-3.2", "data.Linux.tar.gz")
   utils::download.file(
     url = url,
@@ -114,18 +98,10 @@ install_netmhc2pan_data <- function(
   # Linux has a tar file
   utils::untar(
     tarfile = local_path,
-    exdir = path.expand(file.path(folder_name, "netMHCIIpan-3.2")),
-    verbose = verbose
+    exdir = path.expand(file.path(folder_name, "netMHCIIpan-3.2"))
   )
-
-  if (verbose == TRUE) {
-    print(paste("NetMHC2pan data extracted at", data_folder_path))
-  }
   testit::assert(file.exists(data_folder_path))
 }
-
-
-
 
 # Convert:
 #
@@ -154,8 +130,7 @@ install_netmhc2pan_data <- function(
 #' @author Richel J.C. Bilderbeek
 #' @export
 set_up_netmhc2pan <- function(
-  folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE
+  folder_name = rappdirs::user_data_dir()
 ) {
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (!file.exists(bin_path)) {
