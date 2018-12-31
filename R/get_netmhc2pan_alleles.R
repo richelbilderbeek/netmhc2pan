@@ -10,6 +10,7 @@
 get_netmhc2pan_alleles <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
+  testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   testit::assert(file.exists(bin_file_path))
   text <- system2(
