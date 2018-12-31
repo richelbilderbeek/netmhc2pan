@@ -49,5 +49,5 @@ is_netmhc2pan_set_up <- function(
 ) {
   file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   lines <- readLines(file_path)
-  !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2"))
+  !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2")) # nolint file does use absolute path
 }
