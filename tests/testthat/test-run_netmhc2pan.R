@@ -16,6 +16,7 @@ test_that("use, multiple alleles", {
   fasta_filename <- system.file(
     "extdata", "example.fasta", package = "netmhc2pan"
   )
-  df <- run_netmhc2pan(fasta_filename, alleles = alleles)
-  expect_equal(9, nrow(df))
+  df <- run_netmhc2pan(fasta_filename = fasta_filename, alleles = alleles)
+  # Long form
+  expect_equal(18, nrow(df))
 })

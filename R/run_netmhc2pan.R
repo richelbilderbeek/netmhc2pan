@@ -36,9 +36,67 @@ run_netmhc2pan <- function(
       rep(c("one_minus_log50k", "nM", "Rank"), times = length(alleles)),
       "Ave", "NB"
     ),
-    header = FALSE
+    header = FALSE,
+    stringsAsFactors = FALSE
   )
+  # Convert to short form
   # Get rid of weird header
-  df <- df_raw[c(-1, -2), ]
+  df_short <- df_raw[c(-1, -2), ]
+  # Get rid of 'Ave' and 'NB' column
+  colnames(df_short)[ncol(df_short) - 1] == "Ave"
+  colnames(df_short)[ncol(df_short) - 0] == "NB"
+  df_short <- df_short[,c(-(ncol(df_short)-0), -(ncol(df_short)-1))]
+  # Convert to final long form
+  n_alleles <- length(alleles)
+  n_rows <- nrow(df_short) # number of positions
+  df <- data.frame(
+    Pos = rep(df_short$Pos, times = n_alleles),
+    Peptide = rep(df_short$Peptide, times = n_alleles),
+    ID = rep(df_short$ID, times = n_alleles),
+    Allele = rep(alleles, each = n_rows),
+    one_minus_log50k = NA,
+    nM = NA,
+    Rank = NA,
+    stringsAsFactors = FALSE
+  )
+  # one_minus_log50k
+  for (i in seq_along(alleles)) {
+    # one_minus_log50k, one_minus_log50k.1, one_minus_log50k.2, etc..
+    from_col <- 4 + ((i - 1) * 3)
+    testit::assert(
+      stringr::str_match(string = colnames(df_short)[from_col], 
+      pattern = "one_minus_log50k")
+    )
+    from <- as.numeric(as.vector(df_short[, from_col]))
+    to_row <- 1 + ((i - 1) * n_rows)
+    to_row_last <- to_row + n_rows - 1
+    df$one_minus_log50k[to_row:to_row_last] <- from
+  }
+  # nM
+  for (i in seq_along(alleles)) {
+    # one_minus_log50k, one_minus_log50k.1, one_minus_log50k.2, etc..
+    from_col <- 5 + ((i - 1) * 3)
+    testit::assert(
+      stringr::str_match(string = colnames(df_short)[from_col], 
+      pattern = "nM")
+    )
+    from <- as.numeric(as.vector(df_short[, from_col]))
+    to_row <- 1 + ((i - 1) * n_rows)
+    to_row_last <- to_row + n_rows - 1
+    df$nM[to_row:to_row_last] <- from
+  }
+  # Rank
+  for (i in seq_along(alleles)) {
+    # one_minus_log50k, one_minus_log50k.1, one_minus_log50k.2, etc..
+    from_col <- 6 + ((i - 1) * 3)
+    testit::assert(
+      stringr::str_match(string = colnames(df_short)[from_col], 
+      pattern = "Rank")
+    )
+    from <- as.numeric(as.vector(df_short[, from_col]))
+    to_row <- 1 + ((i - 1) * n_rows)
+    to_row_last <- to_row + n_rows - 1
+    df$Rank[to_row:to_row_last] <- from
+  }
   df
 }
