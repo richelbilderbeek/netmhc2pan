@@ -7,6 +7,7 @@ Codecov
 dk
 doi
 dtu
+epitopes
 FASTA
 Greenbaum
 http
@@ -24,6 +25,7 @@ PubMed
 Richel
 rmarkdown
 Sette
+tcsh
 VignetteEncoding
 VignetteEngine
 VignetteIndexEntry
