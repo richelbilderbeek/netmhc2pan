@@ -10,23 +10,13 @@
 get_netmhc2pan_alleles <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
+  check_netmhc2pan_installation() # nolint netmhc2pan function
   testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   testit::assert(file.exists(bin_file_path))
-  tryCatch({
-      text <- system2(
-        command = bin_file_path,
-        args = c("-list"),
-        stdout = TRUE
-      )
-    },
-    error = function(msg) {
-      cat("ERROR")
-      cat(paste("bin_file_path:", bin_file_path))
-      cat(paste("msg:", msg))
-      cat(paste("text:", text))
-      stop("Call to NetMHC2pan failed")
-    }
+  system2(
+    command = bin_file_path,
+    args = c("-list"),
+    stdout = TRUE
   )
-  text
 }

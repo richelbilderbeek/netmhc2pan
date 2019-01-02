@@ -31,7 +31,7 @@ to request a download link at
 [http://www.cbs.dtu.dk/services/NetMHCIIpan/](http://www.cbs.dtu.dk/services/NetMHCIIpan).
 
 ```{r}
-testit::assert(is_netmhc2pan_installed())
+check_netmhc2pan_installation()
 ```
 
 We work on a protein:

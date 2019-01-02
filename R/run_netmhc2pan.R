@@ -9,6 +9,13 @@ run_netmhc2pan <- function(
   folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls")
 ) {
+  # Check input
+  check_netmhc2pan_installation() # nolint netmhc2pan function
+  if (!all(alleles %in% get_netmhc2pan_alleles())) {
+    stop("")
+  }
+  
+  testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
   testit::assert(all(alleles %in% get_netmhc2pan_alleles())) # nolint netmhc2pan function
   testit::assert(file.exists(fasta_filename))
   bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")

@@ -25,6 +25,7 @@ install_netmhc2pan <- function(
       folder_name = folder_name
     )
   }
+  # Cannot install tcsh here
 }
 
 #' Install the NetMHC2pan binary to a local folder
