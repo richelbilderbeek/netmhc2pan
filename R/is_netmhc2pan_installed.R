@@ -60,7 +60,7 @@ is_netmhc2pan_set_up <- function(
 #' @export
 is_tcsh_installed <- function() {
   tryCatch(
-    system2(command = "tcsh"),
+    system2(command = "tcsh", args = "--version"),
     error = function(e) {
       return(FALSE)
     }
