@@ -15,13 +15,16 @@ r_github_packages:
   - ropensci/spelling
 
 before_script:
+  # tcsh
+  - sudo apt install tcsh
+  - tcsh --version
+  # NetMHC2pan
   - |
     Rscript -e "source(\"R/install_netmhc2pan.R\"); \
     source(\"R/get_netmhc2pan_url.R\"); \
     source(\"R/is_netmhc2pan_installed.R\"); \
     install_netmhc2pan(get_netmhc2pan_url())"
-  - sudo apt install tcsh
-  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan
+  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -h
   # proselint
   - sudo pip install proselint
 
