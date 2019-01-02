@@ -4,5 +4,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_netmhc2pan_url <- function() {
-  "http://richelbilderbeek.nl/tmp_netMHCIIpan-3.2.Linux.tar.gz"
+  "http://www.cbs.dtu.dk/download/C86CE65E-0EAF-11E9-BFE8-CFC9B9CD16B5/"
 }

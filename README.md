@@ -7,6 +7,8 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?b
 
 R package for [NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan/) [1].
 
+ * [YouTube video](https://youtu.be/08A_kf4v2UA) or [download video](http://richelbilderbeek.nl/netmhc2pan.ogv)
+
 ## Supported operating systems
 
  * Linux
