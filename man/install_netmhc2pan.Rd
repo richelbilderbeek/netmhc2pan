@@ -4,7 +4,7 @@
 \alias{install_netmhc2pan}
 \title{Install NetMHC2pan to a local folder}
 \usage{
-install_netmhc2pan(download_url = NULL,
+install_netmhc2pan(download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir())
 }
 \arguments{

@@ -3,7 +3,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 install_netmhc2pan <- function(
-  download_url = NULL,
+  download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir()
 ) {
   is_bin_installed <- is_netmhc2pan_bin_installed(folder_name) # nolint netmhc2pan function
