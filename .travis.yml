@@ -24,7 +24,7 @@ before_script:
     source(\"R/get_netmhc2pan_url.R\"); \
     source(\"R/is_netmhc2pan_installed.R\"); \
     install_netmhc2pan(get_netmhc2pan_url())"
-  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -h
+  # - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -h
   # proselint
   - sudo pip install proselint
 
