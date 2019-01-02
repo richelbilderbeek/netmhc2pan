@@ -17,7 +17,7 @@ r_github_packages:
 before_script:
   # tcsh
   - sudo apt install tcsh
-  - tcsh --version
+  - which tcsh
   # NetMHC2pan
   - |
     Rscript -e "source(\"R/install_netmhc2pan.R\"); \
