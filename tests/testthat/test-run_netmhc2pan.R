@@ -6,6 +6,26 @@ test_that("use", {
     "extdata", "example.fasta", package = "netmhc2pan"
   )
   df <- run_netmhc2pan(fasta_filename)
+  expect_equal(
+    colnames(df), 
+    c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
+  )
+  expect_true(is.numeric(df$Pos))
+  expect_true(!is.factor(df$Pos))
+  expect_true(is.character(df$Peptide))
+  expect_true(!is.factor(df$Peptide))
+  expect_true(is.character(df$ID))
+  expect_true(!is.factor(df$ID))
+  expect_true(is.character(df$Allele))
+  expect_true(!is.factor(df$Allele))
+  expect_true(is.numeric(df$one_minus_log50k))
+  expect_true(!is.factor(df$one_minus_log50k))
+  expect_true(is.numeric(df$nM))
+  expect_true(!is.factor(df$nM))
+  expect_true(is.numeric(df$Rank))
+  expect_true(!is.factor(df$Rank))
+  
+  names(df)
   expect_equal(9, nrow(df))
 })
 

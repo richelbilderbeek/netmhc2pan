@@ -25,6 +25,30 @@ a data frame with the NetMHC2pan results
 \description{
 Run NetMHC2pan
 }
+\examples{
+  fasta_filename <- system.file(
+    "extdata", "example.fasta", package = "netmhc2pan"
+  )
+  
+  # One default allele
+  df <- run_netmhc2pan(fasta_filename)
+  testit::assert(
+    all(
+      colnames(df) == 
+      c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
+    )
+  )
+  testit::assert(nrow(df) == 9)
+  testit::assert(all(df$Allele == "DRB1_0101"))
+  
+  # Two alleles
+  alleles <- c("DRB1_0101", "DRB1_0102")
+  # Alleles must be in NetMHC2pan
+  testit::assert(all(alleles \%in\% get_netmhc2pan_alleles()))
+  # Run NetMHCpan with these two alleles
+  df <- run_netmhc2pan(fasta_filename, alleles = alleles)
+  testit::assert(nrow(df) == 18)
+}
 \author{
 Richel J.C. Bilderbeek
 }
