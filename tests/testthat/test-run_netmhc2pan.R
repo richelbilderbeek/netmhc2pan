@@ -7,7 +7,7 @@ test_that("use", {
   )
   df <- run_netmhc2pan(fasta_filename)
   expect_equal(
-    colnames(df), 
+    colnames(df),
     c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
   )
   expect_true(is.numeric(df$Pos))
@@ -20,11 +20,11 @@ test_that("use", {
   expect_true(!is.factor(df$Allele))
   expect_true(is.numeric(df$one_minus_log50k))
   expect_true(!is.factor(df$one_minus_log50k))
-  expect_true(is.numeric(df$nM))
-  expect_true(!is.factor(df$nM))
+  expect_true(is.numeric(df$nM)) # nolint use NetMHC2pan variable names
+  expect_true(!is.factor(df$nM)) # nolint use NetMHC2pan variable names
   expect_true(is.numeric(df$Rank))
   expect_true(!is.factor(df$Rank))
-  
+
   names(df)
   expect_equal(9, nrow(df))
 })

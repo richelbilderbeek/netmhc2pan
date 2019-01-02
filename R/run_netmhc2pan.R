@@ -37,7 +37,7 @@ run_netmhc2pan <- function(
   if (!all(alleles %in% get_netmhc2pan_alleles())) {
     stop("")
   }
-  
+
   testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
   testit::assert(all(alleles %in% get_netmhc2pan_alleles())) # nolint netmhc2pan function
   testit::assert(file.exists(fasta_filename))
