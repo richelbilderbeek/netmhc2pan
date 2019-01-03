@@ -16,7 +16,7 @@ check_netmhc2pan_installation <- function(
       "NetMHC2pan binary not found at\n",
       bin_file_path, "\n",
       "\n",
-      "Tip 1: from R, run 'netmhc2pan::install_netmhc2pan_bin()'\n",
+      "Tip 1: from R, run 'netmhc2pan::install_netmhc2pan()'\n",
       "  with a (non-expired) download URL\n",
       "Tip 2: request a download URL at the NetMHC2pan request page at\n",
       "\n",
@@ -29,14 +29,14 @@ check_netmhc2pan_installation <- function(
       "NetMHC2pan data not found at\n",
       data_file_path, "\n",
       "\n",
-      "Tip: from R, run 'netmhc2pan::install_netmhc2pan_data()'\n"
+      "Tip: from R, run 'netmhc2pan::install_netmhc2pan()'\n"
     )
   }
   if (!is_netmhc2pan_set_up(folder_name = folder_name)) {
     stop(
       "NetMHC2pan not set up completely\n",
       "\n",
-      "Tip: from R, run 'nethmhc2pan::set_up_netmhc2pan()'\n"
+      "Tip: from R, run 'nethmhc2pan::install_netmhc2pan()'\n"
     )
   }
   if (!is_tcsh_installed()) {
