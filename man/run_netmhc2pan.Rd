@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_netmhc2pan.R
 \name{run_netmhc2pan}
 \alias{run_netmhc2pan}
-\title{Run NetMHC2pan}
+\title{Run NetMHCIIpan}
 \usage{
 run_netmhc2pan(fasta_filename, alleles = "DRB1_0101",
   folder_name = get_default_netmhc2pan_folder(),
@@ -14,16 +14,16 @@ run_netmhc2pan(fasta_filename, alleles = "DRB1_0101",
 \item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
 See \link{get_netmhc2pan_alleles} for a full list}
 
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 
 \item{temp_xls_filename}{name for a temporary \code{xls} filename}
 }
 \value{
-a data frame with the NetMHC2pan results
+a data frame with the NetMHCIIpan results
 }
 \description{
-Run NetMHC2pan
+Run NetMHCIIpan
 }
 \examples{
   testit::assert(is_netmhc2pan_installed())
@@ -45,7 +45,7 @@ Run NetMHC2pan
   
   # Two alleles
   alleles <- c("DRB1_0101", "DRB1_0102")
-  # Alleles must be in NetMHC2pan
+  # Alleles must be in NetMHCIIpan
   testit::assert(all(alleles \%in\% get_netmhc2pan_alleles()))
   # Run NetMHCpan with these two alleles
   df <- run_netmhc2pan(fasta_filename, alleles = alleles)

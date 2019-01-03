@@ -12,14 +12,14 @@ default_params_doc(alleles, do_filter, download_url, fasta_filename,
 \item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
 See \link{get_netmhc2pan_alleles} for a full list}
 
-\item{do_filter}{set to TRUE if the results of NetMHC2pan must be filtered}
+\item{do_filter}{set to TRUE if the results of NetMHCIIpan must be filtered}
 
-\item{download_url}{NetMHC2pan download URL, for example,
+\item{download_url}{NetMHCIIpan download URL, for example,
 \code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
 
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
 
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 
 \item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.

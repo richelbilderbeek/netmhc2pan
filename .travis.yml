@@ -18,7 +18,7 @@ before_script:
   # tcsh
   - sudo apt install tcsh
   - which tcsh
-  # NetMHC2pan
+  # NetMHCIIpan
   - |
     Rscript -e "source(\"R/install_netmhc2pan.R\"); \
     source(\"R/get_netmhc2pan_url.R\"); \

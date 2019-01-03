@@ -1,7 +1,7 @@
 #' Get the path to the folder where this package installs
-#' NetMHC2pan by default
+#' NetMHCIIpan by default
 #' @return the path to the folder where this package installs
-#'   NetMHC2pan by default
+#'   NetMHCIIpan by default
 #' @examples
 #'   if (rappdirs::app_dir()$os == "unix") {
 #'     testit::assert(

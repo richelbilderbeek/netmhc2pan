@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to install NetMHC2pan and its dependencies
+# Script to install NetMHCIIpan and its dependencies
 # on the Peregrine computer cluster
 #SBATCH --time=1:00:00
 #SBATCH --nodes=1

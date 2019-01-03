@@ -1,5 +1,5 @@
-#' Get a NetMHC2pan download URL
-#' Will stop if the NetMHC2pan download URL is invalid
+#' Get a NetMHCIIpan download URL
+#' Will stop if the NetMHCIIpan download URL is invalid
 #' @return a download URL
 #' @author Richel J.C. Bilderbeek
 #' @export

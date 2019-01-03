@@ -1,4 +1,4 @@
-#' Install NetMHC2pan to a local folder
+#' Install NetMHCIIpan to a local folder
 #' @inheritParams default_params_doc
 #' @examples 
 #'   if (!is_netmhc2pan_installed()) install_netmhc2pan()
@@ -31,7 +31,7 @@ install_netmhc2pan <- function(
   # Cannot install tcsh here
 }
 
-#' Install the NetMHC2pan binary to a local folder
+#' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek
 #' @export
@@ -41,7 +41,7 @@ install_netmhc2pan_bin <- function(
 ) {
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (file.exists(bin_path)) {
-    stop("NetMHC2pan binary is already installed")
+    stop("NetMHCIIpan binary is already installed")
   }
 
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
@@ -61,7 +61,7 @@ install_netmhc2pan_bin <- function(
       stop(
         "'download_url' is invalid.\n",
         "URL:", url, "\n",
-        "Request a download URL at the NetMHC2pan request page at\n",
+        "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
         "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netMHCIIpan\n",
         "\n",
@@ -81,7 +81,7 @@ install_netmhc2pan_bin <- function(
   testit::assert(file.exists(bin_path))
 }
 
-#' Install the NetMHC2pan binary to a local folder
+#' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek
 #' @export
@@ -90,7 +90,7 @@ install_netmhc2pan_data <- function(
 ) {
   data_folder_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
   if (file.exists(data_folder_path)) {
-    stop("NetMHC2pan data is already installed")
+    stop("NetMHCIIpan data is already installed")
   }
 
   url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
@@ -109,7 +109,7 @@ install_netmhc2pan_data <- function(
   testit::assert(file.exists(data_folder_path))
 }
 
-#' Install the NetMHC2pan binary to a local folder
+#' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek
 #' @export

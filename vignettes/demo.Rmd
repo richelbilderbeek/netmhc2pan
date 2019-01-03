@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 This demo shows how to determine which parts of proteins
-bind strongly to MHC2 alleles. NetMHC2pan is a tool that
+bind strongly to MHC2 alleles. NetMHCIIpan is a tool that
 estimates the binding strength of protein epitopes
 to MHC2 alleles. `netmhc2pan` allows to do so from R.
 
@@ -25,7 +25,7 @@ to MHC2 alleles. `netmhc2pan` allows to do so from R.
 library(netmhc2pan)
 ```
 
-This demo assumes NetMHC2pan is installed.
+This demo assumes NetMHCIIpan is installed.
 Installation cannot be done `netmhc2pan`, as one needs
 to request a download link at 
 [http://www.cbs.dtu.dk/services/NetMHCIIpan/](http://www.cbs.dtu.dk/services/NetMHCIIpan).

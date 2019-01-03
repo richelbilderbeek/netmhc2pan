@@ -2,19 +2,19 @@
 % Please edit documentation in R/get_netmhc2pan_alleles.R
 \name{get_netmhc2pan_alleles}
 \alias{get_netmhc2pan_alleles}
-\title{Get a list of the alleles supported by NetMHC2pan}
+\title{Get a list of the alleles supported by NetMHCIIpan}
 \usage{
 get_netmhc2pan_alleles(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 }
 \value{
-a character vector with the NetMHC2pan alleles
+a character vector with the NetMHCIIpan alleles
 }
 \description{
-Get a list of the alleles supported by NetMHC2pan
+Get a list of the alleles supported by NetMHCIIpan
 }
 \examples{
   alleles <- get_netmhc2pan_alleles()

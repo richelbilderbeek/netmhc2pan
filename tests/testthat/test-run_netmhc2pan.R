@@ -20,8 +20,8 @@ test_that("use", {
   expect_true(!is.factor(df$Allele))
   expect_true(is.numeric(df$one_minus_log50k))
   expect_true(!is.factor(df$one_minus_log50k))
-  expect_true(is.numeric(df$nM)) # nolint use NetMHC2pan variable names
-  expect_true(!is.factor(df$nM)) # nolint use NetMHC2pan variable names
+  expect_true(is.numeric(df$nM)) # nolint use NetMHCIIpan variable names
+  expect_true(!is.factor(df$nM)) # nolint use NetMHCIIpan variable names
   expect_true(is.numeric(df$Rank))
   expect_true(!is.factor(df$Rank))
 

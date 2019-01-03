@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_netmhc2pan_installation.R
 \name{check_netmhc2pan_installation}
 \alias{check_netmhc2pan_installation}
-\title{Checks the installation of NetMHC2pan.
+\title{Checks the installation of NetMHCIIpan.
 Throws a helpful error message if incomplete, 
 else does nothing}
 \usage{
@@ -10,14 +10,14 @@ else does nothing}
   check_netmhc2pan_installation(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 }
 \value{
 Nothing
 }
 \description{
-Checks the installation of NetMHC2pan.
+Checks the installation of NetMHCIIpan.
 Throws a helpful error message if incomplete, 
 else does nothing
 }

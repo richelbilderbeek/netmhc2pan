@@ -2,18 +2,18 @@
 % Please edit documentation in R/uninstall_netmhc2pan.R
 \name{uninstall_netmhc2pan}
 \alias{uninstall_netmhc2pan}
-\title{Uninstall NetMHC2pan}
+\title{Uninstall NetMHCIIpan}
 \usage{
 uninstall_netmhc2pan(folder_name = rappdirs::user_data_dir())
 }
 \arguments{
 \item{folder_name}{name of the folder 
-where the NetMHC2pan files are installed.
-The name of the NetMHC2pan binary file will be at
+where the NetMHCIIpan files are installed.
+The name of the NetMHCIIpan binary file will be at
 \code{[folder_name]/netMHCIIpan-3.2/netMHCIIpan}}
 }
 \description{
-Uninstall NetMHC2pan
+Uninstall NetMHCIIpan
 }
 \author{
 Richel J.C. Bilderbeek

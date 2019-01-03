@@ -3,17 +3,17 @@
 \name{get_default_netmhc2pan_folder}
 \alias{get_default_netmhc2pan_folder}
 \title{Get the path to the folder where this package installs
-NetMHC2pan by default}
+NetMHCIIpan by default}
 \usage{
 get_default_netmhc2pan_folder()
 }
 \value{
 the path to the folder where this package installs
-  NetMHC2pan by default
+  NetMHCIIpan by default
 }
 \description{
 Get the path to the folder where this package installs
-NetMHC2pan by default
+NetMHCIIpan by default
 }
 \examples{
   if (rappdirs::app_dir()$os == "unix") {

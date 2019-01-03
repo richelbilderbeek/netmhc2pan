@@ -2,20 +2,20 @@
 % Please edit documentation in R/is_netmhc2pan_installed.R
 \name{is_netmhc2pan_installed}
 \alias{is_netmhc2pan_installed}
-\title{Measure if NetMHC2pan is installed locally}
+\title{Measure if NetMHCIIpan is installed locally}
 \usage{
 is_netmhc2pan_installed(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 }
 \value{
-TRUE is NetMHC2pan is installed locally,
+TRUE is NetMHCIIpan is installed locally,
   FALSE otherwise
 }
 \description{
-Measure if NetMHC2pan is installed locally
+Measure if NetMHCIIpan is installed locally
 }
 \author{
 Richel J.C. Bilderbeek

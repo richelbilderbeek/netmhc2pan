@@ -22,7 +22,7 @@ test_that("install_netmhc2pan_bin", {
 
   expect_error(
     install_netmhc2pan_bin(folder_name = folder_name),
-    "NetMHC2pan binary is already installed"
+    "NetMHCIIpan binary is already installed"
   )
 })
 
@@ -39,7 +39,7 @@ test_that("install_netmhc2pan_data", {
 
   expect_error(
     install_netmhc2pan_data(folder_name = folder_name),
-    "NetMHC2pan data is already installed"
+    "NetMHCIIpan data is already installed"
   )
 })
 

@@ -1,6 +1,6 @@
-#' Run NetMHC2pan
+#' Run NetMHCIIpan
 #' @inheritParams default_params_doc
-#' @return a data frame with the NetMHC2pan results
+#' @return a data frame with the NetMHCIIpan results
 #' @examples 
 #'   testit::assert(is_netmhc2pan_installed())
 #'   
@@ -21,7 +21,7 @@
 #'   
 #'   # Two alleles
 #'   alleles <- c("DRB1_0101", "DRB1_0102")
-#'   # Alleles must be in NetMHC2pan
+#'   # Alleles must be in NetMHCIIpan
 #'   testit::assert(all(alleles %in% get_netmhc2pan_alleles()))
 #'   # Run NetMHCpan with these two alleles
 #'   df <- run_netmhc2pan(fasta_filename, alleles = alleles)
@@ -121,7 +121,7 @@ run_netmhc2pan <- function(
     from <- as.numeric(as.vector(df_short[, from_col]))
     to_row <- 1 + (i_minus_one * n_rows)
     to_row_last <- to_row + n_rows - 1
-    df$nM[to_row:to_row_last] <- from # nolint use same variable as NetMHC2pan, which is not all lowercase
+    df$nM[to_row:to_row_last] <- from # nolint use same variable as NetMHCIIpan, which is not all lowercase
   }
   # Rank
   for (i in seq_along(alleles)) {

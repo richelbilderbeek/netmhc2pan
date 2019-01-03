@@ -2,16 +2,16 @@
 % Please edit documentation in R/install_netmhc2pan.R
 \name{set_up_netmhc2pan}
 \alias{set_up_netmhc2pan}
-\title{Install the NetMHC2pan binary to a local folder}
+\title{Install the NetMHCIIpan binary to a local folder}
 \usage{
 set_up_netmhc2pan(folder_name = rappdirs::user_data_dir())
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHC2pan, which is
+\item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 }
 \description{
-Install the NetMHC2pan binary to a local folder
+Install the NetMHCIIpan binary to a local folder
 }
 \author{
 Richel J.C. Bilderbeek

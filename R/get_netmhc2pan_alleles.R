@@ -1,6 +1,6 @@
-#' Get a list of the alleles supported by NetMHC2pan
+#' Get a list of the alleles supported by NetMHCIIpan
 #' @inheritParams default_params_doc
-#' @return a character vector with the NetMHC2pan alleles
+#' @return a character vector with the NetMHCIIpan alleles
 #' @examples 
 #'   alleles <- get_netmhc2pan_alleles()
 #'   testit::assert(length(alleles) > 5000)

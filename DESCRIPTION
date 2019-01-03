@@ -1,16 +1,16 @@
 Package: netmhc2pan
-Title: Call NetMHC2pan From R
+Title: Call NetMHCIIpan From R
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Richel",
            family = "Bilderbeek",
            role = c("aut", "cre"),
            email = "richel@richelbilderbeek.nl")
-Description: 'NetMHC2pan' is a tool to obtain MHC2
-    binding sites from a protein FASTA file. 'NetMHC2pan' can
+Description: 'NetMHCIIpan' is a tool to obtain MHC2
+    binding sites from a protein FASTA file. 'NetMHCIIpan' can
     be used from a web server at 'http://www.cbs.dtu.dk/services/NetMHCIIpan/'
     or from the command-line, using a local installation. This package
-    allows to call NetMHC2pan from R.
+    allows to call NetMHCIIpan from R.
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
