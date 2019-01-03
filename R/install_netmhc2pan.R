@@ -50,9 +50,12 @@ install_netmhc2pan_bin <- function(
   url <- file.path(download_url, archive_filename)
   local_path <- file.path(folder_name, archive_filename)
   tryCatch(
-    utils::download.file(
-      url = url,
-      destfile = local_path
+    suppressWarnings(
+      utils::download.file(
+        url = url,
+        destfile = local_path,
+        quiet = TRUE
+      )
     ),
     error = function(e) {
       stop(
@@ -87,13 +90,12 @@ install_netmhc2pan_data <- function(
 ) {
   data_folder_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
   if (file.exists(data_folder_path)) {
-    stop("NetMHC2pan data already installed")
+    stop("NetMHC2pan data is already installed")
   }
-
-  dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
   url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
   local_path <- file.path(folder_name, "netMHCIIpan-3.2", "data.Linux.tar.gz")
+  dir.create(dirname(local_path), showWarnings = FALSE, recursive = TRUE)
   utils::download.file(
     url = url,
     destfile = local_path
@@ -107,28 +109,6 @@ install_netmhc2pan_data <- function(
   testit::assert(file.exists(data_folder_path))
 }
 
-# Convert:
-#
-# # full path to the NetMHCIIpan 3.2 directory (mandatory)
-# setenv	NMHOME	/usr/cbs/bio/src/netMHCIIpan-3.2
-# 
-# # determine where to store temporary files (must be writable to all users)
-# 
-# if ( ${?TMPDIR} == 0 ) then
-# 	setenv  TMPDIR  /scratch
-# endif
-#
-# To:
-# 
-# # full path to the NetMHCIIpan 3.2 directory (mandatory)
-# setenv	NMHOME	/home/richel/.local/share/netMHCIIpan-3.2
-# 
-# # determine where to store temporary files (must be writable to all users)
-# 
-# if ( ${?TMPDIR} == 0 ) then
-# 	setenv  TMPDIR  /tmp
-# endif
-
 #' Install the NetMHC2pan binary to a local folder
 #' @inheritParams default_params_doc
 #' @author Richel J.C. Bilderbeek
@@ -138,7 +118,12 @@ set_up_netmhc2pan <- function(
 ) {
   bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
   if (!file.exists(bin_path)) {
-    stop("NetMHC2pan binary is absent")
+    stop(
+      "NetMHCIIpan binary is absent at path '", bin_path, "'\n",
+      "\n",
+      "Tip: call 'netmhc2pan::install_netmhc2pan'\n",
+      "     to install the NetMHCIIpan binary"
+    )
   }
   lines <- readLines(bin_path)
 

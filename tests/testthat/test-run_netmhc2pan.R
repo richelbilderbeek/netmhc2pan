@@ -40,3 +40,19 @@ test_that("use, multiple alleles", {
   # Long form
   expect_equal(18, nrow(df))
 })
+
+test_that("abuse, multiple alleles", {
+  testit::assert(is_netmhc2pan_installed())
+  fasta_filename <- system.file(
+    "extdata", "example.fasta", package = "netmhc2pan"
+  )
+  expect_error(
+    run_netmhc2pan(
+      fasta_filename = fasta_filename,
+      alleles = "nonsense"
+    ),
+    "Invalid 'alleles'"
+  )
+  # Long form
+  expect_equal(18, nrow(df))
+})

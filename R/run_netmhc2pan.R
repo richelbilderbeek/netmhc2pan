@@ -37,7 +37,12 @@ run_netmhc2pan <- function(
   # Check input
   check_netmhc2pan_installation() # nolint netmhc2pan function
   if (!all(alleles %in% get_netmhc2pan_alleles())) {
-    stop("")
+    stop(
+      "Invalid 'alleles'\n",
+      "\n",
+      "Tip: use 'netmhc2pan::get_netmhc2pan_alleles()' for a list\n",
+      "     of all supported alleles"
+    )
   }
 
   testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
@@ -58,9 +63,6 @@ run_netmhc2pan <- function(
     ),
     stdout = NULL
   )
-  if (!file.exists(temp_xls_filename)) {
-    stop("Error:\n\n", text)
-  }
   testit::assert(file.exists(temp_xls_filename))
   df_raw <- utils::read.csv(temp_xls_filename, sep = "\t",
     col.names = c(
