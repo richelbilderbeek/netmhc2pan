@@ -53,6 +53,4 @@ test_that("abuse, multiple alleles", {
     ),
     "Invalid 'alleles'"
   )
-  # Long form
-  expect_equal(18, nrow(df))
 })
