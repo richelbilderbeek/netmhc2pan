@@ -3,6 +3,8 @@
 #' else does nothing
 #' @inheritParams default_params_doc
 #' @return Nothing
+#' @examples 
+#'   check_netmhc2pan_installation()
 #' @author Richel J.C. Bilderbeek
 #' @export
 check_netmhc2pan_installation <- function(

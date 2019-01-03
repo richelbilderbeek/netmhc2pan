@@ -21,6 +21,9 @@ Checks the installation of NetMHC2pan.
 Throws a helpful error message if incomplete, 
 else does nothing
 }
+\examples{
+  check_netmhc2pan_installation()
+}
 \author{
 Richel J.C. Bilderbeek
 }

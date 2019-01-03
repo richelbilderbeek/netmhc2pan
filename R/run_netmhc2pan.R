@@ -2,6 +2,8 @@
 #' @inheritParams default_params_doc
 #' @return a data frame with the NetMHC2pan results
 #' @examples 
+#'   testit::assert(is_netmhc2pan_installed())
+#'   
 #'   fasta_filename <- system.file(
 #'     "extdata", "example.fasta", package = "netmhc2pan"
 #'   )

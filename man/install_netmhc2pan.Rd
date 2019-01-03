@@ -17,6 +17,10 @@ install_netmhc2pan(download_url = get_netmhc2pan_url(),
 \description{
 Install NetMHC2pan to a local folder
 }
+\examples{
+  if (!is_netmhc2pan_installed()) install_netmhc2pan()
+  testit::assert(is_netmhc2pan_installed())
+}
 \author{
 Richel J.C. Bilderbeek
 }
