@@ -7,42 +7,132 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?b
 
 R package for [NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan/) [1].
 
+> Please note that NetMHCIIpan is intended for academic users only. 
+> Other users are requested to contact 
+> the NetMHCIIpan Software Package Manager at software@cbs.dtu.dk
+
  * [YouTube video](https://youtu.be/08A_kf4v2UA) or [download video](http://richelbilderbeek.nl/netmhc2pan.ogv)
-
-## Supported operating systems
-
- * Linux
- * Mac (future)
- * Windows (never, as NetMHCIIpan does not support Windows)
 
 ## Install
 
-```
+Use `usethis` (or `devtools`) to install the `netmhc2pan` package:
+
+```{r}
 usethis::install_github("richelbilderbeek/netmhc2pan")
 ```
 
-Install NetMHCIIpan to a default folder:
+Load the `netmhc2pan` library:
 
-```
+```{r}
 library(netmhc2pan)
-install_netmhc2pan()
 ```
+
+Install NetMHCIIpan to a default folder using `netmhc2pan` and a download URL.
+The download URL can be obtained from the 
+[NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan) website at
+[http://www.cbs.dtu.dk/services/NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan)
+and expires after four hours.
+
+```{r}
+install_netmhc2pan("http://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
+```
+
+The installation of `netmhc2pan` is checked, with
+the goal of producing a helpful error message:
+
+```{r}
+check_netmhc2pan_installation()
+```
+
+
 
 ## Usage
 
-We need a FASTA file:
+We start from a FASTA file with one or more protein sequences:
 
-```
-fasta_file <- system.file("extdata", "example.fas", package = "netmhc2pan")
-```
-
-Calling `netmhc2pan_run` will do the NetMHC2pan analysis:
-
-```
-df <- netmhc2pan_run(fasta_file)
+```{r}
+fasta_filename <- system.file(
+  "extdata", "example.fasta", package = "netmhc2pan"
+)
 ```
 
-The data frame `df` contains the results.
+This is how to content of such a FASTA file looks like:
+
+```{r}
+cat(readLines(fasta_filename), sep = "\n")
+```
+
+```
+>sp|L0T550|RIP2_MYCTU_158_180
+AVLWAGVAFLAFLQLTALVLNLL
+```
+
+MHC2 has multiple alleles that bind differently to protein parts.
+NetMHCIIpan supports more than 5000 alleles:
+
+```{r}
+all_alleles <- get_netmhc2pan_alleles()
+testit::assert(length(all_alleles) > 5000)
+```
+
+We simply pick the first two alleles:
+
+```{r}
+alleles <- all_alleles[1:2]
+```
+
+Running the NetMHCIIpan analysis: 
+
+```{r}
+bindings <- run_netmhc2pan(
+  fasta_filename = fasta_filename,
+  alleles = alleles
+)
+```
+
+The data frame `bindings` contains the results:
+
+```{r}
+knitr::kable(bindings)
+```
+
+| Pos|Peptide         |ID                                     |Allele    | one_minus_log50k|      nM| Rank|
+|---:|:---------------|:--------------------------------------|:---------|----------------:|-------:|----:|
+|   1|AVLWAGVAFLAFLQL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.510|  201.09| 39.0|
+|   2|VLWAGVAFLAFLQLT |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.475|  293.98| 47.0|
+|   3|LWAGVAFLAFLQLTA |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.524|  172.31| 36.0|
+|   4|WAGVAFLAFLQLTAL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.566|  109.07| 26.0|
+|   5|AGVAFLAFLQLTALV |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.602|   73.94| 19.0|
+|   6|GVAFLAFLQLTALVL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.680|   31.93|  7.0|
+|   7|VAFLAFLQLTALVLN |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.688|   29.20|  6.5|
+|   8|AFLAFLQLTALVLNL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.680|   32.04|  7.0|
+|   9|FLAFLQLTALVLNLL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0101 |            0.669|   35.92|  8.5|
+|   1|AVLWAGVAFLAFLQL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.346| 1188.96| 38.0|
+|   2|VLWAGVAFLAFLQLT |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.329| 1414.85| 44.0|
+|   3|LWAGVAFLAFLQLTA |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.379|  823.82| 28.0|
+|   4|WAGVAFLAFLQLTAL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.406|  616.05| 21.0|
+|   5|AGVAFLAFLQLTALV |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.425|  504.55| 17.0|
+|   6|GVAFLAFLQLTALVL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.458|  353.10| 11.0|
+|   7|VAFLAFLQLTALVLN |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.456|  360.90| 11.0|
+|   8|AFLAFLQLTALVLNL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.456|  361.54| 11.0|
+|   9|FLAFLQLTALVLNLL |sp&#124;L0T550&#124;RIP2_MYCTU_158_180 |DRB1_0102 |            0.442|  420.88| 14.0|
+
+The strongest binding is between the MHC2 allele `DRB1_0101`
+at the 7th (to and including 21st) amino acid of the `sp&#124;L0T550&#124;RIP2_MYCTU_158_180`
+protein, as it is in the top 6.5% of best binders.
+
+## FAQ
+
+### Under which operating systems does `netmhc2pan` work?
+
+`netmhc2pan` can only work on the set of operating systems NetMHCIIpan
+works on. Currently, only Linux is supported:
+
+Operating system|Supported by NetMHCIIpan|Supported by `netmhc2pan`
+---|---|---
+Darwin|Y|N
+Linux|Y|Y
+Windows|N|N
 
 ## References
 
