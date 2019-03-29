@@ -18,7 +18,6 @@ if [ "$#" -ne 1 ]; then
   branch=master
 fi
 
-
 echo "Installing perl package 'Env':"
 /usr/bin/perl -MCPAN -e 'install Env'
 
@@ -29,7 +28,7 @@ echo "Installing NetMHC2pan"
 Rscript -e 'netmhc2pan::install_netmhc2pan()'
 
 echo "NetMHC2pan binary installed:"
-Rscript Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
+Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
 
 echo "NetMHC2pan data installed:"
 Rscript -e 'netmhc2pan::is_netmhc2pan_data_installed()'
