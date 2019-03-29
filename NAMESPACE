@@ -2,6 +2,7 @@
 
 export(check_netmhc2pan_installation)
 export(get_default_netmhc2pan_folder)
+export(get_default_netmhc2pan_subfolder)
 export(get_netmhc2pan_alleles)
 export(get_netmhc2pan_url)
 export(install_netmhc2pan)

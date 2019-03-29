@@ -48,7 +48,11 @@ run_netmhc2pan <- function(
   testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
   testit::assert(all(alleles %in% get_netmhc2pan_alleles())) # nolint netmhc2pan function
   testit::assert(file.exists(fasta_filename))
-  bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  bin_file_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCIIpan"
+  )
   testit::assert(file.exists(bin_file_path))
   # Adding '-filter' and '1' top the args does not help: the XLS
   # file is created without the desired filter. The text output does

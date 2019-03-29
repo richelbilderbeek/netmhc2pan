@@ -39,7 +39,11 @@ install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir()
 ) {
-  bin_path <- file.path(folder_name, "netMHCpan-4.0", "netMHCpan")
+  bin_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCpan"
+  )
   if (file.exists(bin_path)) {
     stop("netMHCpan binary is already installed")
   }
@@ -91,13 +95,26 @@ install_netmhc2pan_bin <- function(
 install_netmhc2pan_data <- function(
   folder_name = rappdirs::user_data_dir()
 ) {
-  data_folder_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
+  data_folder_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "data"
+  )
   if (file.exists(data_folder_path)) {
     stop("NetMHCIIpan data is already installed")
   }
 
-  url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
-  local_path <- file.path(folder_name, "netMHCIIpan-3.2", "data.Linux.tar.gz")
+  # Used to be: url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
+  url <- paste0(
+    "http://www.cbs.dtu.dk/services/", 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "/data.Linux.tar.gz"
+  )
+  local_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "data.Linux.tar.gz"
+  )
   dir.create(dirname(local_path), showWarnings = FALSE, recursive = TRUE)
   utils::download.file(
     url = url,
@@ -107,7 +124,12 @@ install_netmhc2pan_data <- function(
   # Linux has a tar file
   utils::untar(
     tarfile = local_path,
-    exdir = path.expand(file.path(folder_name, "netMHCIIpan-3.2"))
+    exdir = path.expand(
+      file.path(
+        folder_name, 
+        basename(get_default_netmhc2pan_subfolder())
+      )
+    )
   )
   testit::assert(file.exists(data_folder_path))
 }
@@ -119,7 +141,11 @@ install_netmhc2pan_data <- function(
 set_up_netmhc2pan <- function(
   folder_name = rappdirs::user_data_dir()
 ) {
-  bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  bin_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCIIpan"
+  )
   if (!file.exists(bin_path)) {
     stop(
       "NetMHCIIpan binary is absent at path '", bin_path, "'\n",
@@ -132,7 +158,11 @@ set_up_netmhc2pan <- function(
 
   # Change sentenv
   setenv_line_idx <- which(
-    lines == "setenv\tNMHOME\t/usr/cbs/bio/src/netMHCIIpan-3.2"
+    # Used to be: lines == "setenv\tNMHOME\t/usr/cbs/bio/src/netMHCIIpan-3.2"
+    lines == paste0(
+      "setenv\tNMHOME\t/usr/cbs/bio/src/", 
+      basename(get_default_netmhc2pan_subfolder())
+    )
   )
   lines[setenv_line_idx] <- paste0("setenv\tNMHOME\t", dirname(bin_path))
 

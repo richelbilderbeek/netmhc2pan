@@ -11,7 +11,11 @@ check_netmhc2pan_installation <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
   if (!is_netmhc2pan_bin_installed(folder_name = folder_name)) {
-    bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+    bin_file_path <- file.path(
+      folder_name, 
+      basename(get_default_netmhc2pan_subfolder()), 
+      "netMHCIIpan"
+    )
     stop(
       "NetMHCIIpan binary not found at\n",
       bin_file_path, "\n",
@@ -24,7 +28,11 @@ check_netmhc2pan_installation <- function(
     )
   }
   if (!is_netmhc2pan_data_installed(folder_name = folder_name)) {
-    data_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
+    data_file_path <- file.path(
+      folder_name, 
+      basename(get_default_netmhc2pan_subfolder()), 
+      "data"
+    )
     stop(
       "NetMHCIIpan data not found at\n",
       data_file_path, "\n",

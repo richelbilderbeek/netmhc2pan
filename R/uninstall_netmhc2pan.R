@@ -3,7 +3,7 @@
 #' @param folder_name name of the folder 
 #'   where the NetMHCIIpan files are installed.
 #'   The name of the NetMHCIIpan binary file will be at
-#'   \code{[folder_name]/netMHCIIpan-3.2/netMHCIIpan}
+#'   \code{[folder_name]/[subfolder_basename]/netMHCIIpan}
 #' @author Richel J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(
@@ -13,11 +13,17 @@ uninstall_netmhc2pan <- function(
   ) {
     stop("Cannot uninstall absent NetMHCIIpan at folder '", folder_name, "'")
   }
-  bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  bin_file_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCIIpan"
+  )
   testit::assert(file.exists(bin_file_path))
   file.remove(bin_file_path)
   data_folder_path <- file.path(
-    folder_name, "netMHCIIpan-3.2", "data"
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "data"
   )
   unlink(x = data_folder_path, recursive = TRUE)
 }

@@ -10,7 +10,7 @@ uninstall_netmhc2pan(folder_name = rappdirs::user_data_dir())
 \item{folder_name}{name of the folder 
 where the NetMHCIIpan files are installed.
 The name of the NetMHCIIpan binary file will be at
-\code{[folder_name]/netMHCIIpan-3.2/netMHCIIpan}}
+\code{[folder_name]/[subfolder_basename]/netMHCIIpan}}
 }
 \description{
 Uninstall NetMHCIIpan

@@ -22,7 +22,11 @@ is_netmhc2pan_installed <- function(
 is_netmhc2pan_bin_installed <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
-  bin_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  bin_file_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCIIpan"
+  )
   file.exists(bin_file_path)
 }
 
@@ -35,7 +39,11 @@ is_netmhc2pan_bin_installed <- function(
 is_netmhc2pan_data_installed <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
-  data_file_path <- file.path(folder_name, "netMHCIIpan-3.2", "data")
+  data_file_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "data"
+  )
   file.exists(data_file_path)
 }
 
@@ -48,9 +56,22 @@ is_netmhc2pan_data_installed <- function(
 is_netmhc2pan_set_up <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
-  file_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  file_path <- file.path(
+    folder_name, 
+    basename(get_default_netmhc2pan_subfolder()), 
+    "netMHCIIpan"
+  )
   lines <- readLines(file_path)
-  !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2")) # nolint file does use absolute path
+  # Used to be: !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2")) # nolint file does use absolute path
+  !any(
+    grepl(
+      x = lines, 
+      pattern = paste0(
+        "/usr/cbs/bio/src/", 
+        basename(get_default_netmhc2pan_subfolder())
+      )
+    )
+  )
 }
 
 #' See if tcsh is installed 

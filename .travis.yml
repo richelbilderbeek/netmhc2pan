@@ -25,7 +25,7 @@ before_script:
     source(\"R/is_netmhc2pan_installed.R\"); \
     install_netmhc2pan()"
   - echo -e ">sp|L0T550|RIP2_MYCTU_158_180\nAVLWAGVAFLAFLQLTALVLNLL" > example.fasta
-  - ~/.local/share/netMHCIIpan-3.2/netMHCIIpan -f example.fasta
+  - ~/.local/share/netMHCpan-4.0/netMHCIIpan -f example.fasta
   - rm example.fasta
   # proselint
   - sudo pip install proselint
