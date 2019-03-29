@@ -21,6 +21,10 @@ before_script:
   # NetMHCIIpan
   - |
     Rscript -e "source(\"R/install_netmhc2pan.R\"); \
+    source(\"R/capitalize_first_char.R\"); \
+    source(\"R/get_default_netmhc2pan_bin_path.R\"); \
+    source(\"R/get_default_netmhc2pan_folder.R\"); \
+    source(\"R/get_default_netmhc2pan_subfolder.R\"); \
     source(\"R/get_netmhc2pan_url.R\"); \
     source(\"R/is_netmhc2pan_installed.R\"); \
     install_netmhc2pan()"
