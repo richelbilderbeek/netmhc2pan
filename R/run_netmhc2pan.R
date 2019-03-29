@@ -51,7 +51,7 @@ run_netmhc2pan <- function(
   bin_file_path <- file.path(
     folder_name, 
     basename(get_default_netmhc2pan_subfolder()), 
-    "netMHCIIpan"
+    basename(get_default_netmhc2pan_bin_path())
   )
   testit::assert(file.exists(bin_file_path))
   # Adding '-filter' and '1' top the args does not help: the XLS

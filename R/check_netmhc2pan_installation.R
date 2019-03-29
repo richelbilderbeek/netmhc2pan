@@ -14,7 +14,7 @@ check_netmhc2pan_installation <- function(
     bin_file_path <- file.path(
       folder_name, 
       basename(get_default_netmhc2pan_subfolder()), 
-      "netMHCIIpan"
+      basename(get_default_netmhc2pan_bin_path())
     )
     stop(
       "NetMHCIIpan binary not found at\n",

@@ -144,7 +144,7 @@ set_up_netmhc2pan <- function(
   bin_path <- file.path(
     folder_name, 
     basename(get_default_netmhc2pan_subfolder()), 
-    "netMHCIIpan"
+    basename(get_default_netmhc2pan_bin_path())
   )
   if (!file.exists(bin_path)) {
     stop(

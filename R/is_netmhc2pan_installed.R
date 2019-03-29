@@ -25,7 +25,7 @@ is_netmhc2pan_bin_installed <- function(
   bin_file_path <- file.path(
     folder_name, 
     basename(get_default_netmhc2pan_subfolder()), 
-    "netMHCIIpan"
+    basename(get_default_netmhc2pan_bin_path())
   )
   file.exists(bin_file_path)
 }
@@ -59,7 +59,7 @@ is_netmhc2pan_set_up <- function(
   file_path <- file.path(
     folder_name, 
     basename(get_default_netmhc2pan_subfolder()), 
-    "netMHCIIpan"
+    basename(get_default_netmhc2pan_bin_path())
   )
   lines <- readLines(file_path)
   # Used to be: !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2")) # nolint file does use absolute path
