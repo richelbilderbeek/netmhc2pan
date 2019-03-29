@@ -83,7 +83,7 @@ install_netmhc2pan_bin <- function(
     exdir = path.expand(folder_name)
   )
   if (!file.exists(bin_path)) {
-    stop("netMHCpan binary not found at path '", bin_path, "'")
+    stop("NetMHCIIpan binary not found at path '", bin_path, "'")
   }
   testit::assert(file.exists(bin_path))
 }
