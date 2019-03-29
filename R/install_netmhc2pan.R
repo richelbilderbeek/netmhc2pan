@@ -105,10 +105,13 @@ install_netmhc2pan_data <- function(
   }
 
   # Used to be: url <- "http://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz"
-  url <- paste0(
-    "http://www.cbs.dtu.dk/services/", 
-    basename(get_default_netmhc2pan_subfolder()), 
-    "/data.Linux.tar.gz"
+  #                                                    ^
+  #                                                    |
+  #                                                    +--- Note the uppercase!
+  url <- file.path(
+    "http://www.cbs.dtu.dk/services", 
+    capitalize_first_char(basename(get_default_netmhc2pan_subfolder())),
+    "data.Linux.tar.gz"
   )
   local_path <- file.path(
     folder_name, 
