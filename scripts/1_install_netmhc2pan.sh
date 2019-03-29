@@ -10,7 +10,35 @@
 #SBATCH --output=install_netmhc2pan.log
 module load GCCcore/4.9.3 
 module load XZ/5.2.2-foss-2016a
-#module load R/3.3.1-foss-2016a
 module load R
+module load Perl
+echo "Installing perl package 'Env':"
+/usr/bin/perl -MCPAN -e 'install Env'
+
+echo "Installing GitHub"
 Rscript -e 'devtools::install_github("richelbilderbeek/netmhc2pan")'
+
+echo "Installing NetMHC2pan"
 Rscript -e 'netmhc2pan::install_netmhc2pan()'
+
+echo "NetMHC2pan binary installed:"
+Rscripts Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
+
+echo "NetMHC2pan data installed:"
+Rscript -e 'netmhc2pan::is_netmhc2pan_data_installed()'
+
+echo "NetMHC2pan set up:"
+Rscript -e 'netmhc2pan::is_netmhc2pan_set_up()'
+
+echo "TCSH installed:"
+Rscript -e 'netmhc2pan::is_tcsh_installed()'
+
+echo "Default NetMHC22pan_folder: "
+Rscript -e 'netmhc2pan::get_default_netmhc2pan_folder()'
+
+echo "Show NetMHC2pan alleles:"
+Rscript -e 'head(netmhc2pan::get_netmhc2pan_alleles())'
+
+echo "NetMHC2pan run:"
+Rscript -e 'netmhc2pan::run_netmhc2pan(fasta_filename = system.file("extdata", "example.fasta", package = "netmhc2pan"))'
+
