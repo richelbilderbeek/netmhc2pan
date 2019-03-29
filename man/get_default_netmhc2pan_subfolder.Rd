@@ -2,15 +2,15 @@
 % Please edit documentation in R/get_default_netmhc2pan_subfolder.R
 \name{get_default_netmhc2pan_subfolder}
 \alias{get_default_netmhc2pan_subfolder}
-\title{Get the full path to the NetMHC2pan subfolder}
+\title{Get the full path to the NetMHC2pan sub-folder}
 \usage{
 get_default_netmhc2pan_subfolder()
 }
 \value{
-the full path to the NetMHC2pan subfolder
+the full path to the NetMHC2pan sub-folder
 }
 \description{
-Get the full path to the NetMHC2pan subfolder
+Get the full path to the NetMHC2pan sub-folder
 }
 \author{
 Richel J.C. Bilderbeek

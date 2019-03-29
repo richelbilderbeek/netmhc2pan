@@ -1,4 +1,5 @@
 #' Convert the first character to upper case
+#' @param s a string
 #' @author Richel J.C. Bilderbeek
 #' @export
 capitalize_first_char <- function(s) {

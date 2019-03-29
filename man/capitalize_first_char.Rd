@@ -6,6 +6,9 @@
 \usage{
 capitalize_first_char(s)
 }
+\arguments{
+\item{s}{a string}
+}
 \description{
 Convert the first character to upper case
 }
