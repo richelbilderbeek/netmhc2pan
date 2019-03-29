@@ -134,6 +134,16 @@ Darwin|Y|N
 Linux|Y|Y
 Windows|N|N
 
+### How to solve `Can't locate Env.pm in @INC`?
+
+Install the Perl `Env` package with:
+
+```
+/usr/bin/perl -MCPAN -e 'install Env'
+```
+
+See notes at [this Issue](https://github.com/richelbilderbeek/netmhc2pan/issues/1).
+
 ## References
 
  * [1] Improved methods for predicting peptide binding affinity to MHC class II molecules.
