@@ -39,9 +39,9 @@ install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir()
 ) {
-  bin_path <- file.path(folder_name, "netMHCIIpan-3.2", "netMHCIIpan")
+  bin_path <- file.path(folder_name, "netMHCpan-4.0", "netMHCpan")
   if (file.exists(bin_path)) {
-    stop("NetMHCIIpan binary is already installed")
+    stop("netMHCpan binary is already installed")
   }
 
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
@@ -78,6 +78,9 @@ install_netmhc2pan_bin <- function(
     tarfile = local_path,
     exdir = path.expand(folder_name)
   )
+  if (!file.exists(bin_path)) {
+    stop("netMHCpan binary not found at path '", bin_path, "'")
+  }
   testit::assert(file.exists(bin_path))
 }
 
