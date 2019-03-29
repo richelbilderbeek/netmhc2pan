@@ -12,11 +12,18 @@ module load GCCcore/4.9.3
 module load XZ/5.2.2-foss-2016a
 module load R
 module load Perl
+
+branch=$1
+if [ "$#" -ne 1 ]; then
+  branch=master
+fi
+
+
 echo "Installing perl package 'Env':"
 /usr/bin/perl -MCPAN -e 'install Env'
 
 echo "Installing GitHub"
-Rscript -e 'devtools::install_github("richelbilderbeek/netmhc2pan")'
+Rscript -e "devtools::install_github(\"richelbilderbeek/netmhc2pan\", ref = \"$branch\")" 
 
 echo "Installing NetMHC2pan"
 Rscript -e 'netmhc2pan::install_netmhc2pan()'
