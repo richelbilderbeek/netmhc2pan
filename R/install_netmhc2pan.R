@@ -42,7 +42,7 @@ install_netmhc2pan_bin <- function(
   bin_path <- file.path(
     folder_name, 
     basename(get_default_netmhc2pan_subfolder()), 
-    "netMHCpan"
+    basename(get_default_netmhc2pan_bin_path())
   )
   if (file.exists(bin_path)) {
     stop("netMHCpan binary is already installed")
