@@ -22,7 +22,7 @@ echo "Installing NetMHC2pan"
 Rscript -e 'netmhc2pan::install_netmhc2pan()'
 
 echo "NetMHC2pan binary installed:"
-Rscripts Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
+Rscript Rscript -e 'netmhc2pan::is_netmhc2pan_bin_installed()' 
 
 echo "NetMHC2pan data installed:"
 Rscript -e 'netmhc2pan::is_netmhc2pan_data_installed()'
