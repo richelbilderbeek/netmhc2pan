@@ -3,5 +3,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_default_netmhc2pan_subfolder <- function() {
-  file.path(get_default_netmhc2pan_folder(), "netMHCpan-4.0")
+  file.path(get_default_netmhc2pan_folder(), "netMHCIIpan-3.2")
 }

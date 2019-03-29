@@ -3,6 +3,6 @@
 #' @export
 get_default_netmhc2pan_bin_path <- function() {
   file.path(
-    get_default_netmhc2pan_subfolder(), "netMHCpan"
+    get_default_netmhc2pan_subfolder(), "netMHCIIpan"
   )
 }
