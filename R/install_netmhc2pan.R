@@ -50,7 +50,7 @@ install_netmhc2pan_bin <- function(
 
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
 
-  archive_filename <- "netMHCpan-4.0a.Linux.tar.gz"
+  archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
   url <- file.path(download_url, archive_filename)
   local_path <- file.path(folder_name, archive_filename)
   tryCatch(
