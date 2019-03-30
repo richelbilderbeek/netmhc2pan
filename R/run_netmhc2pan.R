@@ -1,24 +1,24 @@
 #' Run NetMHCIIpan
 #' @inheritParams default_params_doc
 #' @return a data frame with the NetMHCIIpan results
-#' @examples 
+#' @examples
 #'   testit::assert(is_netmhc2pan_installed())
-#'   
+#'
 #'   fasta_filename <- system.file(
 #'     "extdata", "example.fasta", package = "netmhc2pan"
 #'   )
-#'   
+#'
 #'   # One default allele
 #'   df <- run_netmhc2pan(fasta_filename)
 #'   testit::assert(
 #'     all(
-#'       colnames(df) == 
+#'       colnames(df) ==
 #'       c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
 #'     )
 #'   )
 #'   testit::assert(nrow(df) == 9)
 #'   testit::assert(all(df$Allele == "DRB1_0101"))
-#'   
+#'
 #'   # Two alleles
 #'   alleles <- c("DRB1_0101", "DRB1_0102")
 #'   # Alleles must be in NetMHCIIpan
@@ -49,8 +49,8 @@ run_netmhc2pan <- function(
   testit::assert(all(alleles %in% get_netmhc2pan_alleles())) # nolint netmhc2pan function
   testit::assert(file.exists(fasta_filename))
   bin_file_path <- file.path(
-    folder_name, 
-    basename(get_default_netmhc2pan_subfolder()), 
+    folder_name,
+    basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
   testit::assert(file.exists(bin_file_path))

@@ -1,9 +1,9 @@
 #' Checks the installation of NetMHCIIpan.
-#' Throws a helpful error message if incomplete, 
+#' Throws a helpful error message if incomplete,
 #' else does nothing
 #' @inheritParams default_params_doc
 #' @return Nothing
-#' @examples 
+#' @examples
 #'   check_netmhc2pan_installation()
 #' @author Richel J.C. Bilderbeek
 #' @export
@@ -12,8 +12,8 @@ check_netmhc2pan_installation <- function(
 ) {
   if (!is_netmhc2pan_bin_installed(folder_name = folder_name)) {
     bin_file_path <- file.path(
-      folder_name, 
-      basename(get_default_netmhc2pan_subfolder()), 
+      folder_name,
+      basename(get_default_netmhc2pan_subfolder()),
       basename(get_default_netmhc2pan_bin_path())
     )
     stop(
@@ -29,8 +29,8 @@ check_netmhc2pan_installation <- function(
   }
   if (!is_netmhc2pan_data_installed(folder_name = folder_name)) {
     data_file_path <- file.path(
-      folder_name, 
-      basename(get_default_netmhc2pan_subfolder()), 
+      folder_name,
+      basename(get_default_netmhc2pan_subfolder()),
       "data"
     )
     stop(
