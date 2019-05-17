@@ -13,6 +13,9 @@ TRUE is tcsh is installed,
 \description{
 See if tcsh is installed
 }
+\note{
+To install \code{tcsh} under Linux, do \code{sudo apt install tcsh}
+}
 \author{
 Richel J.C. Bilderbeek
 }
