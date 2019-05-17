@@ -4,7 +4,11 @@
 #' @export
 get_default_netmhc2pan_subfolder <- function() { # nolint indeed a long name, I keep it for the sake of readability
   file.path(
-    netmhc2pan::get_default_netmhc2pan_folder(),
+    # Leave out the namespace in the next function:
+    # The Travis build script sources this function before installing 
+    # netmhc2pan. sourcing this will then result in a 'cannot find 
+    # package ...' error
+    get_default_netmhc2pan_folder(),
     "netMHCIIpan-3.2"
   )
 }
