@@ -11,7 +11,7 @@ run_netmhc2pan(fasta_filename, alleles = "DRB1_0101",
 \arguments{
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
 
-\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
+\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 
 \item{folder_name}{the folder to install NetMHCIIpan, which is
