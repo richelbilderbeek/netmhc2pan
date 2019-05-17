@@ -9,7 +9,7 @@ default_params_doc(alleles, do_filter, download_url, fasta_filename,
   folder_name, os, temp_xls_filename, verbose)
 }
 \arguments{
-\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}. 
+\item{alleles}{one or more alleles, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 
 \item{do_filter}{set to TRUE if the results of NetMHCIIpan must be filtered}
