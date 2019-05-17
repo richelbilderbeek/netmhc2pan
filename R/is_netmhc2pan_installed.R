@@ -77,14 +77,23 @@ is_netmhc2pan_set_up <- function(
 #' See if tcsh is installed
 #' @return TRUE is tcsh is installed,
 #'   FALSE otherwise
+#' @note To install \code{tcsh} under Linux, do \code{sudo apt install tcsh}
 #' @author Richel J.C. Bilderbeek
 #' @export
 is_tcsh_installed <- function() {
+  error_code <- NA
   tryCatch(
-    system2(command = "tcsh", args = "--version", stdout = FALSE),
+    suppressWarnings(
+      error_code <- system2(
+        command = "tcsh",
+        args = "--version",
+        stdout = FALSE,
+        stderr = FALSE
+      )
+    ),
     error = function(e) {
       return(FALSE)
     }
   )
-  TRUE
+  error_code == 0
 }

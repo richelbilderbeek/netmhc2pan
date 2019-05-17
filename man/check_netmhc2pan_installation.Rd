@@ -3,7 +3,7 @@
 \name{check_netmhc2pan_installation}
 \alias{check_netmhc2pan_installation}
 \title{Checks the installation of NetMHCIIpan.
-Throws a helpful error message if incomplete, 
+Throws a helpful error message if incomplete,
 else does nothing}
 \usage{
 
@@ -18,7 +18,7 @@ Nothing
 }
 \description{
 Checks the installation of NetMHCIIpan.
-Throws a helpful error message if incomplete, 
+Throws a helpful error message if incomplete,
 else does nothing
 }
 \examples{
