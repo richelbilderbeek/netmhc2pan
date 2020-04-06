@@ -8,9 +8,10 @@ Authors@R:
            email = "richel@richelbilderbeek.nl")
 Description: 'NetMHCIIpan' is a tool to obtain MHC2
     binding sites from a protein FASTA file. 'NetMHCIIpan' can
-    be used from a web server at 'http://www.cbs.dtu.dk/services/NetMHCIIpan/'
+    be used from a web server at 
+    'https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2'
     or from the command-line, using a local installation. This package
-    allows to call NetMHCIIpan from R.
+    allows to call 'NetMHCIIpan' from R.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -28,3 +29,5 @@ RoxygenNote: 7.0.2
 Language: en-US
 URL: https://github.com/richelbilderbeek/netmhc2pan
 BugReports: https://github.com/richelbilderbeek/netmhc2pan/issues
+SystemRequirements: NetMHC2pan (https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2)
+
