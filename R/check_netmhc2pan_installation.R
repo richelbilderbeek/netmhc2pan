@@ -22,9 +22,9 @@ check_netmhc2pan_installation <- function(
       "\n",
       "Tip 1: from R, run 'netmhc2pan::install_netmhc2pan()'\n",
       "  with a (non-expired) download URL\n",
-      "Tip 2: request a download URL at the NetMHCIIpan request page at\n",
+      "Tip 2: request a download URL at the NetMHCIIpan download page at\n",
       "\n",
-      "http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?netMHCIIpan\n"
+      "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2\n"
     )
   }
   if (!is_netmhc2pan_data_installed(folder_name = folder_name)) {

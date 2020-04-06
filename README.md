@@ -5,11 +5,10 @@ Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codecov 
 master|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?branch=master)](https://travis-ci.org/richelbilderbeek/netmhc2pan)|[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/master)
 develop|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/netmhc2pan)|[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/develop)
 
-R package for [NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan/) [1].
+R package for [NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) [1].
 
-> Please note that NetMHCIIpan is intended for academic users only. 
-> Other users are requested to contact 
-> the NetMHCIIpan Software Package Manager at software@cbs.dtu.dk
+> Please note that this page is intended for academic users only. Other users are requested
+> to contact the Software Package Manager at health-software@dtu.dk
 
  * [YouTube video](https://youtu.be/08A_kf4v2UA) or [download video](http://richelbilderbeek.nl/netmhc2pan.ogv)
 
