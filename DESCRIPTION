@@ -1,6 +1,6 @@
 Package: netmhc2pan
 Title: Call NetMHCIIpan From R
-Version: 1.1
+Version: 1.1.1
 Authors@R: 
     person(given = "Richel",
            family = "Bilderbeek",
