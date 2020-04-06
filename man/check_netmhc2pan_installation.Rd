@@ -6,8 +6,7 @@
 Throws a helpful error message if incomplete,
 else does nothing}
 \usage{
-
-  check_netmhc2pan_installation(folder_name = get_default_netmhc2pan_folder())
+check_netmhc2pan_installation(folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
 \item{folder_name}{the folder to install NetMHCIIpan, which is

@@ -4,9 +4,12 @@
 \alias{run_netmhc2pan}
 \title{Run NetMHCIIpan}
 \usage{
-run_netmhc2pan(fasta_filename, alleles = "DRB1_0101",
+run_netmhc2pan(
+  fasta_filename,
+  alleles = "DRB1_0101",
   folder_name = get_default_netmhc2pan_folder(),
-  temp_xls_filename = tempfile(fileext = ".xls"))
+  temp_xls_filename = tempfile(fileext = ".xls")
+)
 }
 \arguments{
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
