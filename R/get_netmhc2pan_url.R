@@ -4,5 +4,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_netmhc2pan_url <- function() {
-  "http://www.cbs.dtu.dk/download/A2B7F0E6-7892-11E9-BC92-ECEBB9CD16B5/"
+  "https://services.healthtech.dtu.dk/download/fb4dee93-ddbb-4639-ab21-45fdfd0ed23e" # nolint
 }

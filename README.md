@@ -5,11 +5,10 @@ Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codecov 
 master|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?branch=master)](https://travis-ci.org/richelbilderbeek/netmhc2pan)|[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/master)
 develop|[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/netmhc2pan)|[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/develop)
 
-R package for [NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan/) [1].
+R package for [NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) [1].
 
-> Please note that NetMHCIIpan is intended for academic users only. 
-> Other users are requested to contact 
-> the NetMHCIIpan Software Package Manager at software@cbs.dtu.dk
+> Please note that this page is intended for academic users only. Other users are requested
+> to contact the Software Package Manager at health-software@dtu.dk
 
  * [YouTube video](https://youtu.be/08A_kf4v2UA) or [download video](http://richelbilderbeek.nl/netmhc2pan.ogv)
 
@@ -29,12 +28,12 @@ library(netmhc2pan)
 
 Install NetMHCIIpan to a default folder using `netmhc2pan` and a download URL.
 The download URL can be obtained from the 
-[NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan) website at
-[http://www.cbs.dtu.dk/services/NetMHCIIpan](http://www.cbs.dtu.dk/services/NetMHCIIpan)
+[NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) website at
+[https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2)
 and expires after four hours.
 
 ```{r}
-install_netmhc2pan("http://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
+install_netmhc2pan("https://services.healthtech.dtu.dk/download/fb4dee93-ddbb-4639-ab21-45fdfd0ed23e")
 ```
 
 The installation of `netmhc2pan` is checked, with
