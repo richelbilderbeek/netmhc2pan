@@ -1,6 +1,6 @@
 Package: netmhc2pan
 Title: Call NetMHCIIpan From R
-Version: 1.0
+Version: 1.1
 Authors@R: 
     person(given = "Richel",
            family = "Bilderbeek",
@@ -11,7 +11,7 @@ Description: 'NetMHCIIpan' is a tool to obtain MHC2
     be used from a web server at 'http://www.cbs.dtu.dk/services/NetMHCIIpan/'
     or from the command-line, using a local installation. This package
     allows to call NetMHCIIpan from R.
-License: GPL-3 | file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
