@@ -28,7 +28,7 @@ library(netmhc2pan)
 
 Install NetMHCIIpan to a default folder using `netmhc2pan` and a download URL.
 The download URL can be obtained from the 
-[NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) website at
+NetMHCIIpan website at
 [https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2)
 and expires after four hours.
 
