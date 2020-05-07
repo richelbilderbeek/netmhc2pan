@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return TRUE is NetMHCIIpan is installed locally,
 #'   FALSE otherwise
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_installed <- function(
   folder_name = get_default_netmhc2pan_folder()
@@ -17,7 +17,7 @@ is_netmhc2pan_installed <- function(
 #' @inheritParams default_params_doc
 #' @return TRUE is NetMHCIIpan binary is installed locally,
 #'   FALSE otherwise
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_bin_installed <- function(
   folder_name = get_default_netmhc2pan_folder()
@@ -34,7 +34,7 @@ is_netmhc2pan_bin_installed <- function(
 #' @inheritParams default_params_doc
 #' @return TRUE is NetMHCIIpan data folder is installed locally,
 #'   FALSE otherwise
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_data_installed <- function(
   folder_name = get_default_netmhc2pan_folder()
@@ -51,7 +51,7 @@ is_netmhc2pan_data_installed <- function(
 #' @inheritParams default_params_doc
 #' @return TRUE is NetMHCIIpan is set up locally,
 #'   FALSE otherwise
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_set_up <- function(
   folder_name = get_default_netmhc2pan_folder()
@@ -78,7 +78,7 @@ is_netmhc2pan_set_up <- function(
 #' @return TRUE is tcsh is installed,
 #'   FALSE otherwise
 #' @note To install \code{tcsh} under Linux, do \code{sudo apt install tcsh}
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_tcsh_installed <- function() {
   error_code <- NA

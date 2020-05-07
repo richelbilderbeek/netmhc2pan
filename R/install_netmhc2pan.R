@@ -3,7 +3,7 @@
 #' @examples
 #'   if (!is_netmhc2pan_installed()) install_netmhc2pan()
 #'   testit::assert(is_netmhc2pan_installed())
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan <- function(
   download_url = get_netmhc2pan_url(),
@@ -33,7 +33,7 @@ install_netmhc2pan <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
@@ -90,7 +90,7 @@ install_netmhc2pan_bin <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_data <- function(
   folder_name = rappdirs::user_data_dir()
@@ -139,7 +139,7 @@ install_netmhc2pan_data <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 set_up_netmhc2pan <- function(
   folder_name = rappdirs::user_data_dir()

@@ -3,7 +3,7 @@
 #'   where the NetMHCIIpan files are installed.
 #'   The name of the NetMHCIIpan binary file will be at
 #'   \code{[folder_name]/[subfolder_basename]/netMHCIIpan}
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(
   folder_name = rappdirs::user_data_dir()

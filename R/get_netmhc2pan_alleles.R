@@ -5,7 +5,7 @@
 #'   alleles <- get_netmhc2pan_alleles()
 #'   testit::assert(length(alleles) > 5000)
 #'   testit::assert("DRB1_0101" %in% alleles)
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_netmhc2pan_alleles <- function(
   folder_name = get_default_netmhc2pan_folder()

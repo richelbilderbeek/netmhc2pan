@@ -5,7 +5,7 @@
 #' @return Nothing
 #' @examples
 #'   check_netmhc2pan_installation()
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_netmhc2pan_installation <- function(
   folder_name = get_default_netmhc2pan_folder()

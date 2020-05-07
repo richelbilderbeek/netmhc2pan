@@ -11,7 +11,7 @@
 #'       )
 #'     )
 #'   }
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_netmhc2pan_folder <- function() {
   rappdirs::user_data_dir()

@@ -26,7 +26,7 @@
 #'   # Run NetMHCpan with these two alleles
 #'   df <- run_netmhc2pan(fasta_filename, alleles = alleles)
 #'   testit::assert(nrow(df) == 18)
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 run_netmhc2pan <- function(
   fasta_filename,
