@@ -55,14 +55,18 @@ cat(readLines(fasta_filename), sep = "\n")
 We need to pick an allele. There are many alleles:
 
 ```{r}
-all_alleles <- get_netmhc2pan_alleles()
-length(all_alleles)
+if (is_netmhc2pan_installed()) {
+  all_alleles <- get_netmhc2pan_alleles()
+  length(all_alleles)
+}
 ```
 
 We simply pick the first two alleles:
 
 ```{r}
-alleles <- all_alleles[1:2]
+if (is_netmhc2pan_installed()) {
+  alleles <- all_alleles[1:2]
+}
 ```
 
 ```{r}
