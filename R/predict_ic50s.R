@@ -1,0 +1,33 @@
+#' Predict the IC50s from a sequence
+#' @inheritParams default_params_doc
+#' @return a tibble with columns:\cr
+#' \itemize{
+#'   \item peptide the peptide fragment, each of length \code{peptide_length}
+#'   \item ic50 the predicted IC50 (in nM)
+#' }
+#' The number of rows equals \code{protein_sequence - peptide_length + 1}.
+#' @export
+predict_ic50s <- function(
+  protein_sequence,
+  peptide_length,
+  mhc_haplotype,
+  fasta_filename = tempfile(fileext = ".fasta"),
+  temp_xls_filename = tempfile(fileext = ".xls"),
+  folder_name = get_default_netmhc2pan_folder()
+) {
+  fasta_text <- c(">seq1", protein_sequence)
+  readr::write_lines(x = fasta_text, path = fasta_filename)
+
+  df <- netmhc2pan::run_netmhc2pan(
+    fasta_filename = fasta_filename,
+    peptide_length = peptide_length,
+    alleles = mhc_haplotype,
+    temp_xls_filename = temp_xls_filename,
+    folder_name = folder_name
+  )
+  tibble::as_tibble(df) %>%
+    dplyr::select(
+      peptide = Peptide,
+      ic50 = nM
+    )
+}

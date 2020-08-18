@@ -7,6 +7,7 @@
 run_netmhc2pan(
   fasta_filename,
   alleles = "DRB1_0101",
+  peptide_length = 15,
   folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls")
 )
@@ -16,6 +17,8 @@ run_netmhc2pan(
 
 \item{alleles}{one or more alleles, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
+
+\item{peptide_length}{length of a peptide}
 
 \item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}

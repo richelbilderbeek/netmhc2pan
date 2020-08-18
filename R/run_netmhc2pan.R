@@ -19,6 +19,7 @@
 run_netmhc2pan <- function(
   fasta_filename,
   alleles = "DRB1_0101",
+  peptide_length = 15,
   folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls")
 ) {
@@ -49,6 +50,7 @@ run_netmhc2pan <- function(
     command = bin_file_path,
     args = c(
       "-a", paste0(alleles, sep = ",", collapse = ""),
+      "-length", peptide_length,
       "-xls", "1",
       "-xlsfile", temp_xls_filename,
       "-f", fasta_filename

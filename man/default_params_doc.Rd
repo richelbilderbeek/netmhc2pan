@@ -11,7 +11,10 @@ default_params_doc(
   download_url,
   fasta_filename,
   folder_name,
+  mhc_haplotype,
   os,
+  peptide_length,
+  protein_sequence,
   temp_xls_filename,
   verbose,
   xls_filename
@@ -31,8 +34,15 @@ See \link{get_netmhc2pan_alleles} for a full list}
 \item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 
+\item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
+See \link{get_netmhc2pan_alleles} for a full list}
+
 \item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
 \code{netmhc2pan} supports Linux ('\code{unix}') only}
+
+\item{peptide_length}{length of a peptide}
+
+\item{protein_sequence}{a protein sequence, for example \code{FAMILYVW}}
 
 \item{temp_xls_filename}{name for a temporary \code{xls} file}
 
