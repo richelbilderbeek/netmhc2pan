@@ -66,9 +66,11 @@ alleles <- all_alleles[1:2]
 ```
 
 ```{r}
-bindings <- run_netmhc2pan(
-  fasta_filename = fasta_filename,
-  alleles = alleles
-)
-knitr::kable(bindings)
+if (is_netmhc2pan_installed()) {
+  bindings <- run_netmhc2pan(
+    fasta_filename = fasta_filename,
+    alleles = alleles
+  )
+  knitr::kable(bindings)
+}
 ```
