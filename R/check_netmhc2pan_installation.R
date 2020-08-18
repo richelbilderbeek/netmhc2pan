@@ -8,11 +8,13 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_netmhc2pan_installation <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  if (!is_netmhc2pan_bin_installed(folder_name = folder_name)) {
+  if (!is_netmhc2pan_bin_installed(
+    netmhc2pan_folder_name = netmhc2pan_folder_name)
+  ) {
     bin_file_path <- file.path(
-      folder_name,
+      netmhc2pan_folder_name,
       basename(get_default_netmhc2pan_subfolder()),
       basename(get_default_netmhc2pan_bin_path())
     )
@@ -27,7 +29,7 @@ check_netmhc2pan_installation <- function(
       "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2\n"
     )
   }
-  if (!is_netmhc2pan_data_installed(folder_name = folder_name)) {
+  if (!is_netmhc2pan_data_installed(netmhc2pan_folder_name)) {
     data_file_path <- file.path(
       folder_name,
       basename(get_default_netmhc2pan_subfolder()),
@@ -40,7 +42,7 @@ check_netmhc2pan_installation <- function(
       "Tip: from R, run 'netmhc2pan::install_netmhc2pan()'\n"
     )
   }
-  if (!is_netmhc2pan_set_up(folder_name = folder_name)) {
+  if (!is_netmhc2pan_set_up(netmhc2pan_folder_name)) {
     stop(
       "NetMHCIIpan not set up completely\n",
       "\n",

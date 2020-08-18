@@ -6,15 +6,16 @@
 \usage{
 install_netmhc2pan_bin(
   download_url = get_netmhc2pan_url(),
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 )
 }
 \arguments{
 \item{download_url}{NetMHCIIpan download URL, for example,
 \code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
 
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \description{
 Install the NetMHCIIpan binary to a local folder

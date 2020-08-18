@@ -6,12 +6,12 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_netmhc2pan_alleles <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  netmhc2pan::check_netmhc2pan_installation()
-  testit::assert(netmhc2pan::is_netmhc2pan_installed())
+  netmhc2pan::check_netmhc2pan_installation(netmhc2pan_folder_name)
+  testit::assert(netmhc2pan::is_netmhc2pan_installed(netmhc2pan_folder_name))
   bin_file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )

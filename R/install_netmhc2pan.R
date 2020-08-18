@@ -7,28 +7,24 @@
 #' @export
 install_netmhc2pan <- function(
   download_url = get_netmhc2pan_url(),
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(folder_name)
+  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(netmhc2pan_folder_name)
   if (!is_bin_installed) {
     netmhc2pan::install_netmhc2pan_bin(
       download_url = download_url,
-      folder_name = folder_name
+      netmhc2pan_folder_name = netmhc2pan_folder_name
     )
   }
   is_data_installed <- netmhc2pan::is_netmhc2pan_data_installed(
-    folder_name = folder_name
+    netmhc2pan_folder_name
   )
   if (!is_data_installed) { # nolint netmhc2pan function
-    netmhc2pan::install_netmhc2pan_data(
-      folder_name = folder_name
-    )
+    netmhc2pan::install_netmhc2pan_data(netmhc2pan_folder_name)
   }
-  is_set_up <- netmhc2pan::is_netmhc2pan_set_up(folder_name = folder_name)
+  is_set_up <- netmhc2pan::is_netmhc2pan_set_up(netmhc2pan_folder_name)
   if (!is_set_up) {
-    netmhc2pan::set_up_netmhc2pan(
-      folder_name = folder_name
-    )
+    netmhc2pan::set_up_netmhc2pan(netmhc2pan_folder_name)
   }
   # Cannot install tcsh here
 }
@@ -39,10 +35,10 @@ install_netmhc2pan <- function(
 #' @export
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   bin_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
@@ -95,10 +91,10 @@ install_netmhc2pan_bin <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_data <- function(
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = rappdirs::user_data_dir()
 ) {
   data_folder_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     "data"
   )
@@ -116,7 +112,7 @@ install_netmhc2pan_data <- function(
     "data.Linux.tar.gz"
   )
   local_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     "data.Linux.tar.gz"
   )
@@ -131,7 +127,7 @@ install_netmhc2pan_data <- function(
     tarfile = local_path,
     exdir = path.expand(
       file.path(
-        folder_name,
+        netmhc2pan_folder_name,
         basename(get_default_netmhc2pan_subfolder())
       )
     )
@@ -144,10 +140,10 @@ install_netmhc2pan_data <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 set_up_netmhc2pan <- function(
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   bin_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )

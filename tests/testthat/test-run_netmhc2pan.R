@@ -11,7 +11,9 @@ test_that("use", {
     alleles = "HLA-DPA10105-DPB112501",
     temp_xls_filename = temp_xls_filename
   )
-  expect_true(file.exists(temp_xls_filename))
+
+  # Must do cleanup
+  expect_false(file.exists(temp_xls_filename))
 
   expect_equal(
    colnames(df),

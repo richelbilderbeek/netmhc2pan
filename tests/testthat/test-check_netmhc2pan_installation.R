@@ -9,30 +9,32 @@ test_that("abuse", {
 
   if (!is_on_travis()) return()
 
-  folder_name <- tempdir()
-  if (dir.exists(folder_name)) unlink(folder_name, recursive = TRUE)
-  testit::assert(!dir.exists(folder_name))
+  netmhc2pan_folder_name <- tempfile()
+  if (dir.exists(netmhc2pan_folder_name)) {
+    unlink(netmhc2pan_folder_name, recursive = TRUE)
+  }
+  testit::assert(!dir.exists(netmhc2pan_folder_name))
 
-  testit::assert(!is_netmhc2pan_installed(folder_name = folder_name))
+  testit::assert(!is_netmhc2pan_installed(netmhc2pan_folder_name))
   expect_error(
-    check_netmhc2pan_installation(folder_name = folder_name),
+    check_netmhc2pan_installation(netmhc2pan_folder_name),
     "NetMHCIIpan binary not found at"
   )
 
-  install_netmhc2pan_bin(folder_name = folder_name)
+  install_netmhc2pan_bin(netmhc2pan_folder_name)
   expect_error(
-    check_netmhc2pan_installation(folder_name = folder_name),
+    check_netmhc2pan_installation(netmhc2pan_folder_name),
     "NetMHCIIpan data not found at"
   )
 
-  install_netmhc2pan_data(folder_name = folder_name)
+  install_netmhc2pan_data(netmhc2pan_folder_name)
   expect_error(
-    check_netmhc2pan_installation(folder_name = folder_name),
+    check_netmhc2pan_installation(netmhc2pan_folder_name),
     "NetMHCIIpan not set up"
   )
 
-  set_up_netmhc2pan(folder_name = folder_name)
+  set_up_netmhc2pan(netmhc2pan_folder_name)
   expect_silent(
-    check_netmhc2pan_installation(folder_name = folder_name)
+    check_netmhc2pan_installation(netmhc2pan_folder_name)
   )
 })

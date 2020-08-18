@@ -20,12 +20,12 @@ run_netmhc2pan <- function(
   fasta_filename,
   alleles = "DRB1_0101",
   peptide_length = 15,
-  folder_name = get_default_netmhc2pan_folder(),
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   temp_xls_filename = tempfile(fileext = ".xls")
 ) {
   # Check input
-  netmhc2pan::check_netmhc2pan_installation()
-  if (!all(alleles %in% get_netmhc2pan_alleles())) {
+  netmhc2pan::check_netmhc2pan_installation(netmhc2pan_folder_name)
+  if (!all(alleles %in% get_netmhc2pan_alleles(netmhc2pan_folder_name))) {
     stop(
       "Invalid 'alleles'\n",
       "\n",
@@ -34,11 +34,17 @@ run_netmhc2pan <- function(
     )
   }
 
-  testit::assert(netmhc2pan::is_netmhc2pan_installed())
-  testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
-  testit::assert(file.exists(fasta_filename))
+  testthat::expect_true(
+    netmhc2pan::is_netmhc2pan_installed(netmhc2pan_folder_name)
+  )
+  testthat::expect_true(
+    all(alleles %in% netmhc2pan::get_netmhc2pan_alleles(
+      netmhc2pan_folder_name)
+    )
+  )
+  testthat::expect_true(file.exists(fasta_filename))
   bin_file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )

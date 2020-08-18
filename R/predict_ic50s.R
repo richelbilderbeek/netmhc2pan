@@ -11,20 +11,22 @@ predict_ic50s <- function(
   protein_sequence,
   peptide_length,
   mhc_haplotype,
-  fasta_filename = tempfile(fileext = ".fasta"),
+  temp_fasta_filename = tempfile(fileext = ".fasta"),
   temp_xls_filename = tempfile(fileext = ".xls"),
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   fasta_text <- c(">seq1", protein_sequence)
-  readr::write_lines(x = fasta_text, path = fasta_filename)
+  readr::write_lines(x = fasta_text, path = temp_fasta_filename)
 
   df <- netmhc2pan::run_netmhc2pan(
-    fasta_filename = fasta_filename,
+    fasta_filename = temp_fasta_filename,
     peptide_length = peptide_length,
     alleles = mhc_haplotype,
     temp_xls_filename = temp_xls_filename,
-    folder_name = folder_name
+    netmhc2pan_folder_name = netmhc2pan_folder_name
   )
+  file.remove(temp_fasta_filename)
+  file.remove(temp_xls_filename)
   tibble::as_tibble(df) %>%
     dplyr::select(
       peptide = Peptide,

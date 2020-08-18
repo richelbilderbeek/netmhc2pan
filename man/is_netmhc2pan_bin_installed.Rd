@@ -4,11 +4,14 @@
 \alias{is_netmhc2pan_bin_installed}
 \title{Measure if NetMHCIIpan binary is installed locally}
 \usage{
-is_netmhc2pan_bin_installed(folder_name = get_default_netmhc2pan_folder())
+is_netmhc2pan_bin_installed(
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+)
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \value{
 TRUE is NetMHCIIpan binary is installed locally,

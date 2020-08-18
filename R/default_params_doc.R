@@ -10,11 +10,17 @@
 #'   \code{"/home/[usename]/.local/share"} by default
 #' @param mhc_haplotype one MHC haplotype, e.g. \code{DRB1_0101}.
 #'   See \link{get_netmhc2pan_alleles} for a full list
+#' @param netmhc2pan_folder_name the folder (to be) used by NetMHCIIpan.
+#'   Use \link{get_default_netmhc2pan_folder} to see the location
+#'   of the default NetMHCIIpan folder
 #' @param os the operating system as obtained by \code{rappdirs::app_dir()$os}.
 #'   \code{netmhc2pan} supports Linux ('\code{unix}') only
 #' @param peptide_length length of a peptide
 #' @param protein_sequence a protein sequence, for example \code{FAMILYVW}
-#' @param temp_xls_filename name for a temporary \code{xls} file
+#' @param temp_fasta_filename name for a temporary FASTA file,
+#'   which will be deleted automatically
+#' @param temp_xls_filename name for a temporary \code{xls} file,
+#'   which will be deleted automatically
 #' @param verbose set to TRUE for more output
 #' @param xls_filename name of an \code{xls} file
 #' @author Richèl J.C. Bilderbeek
@@ -28,9 +34,11 @@ default_params_doc <- function(
   fasta_filename,
   folder_name,
   mhc_haplotype,
+  netmhc2pan_folder_name,
   os,
   peptide_length,
   protein_sequence,
+  temp_fasta_filename,
   temp_xls_filename,
   verbose,
   xls_filename

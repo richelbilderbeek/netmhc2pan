@@ -4,11 +4,14 @@
 \alias{get_netmhc2pan_alleles}
 \title{Get a list of the alleles supported by NetMHCIIpan}
 \usage{
-get_netmhc2pan_alleles(folder_name = get_default_netmhc2pan_folder())
+get_netmhc2pan_alleles(
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+)
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \value{
 a character vector with the NetMHCIIpan alleles

@@ -5,11 +5,11 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_installed <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  is_netmhc2pan_bin_installed(folder_name = folder_name) &&
-    is_netmhc2pan_data_installed(folder_name = folder_name) &&
-    is_netmhc2pan_set_up(folder_name = folder_name) &&
+  is_netmhc2pan_bin_installed(netmhc2pan_folder_name) &&
+    is_netmhc2pan_data_installed(netmhc2pan_folder_name) &&
+    is_netmhc2pan_set_up(netmhc2pan_folder_name) &&
     is_tcsh_installed()
 }
 
@@ -20,10 +20,10 @@ is_netmhc2pan_installed <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_bin_installed <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   bin_file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
@@ -37,10 +37,10 @@ is_netmhc2pan_bin_installed <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_data_installed <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   data_file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     "data"
   )
@@ -54,10 +54,10 @@ is_netmhc2pan_data_installed <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_set_up <- function(
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )

@@ -4,11 +4,12 @@
 \alias{install_netmhc2pan_data}
 \title{Install the NetMHCIIpan binary to a local folder}
 \usage{
-install_netmhc2pan_data(folder_name = rappdirs::user_data_dir())
+install_netmhc2pan_data(netmhc2pan_folder_name = rappdirs::user_data_dir())
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \description{
 Install the NetMHCIIpan binary to a local folder

@@ -6,11 +6,14 @@
 Throws a helpful error message if incomplete,
 else does nothing}
 \usage{
-check_netmhc2pan_installation(folder_name = get_default_netmhc2pan_folder())
+check_netmhc2pan_installation(
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+)
 }
 \arguments{
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \value{
 Nothing

@@ -4,7 +4,7 @@
 \alias{uninstall_netmhc2pan}
 \title{Uninstall NetMHCIIpan}
 \usage{
-uninstall_netmhc2pan(folder_name = rappdirs::user_data_dir())
+uninstall_netmhc2pan(netmhc2pan_folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
 \item{folder_name}{name of the folder

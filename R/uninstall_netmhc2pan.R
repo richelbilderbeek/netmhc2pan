@@ -6,21 +6,24 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(
-  folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  if (!is_netmhc2pan_installed(folder_name = folder_name)
+  if (!is_netmhc2pan_installed(netmhc2pan_folder_name)
   ) {
-    stop("Cannot uninstall absent NetMHCIIpan at folder '", folder_name, "'")
+    stop(
+      "Cannot uninstall absent NetMHCIIpan ",
+      "at folder '", netmhc2pan_folder_name, "'"
+    )
   }
   bin_file_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
   testit::assert(file.exists(bin_file_path))
   file.remove(bin_file_path)
   data_folder_path <- file.path(
-    folder_name,
+    netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     "data"
   )

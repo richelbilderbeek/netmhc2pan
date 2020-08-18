@@ -8,9 +8,9 @@ predict_ic50s(
   protein_sequence,
   peptide_length,
   mhc_haplotype,
-  fasta_filename = tempfile(fileext = ".fasta"),
+  temp_fasta_filename = tempfile(fileext = ".fasta"),
   temp_xls_filename = tempfile(fileext = ".xls"),
-  folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 )
 }
 \arguments{
@@ -21,12 +21,15 @@ predict_ic50s(
 \item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 
-\item{fasta_filename}{the name of a FASTA file with protein sequences}
+\item{temp_fasta_filename}{name for a temporary FASTA file,
+which will be deleted automatically}
 
-\item{temp_xls_filename}{name for a temporary \code{xls} file}
+\item{temp_xls_filename}{name for a temporary \code{xls} file,
+which will be deleted automatically}
 
-\item{folder_name}{the folder to install NetMHCIIpan, which is
-\code{"/home/[usename]/.local/share"} by default}
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder}
 }
 \value{
 a tibble with columns:\cr
