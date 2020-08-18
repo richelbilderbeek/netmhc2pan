@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return a character vector with the NetMHCIIpan alleles
 #' @examples
-#' get_netmhc2pan_alleles()
+#' get_netmhc2pan_alleles()[1:5]
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_netmhc2pan_alleles <- function(
