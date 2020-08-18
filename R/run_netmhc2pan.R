@@ -35,7 +35,7 @@ run_netmhc2pan <- function(
   temp_xls_filename = tempfile(fileext = ".xls")
 ) {
   # Check input
-  check_netmhc2pan_installation() # nolint netmhc2pan function
+  netmhc2pan::check_netmhc2pan_installation()
   if (!all(alleles %in% get_netmhc2pan_alleles())) {
     stop(
       "Invalid 'alleles'\n",
@@ -45,8 +45,8 @@ run_netmhc2pan <- function(
     )
   }
 
-  testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
-  testit::assert(all(alleles %in% get_netmhc2pan_alleles())) # nolint netmhc2pan function
+  testit::assert(netmhc2pan::is_netmhc2pan_installed())
+  testit::assert(all(alleles %in% netmhc2pan::get_netmhc2pan_alleles()))
   testit::assert(file.exists(fasta_filename))
   bin_file_path <- file.path(
     folder_name,

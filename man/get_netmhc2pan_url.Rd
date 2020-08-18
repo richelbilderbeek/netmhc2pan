@@ -15,5 +15,5 @@ Get a NetMHCIIpan download URL
 Will stop if the NetMHCIIpan download URL is invalid
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

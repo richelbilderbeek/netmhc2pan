@@ -18,5 +18,5 @@ TRUE is NetMHCIIpan data folder is installed locally,
 Measure if NetMHCIIpan data folder is installed locally
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

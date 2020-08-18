@@ -10,8 +10,8 @@
 get_netmhc2pan_alleles <- function(
   folder_name = get_default_netmhc2pan_folder()
 ) {
-  check_netmhc2pan_installation() # nolint netmhc2pan function
-  testit::assert(is_netmhc2pan_installed()) # nolint netmhc2pan function
+  netmhc2pan::check_netmhc2pan_installation()
+  testit::assert(netmhc2pan::is_netmhc2pan_installed())
   bin_file_path <- file.path(
     folder_name,
     basename(get_default_netmhc2pan_subfolder()),

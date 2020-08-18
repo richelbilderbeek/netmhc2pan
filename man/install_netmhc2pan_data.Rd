@@ -14,5 +14,5 @@ install_netmhc2pan_data(folder_name = rappdirs::user_data_dir())
 Install the NetMHCIIpan binary to a local folder
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

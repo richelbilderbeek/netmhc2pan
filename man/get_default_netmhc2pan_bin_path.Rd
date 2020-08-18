@@ -10,5 +10,5 @@ get_default_netmhc2pan_bin_path()
 Get the full path to the default NetMHC2pan binary
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

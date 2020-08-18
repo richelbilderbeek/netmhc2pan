@@ -22,5 +22,5 @@ Get a list of the alleles supported by NetMHCIIpan
   testit::assert("DRB1_0101" \%in\% alleles)
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

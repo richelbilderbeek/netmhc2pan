@@ -20,5 +20,5 @@ install_netmhc2pan_bin(
 Install the NetMHCIIpan binary to a local folder
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -24,5 +24,5 @@ else does nothing
   check_netmhc2pan_installation()
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -13,5 +13,5 @@ the full path to the NetMHC2pan sub-folder
 Get the full path to the NetMHC2pan sub-folder
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

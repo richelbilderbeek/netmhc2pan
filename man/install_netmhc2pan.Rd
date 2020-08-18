@@ -24,5 +24,5 @@ Install NetMHCIIpan to a local folder
   testit::assert(is_netmhc2pan_installed())
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

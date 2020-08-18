@@ -17,5 +17,5 @@ See if tcsh is installed
 To install \code{tcsh} under Linux, do \code{sudo apt install tcsh}
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

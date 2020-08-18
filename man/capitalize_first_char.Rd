@@ -13,5 +13,5 @@ capitalize_first_char(s)
 Convert the first character to upper case
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -55,5 +55,5 @@ Run NetMHCIIpan
   testit::assert(nrow(df) == 18)
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

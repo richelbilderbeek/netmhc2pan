@@ -9,22 +9,24 @@ install_netmhc2pan <- function(
   download_url = get_netmhc2pan_url(),
   folder_name = rappdirs::user_data_dir()
 ) {
-  is_bin_installed <- is_netmhc2pan_bin_installed(folder_name) # nolint netmhc2pan function
-  if (!is_bin_installed) { # nolint netmhc2pan function
-    install_netmhc2pan_bin( # nolint netmhc2pan function
+  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(folder_name)
+  if (!is_bin_installed) {
+    netmhc2pan::install_netmhc2pan_bin(
       download_url = download_url,
       folder_name = folder_name
     )
   }
-  is_data_installed <- is_netmhc2pan_data_installed(folder_name = folder_name) # nolint netmhc2pan function
+  is_data_installed <- netmhc2pan::is_netmhc2pan_data_installed(
+    folder_name = folder_name
+  )
   if (!is_data_installed) { # nolint netmhc2pan function
-    install_netmhc2pan_data( # nolint netmhc2pan function
+    netmhc2pan::install_netmhc2pan_data(
       folder_name = folder_name
     )
   }
-  is_set_up <- is_netmhc2pan_set_up(folder_name = folder_name) # nolint netmhc2pan function
+  is_set_up <- netmhc2pan::is_netmhc2pan_set_up(folder_name = folder_name)
   if (!is_set_up) {
-    set_up_netmhc2pan( # nolint netmhc2pan function
+    netmhc2pan::set_up_netmhc2pan(
       folder_name = folder_name
     )
   }

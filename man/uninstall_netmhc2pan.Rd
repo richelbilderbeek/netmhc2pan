@@ -16,5 +16,5 @@ The name of the NetMHCIIpan binary file will be at
 Uninstall NetMHCIIpan
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

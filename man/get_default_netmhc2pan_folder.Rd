@@ -26,5 +26,5 @@ NetMHCIIpan by default
   }
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

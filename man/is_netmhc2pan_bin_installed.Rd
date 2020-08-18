@@ -18,5 +18,5 @@ TRUE is NetMHCIIpan binary is installed locally,
 Measure if NetMHCIIpan binary is installed locally
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }
