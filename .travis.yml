@@ -6,8 +6,10 @@ matrix:
   include:
   - r: release
     os: linux
+    env: INSTALL_NETMHC2PAN=true
   - r: devel
     os: linux
+    env: INSTALL_NETMHC2PAN=false
 
 r_packages:
   - devtools
@@ -24,7 +26,7 @@ before_script:
   - sudo apt install tcsh
   - which tcsh
   # NetMHCIIpan
-  - ./scripts/install_netmhc2pan.sh
+  - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then ./scripts/install_netmhc2pan.sh; fi
   # proselint
   - sudo pip install proselint
 
@@ -38,3 +40,4 @@ after_success:
 
 after_failure:
   - ls
+
