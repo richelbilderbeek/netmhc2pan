@@ -8,7 +8,7 @@
 #' @note this function uses a temporary file, because NetMHC2pan reads its
 #' input from file. This temporary file is deleted after this function
 #' passed successfully.
-#' @return a tibble with two columns:
+#' @return a \link[tibble]{tibble} with two columns:
 #' (1) \code{peptide}, which holds the peptide sequence, and
 #' (2) \code{ic50}, which holds the predicted IC50
 #' @inheritParams default_params_doc

@@ -1,8 +1,5 @@
 #' Uninstall NetMHCIIpan
-#' @param folder_name name of the folder
-#'   where the NetMHCIIpan files are installed.
-#'   The name of the NetMHCIIpan binary file will be at
-#'   \code{[folder_name]/[subfolder_basename]/netMHCIIpan}
+#' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(

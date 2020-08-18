@@ -16,6 +16,7 @@
 #' @param os the operating system as obtained by \code{rappdirs::app_dir()$os}.
 #'   \code{netmhc2pan} supports Linux ('\code{unix}') only
 #' @param peptide_length length of a peptide
+#' @param peptides one or more peptide sequences
 #' @param protein_sequence a protein sequence, for example \code{FAMILYVW}
 #' @param temp_fasta_filename name for a temporary FASTA file,
 #'   which will be deleted automatically
@@ -37,6 +38,7 @@ default_params_doc <- function(
   netmhc2pan_folder_name,
   os,
   peptide_length,
+  peptides,
   protein_sequence,
   temp_fasta_filename,
   temp_xls_filename,

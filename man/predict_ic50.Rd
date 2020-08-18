@@ -7,11 +7,13 @@
 predict_ic50(peptides, mhc_haplotype)
 }
 \arguments{
+\item{peptides}{one or more peptide sequences}
+
 \item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 }
 \value{
-a tibble with two columns:
+a \link[tibble]{tibble} with two columns:
 (1) \code{peptide}, which holds the peptide sequence, and
 (2) \code{ic50}, which holds the predicted IC50
 }

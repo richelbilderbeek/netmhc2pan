@@ -46,11 +46,15 @@ install_netmhc2pan_bin <- function(
     stop("NetMHCIIpan binary is already installed")
   }
 
-  dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
+  dir.create(
+    path = netmhc2pan_folder_name,
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
 
   archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
   url <- file.path(download_url, archive_filename)
-  local_path <- file.path(folder_name, archive_filename)
+  local_path <- file.path(netmhc2pan_folder_name, archive_filename)
   tryCatch(
     suppressWarnings(
       utils::download.file(
@@ -78,7 +82,7 @@ install_netmhc2pan_bin <- function(
   # Linux has a tar file
   utils::untar(
     tarfile = local_path,
-    exdir = path.expand(folder_name)
+    exdir = path.expand(netmhc2pan_folder_name)
   )
   if (!file.exists(bin_path)) {
     stop("NetMHCIIpan binary not found at path '", bin_path, "'")

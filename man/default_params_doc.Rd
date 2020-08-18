@@ -15,6 +15,7 @@ default_params_doc(
   netmhc2pan_folder_name,
   os,
   peptide_length,
+  peptides,
   protein_sequence,
   temp_fasta_filename,
   temp_xls_filename,
@@ -47,6 +48,8 @@ of the default NetMHCIIpan folder}
 \code{netmhc2pan} supports Linux ('\code{unix}') only}
 
 \item{peptide_length}{length of a peptide}
+
+\item{peptides}{one or more peptide sequences}
 
 \item{protein_sequence}{a protein sequence, for example \code{FAMILYVW}}
 

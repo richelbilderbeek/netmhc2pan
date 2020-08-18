@@ -21,7 +21,8 @@ Imports:
     readr,
     stringr,
     testit,
-    tibble
+    tibble,
+    magrittr
 Suggests: 
     knitr,
     rmarkdown,

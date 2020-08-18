@@ -1,6 +1,6 @@
 #' Predict the IC50s from a sequence
 #' @inheritParams default_params_doc
-#' @return a tibble with columns:\cr
+#' @return a \link[tibble]{tibble} with columns:\cr
 #' \itemize{
 #'   \item peptide the peptide fragment, each of length \code{peptide_length}
 #'   \item ic50 the predicted IC50 (in nM)
@@ -31,9 +31,9 @@ predict_ic50s <- function(
   Peptide <- NULL; rm(Peptide) # nolint, fixes warning: no visible binding for global variable
   nM <- NULL; rm(nM) # nolint, fixes warning: no visible binding for global variable
 
-  tibble::as_tibble(df) %>%
-    dplyr::select(
-      peptide = Peptide,
-      ic50 = nM
-    )
+  dplyr::select(
+    tibble::as_tibble(df),
+    peptide = Peptide,
+    ic50 = nM
+  )
 }

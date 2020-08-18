@@ -1,7 +1,7 @@
 #' Read MHC2pan output
 #'
 #' Read the output produced by MHC2pan,
-#' which is an XLS file by default.
+#' which is an \code{XLS} file by default.
 #' @inheritParams default_params_doc
 #' @export
 read_netmhc2pan_xls_output  <- function(

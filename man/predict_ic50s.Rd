@@ -32,7 +32,7 @@ Use \link{get_default_netmhc2pan_folder} to see the location
 of the default NetMHCIIpan folder}
 }
 \value{
-a tibble with columns:\cr
+a \link[tibble]{tibble} with columns:\cr
 \itemize{
   \item peptide the peptide fragment, each of length \code{peptide_length}
   \item ic50 the predicted IC50 (in nM)

@@ -11,5 +11,5 @@ read_netmhc2pan_xls_output(xls_filename)
 }
 \description{
 Read the output produced by MHC2pan,
-which is an XLS file by default.
+which is an \code{XLS} file by default.
 }
