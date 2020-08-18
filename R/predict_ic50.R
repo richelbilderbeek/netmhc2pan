@@ -24,7 +24,10 @@
 #' @export
 predict_ic50 <- function(
   peptides,
-  mhc_haplotype
+  mhc_haplotype,
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
+  temp_fasta_filename = tempfile(fileext = ".fasta"),
+  temp_xls_filename = tempfile(fileext = ".xls")
 ) {
   if (any(nchar(peptides) > 15)) {
     stop(
@@ -41,7 +44,10 @@ predict_ic50 <- function(
     t$ic50[i] <- netmhc2pan::predict_ic50s(
       protein_sequence = peptides[i],
       peptide_length = nchar(peptides[i]),
-      mhc_haplotype = mhc_haplotype
+      mhc_haplotype = mhc_haplotype,
+      netmhc2pan_folder_name = netmhc2pan_folder_name,
+      temp_fasta_filename = temp_fasta_filename,
+      temp_xls_filename = temp_xls_filename
     )$ic50
   }
   t

@@ -4,7 +4,6 @@ test_that("use", {
   fasta_filename <- system.file(
     "extdata", "example.fasta", package = "netmhc2pan"
   )
-  netmhc2pan::get_netmhc2pan_alleles()
   temp_xls_filename <- tempfile()
   df <- run_netmhc2pan(
     fasta_filename,
@@ -13,7 +12,7 @@ test_that("use", {
   )
 
   # Must do cleanup
-  expect_false(file.exists(temp_xls_filename))
+  expect_true(!file.exists(temp_xls_filename))
 
   expect_equal(
    colnames(df),

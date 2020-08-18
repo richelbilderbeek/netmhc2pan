@@ -11,13 +11,14 @@ predict_ic50s <- function(
   protein_sequence,
   peptide_length,
   mhc_haplotype,
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   temp_fasta_filename = tempfile(fileext = ".fasta"),
-  temp_xls_filename = tempfile(fileext = ".xls"),
-  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+  temp_xls_filename = tempfile(fileext = ".xls")
 ) {
   fasta_text <- c(">seq1", protein_sequence)
   readr::write_lines(x = fasta_text, path = temp_fasta_filename)
 
+  # Cleans up 'temp_xls_filename'
   df <- netmhc2pan::run_netmhc2pan(
     fasta_filename = temp_fasta_filename,
     peptide_length = peptide_length,
@@ -26,7 +27,6 @@ predict_ic50s <- function(
     netmhc2pan_folder_name = netmhc2pan_folder_name
   )
   file.remove(temp_fasta_filename)
-  file.remove(temp_xls_filename)
 
   Peptide <- NULL; rm(Peptide) # nolint, fixes warning: no visible binding for global variable
   nM <- NULL; rm(nM) # nolint, fixes warning: no visible binding for global variable

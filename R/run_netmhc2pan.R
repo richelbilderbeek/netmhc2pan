@@ -151,5 +151,6 @@ run_netmhc2pan <- function(
   # No tibbles, as for multiple alleles,
   # the XLS is saved in wide format,
   # with duplicate column names
+  file.remove(temp_xls_filename)
   df
 }
