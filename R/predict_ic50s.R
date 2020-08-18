@@ -27,6 +27,10 @@ predict_ic50s <- function(
   )
   file.remove(temp_fasta_filename)
   file.remove(temp_xls_filename)
+
+  Peptide <- NULL; rm(Peptide) # nolint, fixes warning: no visible binding for global variable
+  nM <- NULL; rm(nM) # nolint, fixes warning: no visible binding for global variable
+
   tibble::as_tibble(df) %>%
     dplyr::select(
       peptide = Peptide,

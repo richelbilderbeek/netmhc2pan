@@ -31,7 +31,7 @@ check_netmhc2pan_installation <- function(
   }
   if (!is_netmhc2pan_data_installed(netmhc2pan_folder_name)) {
     data_file_path <- file.path(
-      folder_name,
+      netmhc2pan_folder_name,
       basename(get_default_netmhc2pan_subfolder()),
       "data"
     )
