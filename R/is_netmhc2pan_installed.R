@@ -5,12 +5,20 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_installed <- function(
+  verbose = FALSE,
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  is_netmhc2pan_bin_installed(netmhc2pan_folder_name) &&
-    is_netmhc2pan_data_installed(netmhc2pan_folder_name) &&
-    is_netmhc2pan_set_up(netmhc2pan_folder_name) &&
-    is_tcsh_installed()
+  is_installed <- FALSE
+  tryCatch({
+    netmhc2pan::check_netmhc2pan_installation(netmhc2pan_folder_name)
+    is_installed <- TRUE
+  }, error = function(e) {
+      if (isTRUE(verbose)) {
+        message(e$ms)
+      }
+    }
+  )
+  is_installed
 }
 
 #' Measure if NetMHCIIpan binary is installed locally

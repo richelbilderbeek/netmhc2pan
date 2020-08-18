@@ -1,5 +1,7 @@
-context("test-is_netmhc2pan_installed")
-
+test_that("use", {
+  expect_silent(is_netmhc2pan_installed())
+  is_netmhc2pan_installed(verbose = TRUE)
+})
 
 test_that("use", {
   if (!is_on_travis()) return()
