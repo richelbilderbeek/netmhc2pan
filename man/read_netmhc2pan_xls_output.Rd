@@ -6,6 +6,9 @@
 \usage{
 read_netmhc2pan_xls_output(xls_filename)
 }
+\arguments{
+\item{xls_filename}{name of an \code{xls} file}
+}
 \description{
 Read the output produced by MHC2pan,
 which is an XLS file by default.

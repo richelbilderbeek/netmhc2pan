@@ -10,8 +10,9 @@
 #'   \code{"/home/[usename]/.local/share"} by default
 #' @param os the operating system as obtained by \code{rappdirs::app_dir()$os}.
 #'   \code{netmhc2pan} supports Linux ('\code{unix}') only
-#' @param temp_xls_filename name for a temporary \code{xls} filename
+#' @param temp_xls_filename name for a temporary \code{xls} file
 #' @param verbose set to TRUE for more output
+#' @param xls_filename name of an \code{xls} file
 #' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
 #'   \code{@noRd}. This is not done, as this will disallow all
@@ -24,7 +25,8 @@ default_params_doc <- function(
   folder_name,
   os,
   temp_xls_filename,
-  verbose
+  verbose,
+  xls_filename
 ) {
   # Nothing
 }

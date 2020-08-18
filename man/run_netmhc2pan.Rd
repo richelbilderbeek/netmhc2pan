@@ -20,7 +20,7 @@ See \link{get_netmhc2pan_alleles} for a full list}
 \item{folder_name}{the folder to install NetMHCIIpan, which is
 \code{"/home/[usename]/.local/share"} by default}
 
-\item{temp_xls_filename}{name for a temporary \code{xls} filename}
+\item{temp_xls_filename}{name for a temporary \code{xls} file}
 }
 \value{
 a data frame with the NetMHCIIpan results

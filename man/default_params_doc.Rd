@@ -13,7 +13,8 @@ default_params_doc(
   folder_name,
   os,
   temp_xls_filename,
-  verbose
+  verbose,
+  xls_filename
 )
 }
 \arguments{
@@ -33,9 +34,11 @@ See \link{get_netmhc2pan_alleles} for a full list}
 \item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
 \code{netmhc2pan} supports Linux ('\code{unix}') only}
 
-\item{temp_xls_filename}{name for a temporary \code{xls} filename}
+\item{temp_xls_filename}{name for a temporary \code{xls} file}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{xls_filename}{name of an \code{xls} file}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
