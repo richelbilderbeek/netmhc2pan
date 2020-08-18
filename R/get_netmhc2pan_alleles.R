@@ -2,9 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return a character vector with the NetMHCIIpan alleles
 #' @examples
-#'   alleles <- get_netmhc2pan_alleles()
-#'   testit::assert(length(alleles) > 5000)
-#'   testit::assert("DRB1_0101" %in% alleles)
+#' get_netmhc2pan_alleles()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_netmhc2pan_alleles <- function(

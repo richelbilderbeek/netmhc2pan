@@ -2,30 +2,18 @@
 #' @inheritParams default_params_doc
 #' @return a data frame with the NetMHCIIpan results
 #' @examples
-#'   testit::assert(is_netmhc2pan_installed())
+#' if (is_netmhc2pan_installed()) {
 #'
 #'   fasta_filename <- system.file(
 #'     "extdata", "example.fasta", package = "netmhc2pan"
 #'   )
-#'
-#'   # One default allele
-#'   df <- run_netmhc2pan(fasta_filename)
-#'   testit::assert(
-#'     all(
-#'       colnames(df) ==
-#'       c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
-#'     )
-#'   )
-#'   testit::assert(nrow(df) == 9)
-#'   testit::assert(all(df$Allele == "DRB1_0101"))
+#'   run_netmhc2pan(fasta_filename)
 #'
 #'   # Two alleles
 #'   alleles <- c("DRB1_0101", "DRB1_0102")
-#'   # Alleles must be in NetMHCIIpan
-#'   testit::assert(all(alleles %in% get_netmhc2pan_alleles()))
 #'   # Run NetMHCpan with these two alleles
-#'   df <- run_netmhc2pan(fasta_filename, alleles = alleles)
-#'   testit::assert(nrow(df) == 18)
+#'   run_netmhc2pan(fasta_filename, alleles = alleles)
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 run_netmhc2pan <- function(
@@ -57,7 +45,7 @@ run_netmhc2pan <- function(
   # Adding '-filter' and '1' top the args does not help: the XLS
   # file is created without the desired filter. The text output does
   # change.
-  text <- system2(
+  error_code <- system2(
     command = bin_file_path,
     args = c(
       "-a", paste0(alleles, sep = ",", collapse = ""),
@@ -67,7 +55,11 @@ run_netmhc2pan <- function(
     ),
     stdout = NULL
   )
+  testthat::expect_equal(error_code, 0)
   testit::assert(file.exists(temp_xls_filename))
+  # For 1 alelle, the XLS is easy to parse
+  # For multiple alleles, the XLS is saved in wide format,
+  # with duplicate column names
   df_raw <- utils::read.csv(temp_xls_filename, sep = "\t",
     col.names = c(
       "Pos", "Peptide", "ID",
@@ -141,5 +133,8 @@ run_netmhc2pan <- function(
     to_row_last <- to_row + n_rows - 1
     df$Rank[to_row:to_row_last] <- from
   }
+  # No tibbles, as for multiple alleles,
+  # the XLS is saved in wide format,
+  # with duplicate column names
   df
 }
