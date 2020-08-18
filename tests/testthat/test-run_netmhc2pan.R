@@ -1,13 +1,22 @@
 test_that("use", {
-  testit::assert(is_netmhc2pan_installed())
+  if (!is_netmhc2pan_installed()) return()
+
   fasta_filename <- system.file(
     "extdata", "example.fasta", package = "netmhc2pan"
   )
-  df <- run_netmhc2pan(fasta_filename)
-  #expect_equal(
-  #  colnames(df),
-  #  c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
-  #)
+  netmhc2pan::get_netmhc2pan_alleles()
+  temp_xls_filename <- tempfile()
+  df <- run_netmhc2pan(
+    fasta_filename,
+    alleles = "HLA-DPA10105-DPB112501",
+    temp_xls_filename = temp_xls_filename
+  )
+  expect_true(file.exists(temp_xls_filename))
+
+  expect_equal(
+   colnames(df),
+   c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
+  )
   expect_true(is.numeric(df$Pos))
   expect_true(!is.factor(df$Pos))
   expect_true(is.character(df$Peptide))
@@ -28,6 +37,8 @@ test_that("use", {
 })
 
 test_that("use, multiple alleles", {
+  if (!is_netmhc2pan_installed()) return()
+
   alleles <- c("DRB1_0101", "DRB1_0102")
   testit::assert(is_netmhc2pan_installed())
   testit::assert(all(alleles %in% get_netmhc2pan_alleles()))
@@ -46,8 +57,21 @@ test_that("use, multiple alleles", {
   expect_equal(18, nrow(df))
 })
 
-test_that("abuse, multiple alleles", {
-  testit::assert(is_netmhc2pan_installed())
+test_that("abuse", {
+
+  if (!is_netmhc2pan_installed()) return()
+
+  fasta_filename <- tempfile()
+  writeLines("Nonsense", fasta_filename)
+  expect_error(
+    run_netmhc2pan(
+      fasta_filename = fasta_filename,
+      alleles = "HLA-DPA10105-DPB112501"
+    ),
+    "'fasta_filename' is not a valid FASTA file"
+  )
+
+
   fasta_filename <- system.file(
     "extdata", "example.fasta", package = "netmhc2pan"
   )

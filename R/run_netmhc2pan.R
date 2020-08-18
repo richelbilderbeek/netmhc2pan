@@ -45,7 +45,7 @@ run_netmhc2pan <- function(
   # Adding '-filter' and '1' top the args does not help: the XLS
   # file is created without the desired filter. The text output does
   # change.
-  error_code <- system2(
+  output_text <- system2(
     command = bin_file_path,
     args = c(
       "-a", paste0(alleles, sep = ",", collapse = ""),
@@ -53,9 +53,14 @@ run_netmhc2pan <- function(
       "-xlsfile", temp_xls_filename,
       "-f", fasta_filename
     ),
-    stdout = NULL
+    stdout = TRUE
   )
-  testthat::expect_equal(error_code, 0)
+  if (output_text == "ERROR: Input file is not in FASTA format") {
+    stop("'fasta_filename' is not a valid FASTA file")
+  }
+  if (!file.exists(temp_xls_filename)) {
+    stop(output_text)
+  }
   testit::assert(file.exists(temp_xls_filename))
   # For 1 alelle, the XLS is easy to parse
   # For multiple alleles, the XLS is saved in wide format,
