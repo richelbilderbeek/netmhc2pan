@@ -55,7 +55,9 @@ run_netmhc2pan <- function(
     ),
     stdout = TRUE
   )
-  if (output_text == "ERROR: Input file is not in FASTA format") {
+  if (length(output_text) == 1 &&
+      output_text == "ERROR: Input file is not in FASTA format"
+  ) {
     stop("'fasta_filename' is not a valid FASTA file")
   }
   if (!file.exists(temp_xls_filename)) {
