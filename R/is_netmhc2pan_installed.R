@@ -5,9 +5,10 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_installed <- function(
-  verbose = FALSE,
-  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
+  verbose = FALSE
 ) {
+  assertive::is_if_condition(verbose)
   is_installed <- FALSE
   tryCatch({
     netmhc2pan::check_netmhc2pan_installation(netmhc2pan_folder_name)
