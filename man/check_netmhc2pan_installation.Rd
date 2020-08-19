@@ -2,9 +2,7 @@
 % Please edit documentation in R/check_netmhc2pan_installation.R
 \name{check_netmhc2pan_installation}
 \alias{check_netmhc2pan_installation}
-\title{Checks the installation of NetMHCIIpan.
-Throws a helpful error message if incomplete,
-else does nothing}
+\title{Checks the installation of NetMHCIIpan.}
 \usage{
 check_netmhc2pan_installation(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()

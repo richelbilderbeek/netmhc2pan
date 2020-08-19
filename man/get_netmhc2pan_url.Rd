@@ -2,8 +2,7 @@
 % Please edit documentation in R/get_netmhc2pan_url.R
 \name{get_netmhc2pan_url}
 \alias{get_netmhc2pan_url}
-\title{Get a NetMHCIIpan download URL
-Will stop if the NetMHCIIpan download URL is invalid}
+\title{Get a NetMHCIIpan download URL}
 \usage{
 get_netmhc2pan_url()
 }
@@ -11,8 +10,11 @@ get_netmhc2pan_url()
 a download URL
 }
 \description{
-Get a NetMHCIIpan download URL
-Will stop if the NetMHCIIpan download URL is invalid
+Get a NetMHCIIpan download URL. These expire after 4 hours.
+}
+\seealso{
+Use \link{is_url_valid} to determine if the download URL
+  is still valid
 }
 \author{
 Richèl J.C. Bilderbeek
