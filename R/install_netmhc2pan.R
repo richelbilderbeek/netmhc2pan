@@ -13,7 +13,9 @@ install_netmhc2pan <- function(
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(netmhc2pan_folder_name)
+  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(
+    netmhc2pan_folder_name = netmhc2pan_folder_name
+  )
   if (!is_bin_installed) {
     netmhc2pan::install_netmhc2pan_bin(
       download_url = download_url,

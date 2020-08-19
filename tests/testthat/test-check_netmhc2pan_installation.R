@@ -17,7 +17,11 @@ test_that("abuse", {
   }
   expect_true(!dir.exists(netmhc2pan_folder_name))
 
-  expect_true(!is_netmhc2pan_installed(netmhc2pan_folder_name = netmhc2pan_folder_name))
+  expect_true(
+    !is_netmhc2pan_installed(
+      netmhc2pan_folder_name = netmhc2pan_folder_name
+    )
+  )
   expect_error(
     check_netmhc2pan_installation(netmhc2pan_folder_name),
     "NetMHCIIpan binary not found at"
