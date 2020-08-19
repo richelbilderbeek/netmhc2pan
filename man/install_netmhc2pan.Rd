@@ -2,7 +2,7 @@
 % Please edit documentation in R/install_netmhc2pan.R
 \name{install_netmhc2pan}
 \alias{install_netmhc2pan}
-\title{Install NetMHCIIpan to a local folder}
+\title{Install NetMHCIIpan}
 \usage{
 install_netmhc2pan(
   download_url = get_netmhc2pan_url(),
@@ -24,7 +24,7 @@ Use \link{get_default_netmhc2pan_folder} to see the location
 of the default NetMHCIIpan folder}
 }
 \description{
-Install NetMHCIIpan to a local folder
+Install NetMHCIIpan to a local folder.
 }
 \examples{
 \dontrun{

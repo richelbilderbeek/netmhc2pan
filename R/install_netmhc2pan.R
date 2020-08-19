@@ -1,4 +1,6 @@
-#' Install NetMHCIIpan to a local folder
+#' Install NetMHCIIpan
+#'
+#' Install NetMHCIIpan to a local folder.
 #' @inheritParams default_params_doc
 #' @examples
 #' \dontrun{
