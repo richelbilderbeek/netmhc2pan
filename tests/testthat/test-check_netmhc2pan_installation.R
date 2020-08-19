@@ -1,13 +1,15 @@
-context("test-check_netmhc2pan_installation")
-
 test_that("use", {
-  testit::assert(is_netmhc2pan_installed())
-  expect_silent(check_netmhc2pan_installation())
+  if (is_netmhc2pan_installed()) {
+    expect_silent(check_netmhc2pan_installation())
+  } else {
+    expect_error(check_netmhc2pan_installation())
+  }
 })
 
 test_that("abuse", {
 
   if (!is_on_travis()) return()
+  if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile()
   if (dir.exists(netmhc2pan_folder_name)) {

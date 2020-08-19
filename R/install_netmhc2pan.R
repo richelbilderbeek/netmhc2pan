@@ -7,12 +7,14 @@
 #' @export
 install_netmhc2pan <- function(
   download_url = get_netmhc2pan_url(),
+  netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(netmhc2pan_folder_name)
   if (!is_bin_installed) {
     netmhc2pan::install_netmhc2pan_bin(
       download_url = download_url,
+      netmhc2pan_archive_filename = netmhc2pan_archive_filename,
       netmhc2pan_folder_name = netmhc2pan_folder_name
     )
   }
@@ -35,6 +37,7 @@ install_netmhc2pan <- function(
 #' @export
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
+  netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
   bin_path <- file.path(
@@ -52,9 +55,8 @@ install_netmhc2pan_bin <- function(
     recursive = TRUE
   )
 
-  archive_filename <- "netMHCIIpan-3.2.Linux.tar.gz"
-  url <- file.path(download_url, archive_filename)
-  local_path <- file.path(netmhc2pan_folder_name, archive_filename)
+  url <- file.path(download_url, netmhc2pan_archive_filename)
+  local_path <- file.path(netmhc2pan_folder_name, netmhc2pan_archive_filename)
   tryCatch(
     suppressWarnings(
       utils::download.file(

@@ -12,6 +12,7 @@ default_params_doc(
   fasta_filename,
   folder_name,
   mhc_haplotype,
+  netmhc2pan_archive_filename,
   netmhc2pan_folder_name,
   os,
   peptide_length,
@@ -39,6 +40,11 @@ See \link{get_netmhc2pan_alleles} for a full list}
 
 \item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
+
+\item{netmhc2pan_archive_filename}{the NetMHC2pan archive
+filename, for example \code{netMHCIIpan-3.2.Linux.tar.gz},
+which is used in installation of NetMHC2pan.
+Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
 Use \link{get_default_netmhc2pan_folder} to see the location
