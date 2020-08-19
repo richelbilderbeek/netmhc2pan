@@ -1,8 +1,9 @@
 #' Install NetMHCIIpan to a local folder
 #' @inheritParams default_params_doc
 #' @examples
-#'   if (!is_netmhc2pan_installed()) install_netmhc2pan()
-#'   testit::assert(is_netmhc2pan_installed())
+#' \dontrun{
+#'   install_netmhc2pan()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan <- function(

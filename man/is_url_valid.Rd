@@ -9,6 +9,15 @@ is_url_valid(
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename()
 )
 }
+\arguments{
+\item{download_url}{NetMHCIIpan download URL, for example,
+\code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
+
+\item{netmhc2pan_archive_filename}{the NetMHC2pan archive
+filename, for example \code{netMHCIIpan-3.2.Linux.tar.gz},
+which is used in installation of NetMHC2pan.
+Use \link{get_netmhc2pan_archive_filename} to get this filename.}
+}
 \description{
 The download link expires after 4 hours.
 }

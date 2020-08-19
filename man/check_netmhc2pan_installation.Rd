@@ -24,7 +24,8 @@ Throws a helpful error message if incomplete,
 else does nothing
 }
 \examples{
-  check_netmhc2pan_installation()
+# Will stop if NetMHC2pan is not installed
+try(check_netmhc2pan_installation())
 }
 \author{
 Richèl J.C. Bilderbeek

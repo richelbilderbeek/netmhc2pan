@@ -20,7 +20,9 @@ a character vector with the NetMHCIIpan alleles
 Get a list of the alleles supported by NetMHCIIpan
 }
 \examples{
-get_netmhc2pan_alleles()[1:5]
+if (is_netmhc2pan_installed()) {
+  get_netmhc2pan_alleles()[1:5]
+}
 }
 \author{
 Richèl J.C. Bilderbeek

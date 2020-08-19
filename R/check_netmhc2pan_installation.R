@@ -4,7 +4,8 @@
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
-#'   check_netmhc2pan_installation()
+#' # Will stop if NetMHC2pan is not installed
+#' try(check_netmhc2pan_installation())
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_netmhc2pan_installation <- function(
