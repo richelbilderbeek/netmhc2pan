@@ -8,6 +8,7 @@ test_that("use", {
   df <- run_netmhc2pan(
     fasta_filename,
     alleles = "HLA-DPA10105-DPB112501",
+    peptide_length = 15,
     temp_xls_filename = temp_xls_filename
   )
 
@@ -32,7 +33,6 @@ test_that("use", {
   expect_true(!is.factor(df$nM))
   expect_true(is.numeric(df$Rank))
   expect_true(!is.factor(df$Rank))
-
   names(df)
   expect_equal(9, nrow(df))
 })

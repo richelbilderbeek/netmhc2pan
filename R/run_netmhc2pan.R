@@ -54,11 +54,11 @@ run_netmhc2pan <- function(
   # Adding '-filter' and '1' top the args does not help: the XLS
   # file is created without the desired filter. The text output does
   # change.
-  alleles <- paste0(alleles, sep = ",", collapse = "")
+  alleles_as_word <- paste0(alleles, sep = ",", collapse = "")
   output_text <- system2(
     command = bin_file_path,
     args = c(
-      "-a", alleles,
+      "-a", alleles_as_word,
       "-length", peptide_length,
       "-xls", "1",
       "-xlsfile", temp_xls_filename,
@@ -74,7 +74,7 @@ run_netmhc2pan <- function(
   if (!file.exists(temp_xls_filename)) {
     stop(
       "NetMHCIIpan output file no created. ",
-      "alleles: '", alleles, "'. ",
+      "alleles_as_word: '", alleles_as_word, "'. ",
       "peptide_length: '", peptide_length, "'. ",
       "temp_xls_filename: '", temp_xls_filename, "'. ",
       "temp_xls_filename: '", temp_xls_filename, "'. ",
@@ -101,6 +101,7 @@ run_netmhc2pan <- function(
     header = FALSE,
     stringsAsFactors = FALSE
   )
+  names(df_raw)
   # Convert to short form
   # Get rid of weird header
   df_short <- df_raw[c(-1, -2), ]
