@@ -5,6 +5,7 @@ test_that("use", {
 
 test_that("use", {
   if (!is_on_travis()) return()
+  if (!is_url_valid()) return()
 
   if (is_netmhc2pan_installed()) {
     uninstall_netmhc2pan()

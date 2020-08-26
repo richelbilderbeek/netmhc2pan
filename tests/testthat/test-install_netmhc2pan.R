@@ -1,10 +1,9 @@
-context("test-install_netmhc2pan")
-
 test_that("install_netmhc2pan_bin", {
 
   if (!is_on_travis()) return()
+  if (!is_url_valid()) return()
 
-  netmhc2pan_folder_name <- tempdir()
+  netmhc2pan_folder_name <- tempfile()
   if (dir.exists(netmhc2pan_folder_name)) {
     unlink(netmhc2pan_folder_name, recursive = TRUE)
   }
