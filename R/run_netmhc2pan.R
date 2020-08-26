@@ -79,8 +79,11 @@ run_netmhc2pan <- function(
       "temp_xls_filename: '", temp_xls_filename, "'. ",
       "temp_xls_filename: '", temp_xls_filename, "'. ",
       "fasta_filename: '", fasta_filename, "'. ",
-      "head(readLines(fasta_filename)): '",
-        paste0(head(readLines(fasta_filename, warn = FALSE)), collapse = " \n"),
+      "utils::head(readLines(fasta_filename)): '",
+        paste0(
+          utils::head(readLines(fasta_filename, warn = FALSE)),
+          collapse = " \n"
+        ),
       "'. ",
       "NetMHCII error output: '", output_text, "'"
     )
