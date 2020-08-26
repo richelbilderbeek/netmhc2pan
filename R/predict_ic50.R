@@ -26,8 +26,8 @@ predict_ic50 <- function(
   peptides,
   mhc_haplotype,
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
-  temp_fasta_filename = tempfile(fileext = ".fasta"),
-  temp_xls_filename = tempfile(fileext = ".xls")
+  temp_fasta_filename = netmhc2pan::create_temp_fasta_filename(),
+  temp_xls_filename = netmhc2pan::create_temp_xls_filename()
 ) {
   if (any(nchar(peptides) > 15)) {
     stop(

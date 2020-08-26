@@ -2,6 +2,7 @@
 
 export(capitalize_first_char)
 export(check_netmhc2pan_installation)
+export(create_temp_xls_filename)
 export(get_default_netmhc2pan_bin_path)
 export(get_default_netmhc2pan_folder)
 export(get_default_netmhc2pan_subfolder)

@@ -9,7 +9,7 @@ run_netmhc2pan(
   alleles = "DRB1_0101",
   peptide_length = 15,
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
-  temp_xls_filename = tempfile(fileext = ".xls")
+  temp_xls_filename = netmhc2pan::create_temp_xls_filename()
 )
 }
 \arguments{

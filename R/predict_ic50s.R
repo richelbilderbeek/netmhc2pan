@@ -12,8 +12,8 @@ predict_ic50s <- function(
   peptide_length,
   mhc_haplotype,
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
-  temp_fasta_filename = tempfile(fileext = ".fasta"),
-  temp_xls_filename = tempfile(fileext = ".xls")
+  temp_fasta_filename = netmhc2pan::create_temp_fasta_filename(),
+  temp_xls_filename = netmhc2pan::create_temp_xls_filename()
 ) {
   fasta_text <- c(">seq1", protein_sequence)
   readr::write_lines(x = fasta_text, path = temp_fasta_filename)
