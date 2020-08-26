@@ -35,7 +35,9 @@ run_netmhc2pan <- function(
   }
 
   testthat::expect_true(
-    netmhc2pan::is_netmhc2pan_installed(netmhc2pan_folder_name)
+    netmhc2pan::is_netmhc2pan_installed(
+      netmhc2pan_folder_name = netmhc2pan_folder_name
+    )
   )
   testthat::expect_true(
     all(alleles %in% netmhc2pan::get_netmhc2pan_alleles(
@@ -48,14 +50,15 @@ run_netmhc2pan <- function(
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
-  testit::assert(file.exists(bin_file_path))
+  testthat::expect_true(file.exists(bin_file_path))
   # Adding '-filter' and '1' top the args does not help: the XLS
   # file is created without the desired filter. The text output does
   # change.
+  alleles <- paste0(alleles, sep = ",", collapse = "")
   output_text <- system2(
     command = bin_file_path,
     args = c(
-      "-a", paste0(alleles, sep = ",", collapse = ""),
+      "-a", alleles,
       "-length", peptide_length,
       "-xls", "1",
       "-xlsfile", temp_xls_filename,
@@ -69,7 +72,18 @@ run_netmhc2pan <- function(
     stop("'fasta_filename' is not a valid FASTA file")
   }
   if (!file.exists(temp_xls_filename)) {
-    stop(output_text)
+    stop(
+      "NetMHCIIpan output file no created. ",
+      "alleles: '", alleles, "'. ",
+      "peptide_length: '", peptide_length, "'. ",
+      "temp_xls_filename: '", temp_xls_filename, "'. ",
+      "temp_xls_filename: '", temp_xls_filename, "'. ",
+      "fasta_filename: '", fasta_filename, "'. ",
+      "head(readLines(fasta_filename)): '",
+        paste0(head(readLines(fasta_filename, warn = FALSE)), collapse = " \n"),
+      "'. ",
+      "NetMHCII error output: '", output_text, "'"
+    )
   }
   testit::assert(file.exists(temp_xls_filename))
   # For 1 alelle, the XLS is easy to parse
