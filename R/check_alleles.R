@@ -10,7 +10,10 @@
 #' @return nothing
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' check_alleles(get_netmhc2pan_alleles())
+#' if (is_netmhc2pan_installed()) {
+#'   check_alleles("DRB1_0101")
+#'   check_alleles(c("DRB1_0102", "DRB1_0103"))
+#' }
 #' @export
 check_alleles <- function(
   alleles,

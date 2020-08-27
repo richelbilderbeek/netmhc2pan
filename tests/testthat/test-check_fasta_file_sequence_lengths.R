@@ -1,5 +1,4 @@
 test_that("use", {
-
   expect_silent(
     check_fasta_file_sequence_lengths(
       fasta_filename = system.file(

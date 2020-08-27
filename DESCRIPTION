@@ -18,6 +18,7 @@ Imports:
     dplyr,
     rappdirs,
     readr,
+    seqinr,
     stringr,
     testit,
     tibble

@@ -25,7 +25,10 @@ Check if the alleles have a valid NetMHC2pan name.
 Will \link{stop} if not.
 }
 \examples{
-check_alleles(get_netmhc2pan_alleles())
+if (is_netmhc2pan_installed()) {
+  check_alleles("DRB1_0101")
+  check_alleles(c("DRB1_0102", "DRB1_0103"))
+}
 }
 \seealso{
 Use \link{to_netmhc2pan_name} to convert
