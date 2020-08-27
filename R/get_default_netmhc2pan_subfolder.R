@@ -1,4 +1,5 @@
 #' Get the full path to the NetMHC2pan sub-folder
+#' @inheritParams default_params_doc
 #' @return the full path to the NetMHC2pan sub-folder
 #' @author Richèl J.C. Bilderbeek
 #' @export

@@ -8,6 +8,12 @@ get_netmhc2pan_archive_filename(
   netmhc2pan_version = get_default_netmhc2pan_version()
 )
 }
+\arguments{
+\item{netmhc2pan_version}{the NetMHCIIpan version,
+for example \code{3.2}.
+Use \link{get_default_netmhc2pan_version} to get the default
+NetMHCIIpan version}
+}
 \description{
 Get the filename of the NetMHC2pan archive file
 }

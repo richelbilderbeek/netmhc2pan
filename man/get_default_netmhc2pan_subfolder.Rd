@@ -8,6 +8,12 @@ get_default_netmhc2pan_subfolder(
   netmhc2pan_version = get_default_netmhc2pan_version()
 )
 }
+\arguments{
+\item{netmhc2pan_version}{the NetMHCIIpan version,
+for example \code{3.2}.
+Use \link{get_default_netmhc2pan_version} to get the default
+NetMHCIIpan version}
+}
 \value{
 the full path to the NetMHC2pan sub-folder
 }
