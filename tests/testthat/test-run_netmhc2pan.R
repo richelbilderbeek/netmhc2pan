@@ -92,35 +92,13 @@ test_that("bug bbbq_1_fast", {
 
   fasta_filename <- tempfile()
   readr::write_lines(x = c(">seq1", "GTGG"), fasta_filename)
-  temp_xls_filename <- tempfile()
-  df <- run_netmhc2pan(
-    fasta_filename,
-    alleles = "DRB1_0101",
-    peptide_length = 13,
-    temp_xls_filename = temp_xls_filename
+  expect_error(
+    run_netmhc2pan(
+      fasta_filename,
+      alleles = "DRB1_0101",
+      peptide_length = 13
+    ),
+    "Sequence in FASTA file shorter than the requested peptide length"
   )
-
-  # Must do cleanup
-  expect_true(!file.exists(temp_xls_filename))
-
-  expect_equal(
-   colnames(df),
-   c("Pos", "Peptide", "ID", "Allele", "one_minus_log50k", "nM", "Rank")
-  )
-  expect_true(is.numeric(df$Pos))
-  expect_true(!is.factor(df$Pos))
-  expect_true(is.character(df$Peptide))
-  expect_true(!is.factor(df$Peptide))
-  expect_true(is.character(df$ID))
-  expect_true(!is.factor(df$ID))
-  expect_true(is.character(df$Allele))
-  expect_true(!is.factor(df$Allele))
-  expect_true(is.numeric(df$one_minus_log50k))
-  expect_true(!is.factor(df$one_minus_log50k))
-  expect_true(is.numeric(df$nM))
-  expect_true(!is.factor(df$nM))
-  expect_true(is.numeric(df$Rank))
-  expect_true(!is.factor(df$Rank))
-  names(df)
-  expect_equal(9, nrow(df))
+  file.remove(fasta_filename)
 })
