@@ -6,7 +6,7 @@
 #' @return Nothing.
 #' @author Richèl J.C. Bilderbeek
 #' @export
-check_fasta_file_sequence_lengths <- function(
+check_fasta_file_sequence_lengths <- function( # nolint indeed a long name
   fasta_filename,
   peptide_length
 ) {
