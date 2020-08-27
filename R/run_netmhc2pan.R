@@ -25,25 +25,15 @@ run_netmhc2pan <- function(
 ) {
   # Check input
   netmhc2pan::check_netmhc2pan_installation(netmhc2pan_folder_name)
-  if (!all(alleles %in% get_netmhc2pan_alleles(netmhc2pan_folder_name))) {
-    stop(
-      "Invalid 'alleles'\n",
-      "\n",
-      "Tip: use 'netmhc2pan::get_netmhc2pan_alleles()' for a list\n",
-      "     of all supported alleles"
-    )
-  }
+  netmhc2pan::check_alleles(
+    alleles = alleles,
+    netmhc2pan_folder_name = netmhc2pan_folder_name
+  )
+  netmhc2pan::check_fasta_file_sequence_lengths(
+    fasta_filename = fasta_filename,
+    peptide_length = peptide_length
+  )
 
-  testthat::expect_true(
-    netmhc2pan::is_netmhc2pan_installed(
-      netmhc2pan_folder_name = netmhc2pan_folder_name
-    )
-  )
-  testthat::expect_true(
-    all(alleles %in% netmhc2pan::get_netmhc2pan_alleles(
-      netmhc2pan_folder_name)
-    )
-  )
   testthat::expect_true(file.exists(fasta_filename))
   bin_file_path <- file.path(
     netmhc2pan_folder_name,
@@ -73,7 +63,7 @@ run_netmhc2pan <- function(
   }
   if (!file.exists(temp_xls_filename)) {
     stop(
-      "NetMHCIIpan output file no created. ",
+      "NetMHCIIpan output file not created. ",
       "alleles_as_word: '", alleles_as_word, "'. ",
       "peptide_length: '", peptide_length, "'. ",
       "temp_xls_filename: '", temp_xls_filename, "'. ",
@@ -85,7 +75,7 @@ run_netmhc2pan <- function(
           collapse = " \n"
         ),
       "'. ",
-      "NetMHCII error output: '", output_text, "'"
+      "NetMHCIIpan error output: '", output_text, "'"
     )
   }
   testit::assert(file.exists(temp_xls_filename))
