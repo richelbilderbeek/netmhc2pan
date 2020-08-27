@@ -18,9 +18,25 @@ get_netmhc2pan_alleles <- function(
     basename(get_default_netmhc2pan_bin_path())
   )
   testit::assert(file.exists(bin_file_path))
-  system2(
+  alleles <- system2(
     command = bin_file_path,
     args = c("-list"),
     stdout = TRUE
   )
+
+  # Remove the tab-duplicated alleles
+  #
+  # Find the duplicate indices, verify the name
+  # before and after tab is exactly the same
+  duplicate_indices <- which(
+    stringr::str_count(alleles, pattern = "\t") != 0
+  )
+  for (i in duplicate_indices) {
+    duplicate_allele <- alleles[i]
+    s <- stringr::str_split(duplicate_allele, pattern = "\t")[[1]]
+    testthat::expect_equal(s[1], s[2])
+    alleles[i] <- s[1]
+  }
+
+  alleles
 }
