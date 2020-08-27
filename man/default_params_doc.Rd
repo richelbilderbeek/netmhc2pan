@@ -14,6 +14,7 @@ default_params_doc(
   mhc_haplotype,
   netmhc2pan_archive_filename,
   netmhc2pan_folder_name,
+  netmhc2pan_version,
   os,
   peptide_length,
   peptides,
@@ -49,6 +50,11 @@ Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
 Use \link{get_default_netmhc2pan_folder} to see the location
 of the default NetMHCIIpan folder}
+
+\item{netmhc2pan_version}{the NetMHCIIpan version,
+for example \code{3.2}.
+Use \link{get_default_netmhc2pan_version} to get the default
+NetMHCIIpan version}
 
 \item{os}{the operating system as obtained by \code{rappdirs::app_dir()$os}.
 \code{netmhc2pan} supports Linux ('\code{unix}') only}
