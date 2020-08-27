@@ -4,7 +4,9 @@
 \alias{get_netmhc2pan_archive_filename}
 \title{Get the filename of the NetMHC2pan archive file}
 \usage{
-get_netmhc2pan_archive_filename()
+get_netmhc2pan_archive_filename(
+  netmhc2pan_version = get_default_netmhc2pan_version()
+)
 }
 \description{
 Get the filename of the NetMHC2pan archive file

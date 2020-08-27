@@ -71,12 +71,20 @@ install_netmhc2pan_bin <- function(
       )
     ),
     error = function(e) {
+      netmhc2pan_version <- stringr::str_match(
+        netmhc2pan_archive_filename,
+        "[:digit:]\\.[:digit:]"
+      )[1, 1]
       stop(
         "'download_url' is invalid.\n",
         "URL:", url, "\n",
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
-        "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2\n",
+        paste0(
+          "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-",
+          netmhc2pan_version,
+          "\n"
+        ),
         "\n",
         "Full error message: \n",
         "\n",
@@ -113,10 +121,6 @@ install_netmhc2pan_data <- function(
     stop("NetMHCIIpan data is already installed")
   }
 
-  # Used to be: url <- "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2-3.2/data.Linux.tar.gz" # nolint yup, long line indeed!
-  #                                                    ^
-  #                                                    |
-  #                                                    +--- Note the uppercase!
   url <- file.path(
     "http://www.cbs.dtu.dk/services",
     capitalize_first_char(basename(get_default_netmhc2pan_subfolder())),
@@ -170,7 +174,6 @@ set_up_netmhc2pan <- function(
 
   # Change sentenv
   setenv_line_idx <- which(
-    # Used to be: lines == "setenv\tNMHOME\t/usr/cbs/bio/src/netMHCIIpan-3.2"
     lines == paste0(
       "setenv\tNMHOME\t/usr/cbs/bio/src/",
       basename(get_default_netmhc2pan_subfolder())

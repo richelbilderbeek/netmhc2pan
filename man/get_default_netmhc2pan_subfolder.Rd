@@ -4,7 +4,9 @@
 \alias{get_default_netmhc2pan_subfolder}
 \title{Get the full path to the NetMHC2pan sub-folder}
 \usage{
-get_default_netmhc2pan_subfolder()
+get_default_netmhc2pan_subfolder(
+  netmhc2pan_version = get_default_netmhc2pan_version()
+)
 }
 \value{
 the full path to the NetMHC2pan sub-folder

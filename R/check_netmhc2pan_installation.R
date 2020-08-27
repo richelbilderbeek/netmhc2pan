@@ -21,6 +21,10 @@ check_netmhc2pan_installation <- function(
       basename(get_default_netmhc2pan_subfolder()),
       basename(get_default_netmhc2pan_bin_path())
     )
+    netmhc2pan_version <- stringr::str_match(
+      bin_file_path,
+      "[:digit:]\\.[:digit:]"
+    )[1, 1]
     stop(
       "NetMHCIIpan binary not found at\n",
       bin_file_path, "\n",
@@ -29,7 +33,11 @@ check_netmhc2pan_installation <- function(
       "  with a (non-expired) download URL\n",
       "Tip 2: request a download URL at the NetMHCIIpan download page at\n",
       "\n",
-      "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2\n"
+      paste0(
+        "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-",
+        netmhc2pan_version,
+        "\n"
+      )
     )
   }
   if (!is_netmhc2pan_data_installed(netmhc2pan_folder_name)) {

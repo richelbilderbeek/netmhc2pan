@@ -72,7 +72,6 @@ is_netmhc2pan_set_up <- function(
   )
   if (!file.exists(file_path)) return(FALSE)
   lines <- readLines(file_path)
-  # Used to be: !any(grepl(x = lines, pattern = "/usr/cbs/bio/src/netMHCIIpan-3.2")) # nolint file does use absolute path
   !any(
     grepl(
       x = lines,
