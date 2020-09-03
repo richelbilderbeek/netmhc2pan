@@ -6,6 +6,16 @@
 \usage{
 create_temp_xls_filename()
 }
+\value{
+a path to a non-existing file,
+for example, \code{/home/myusername/.cache/temp_582047dac733.xls}
+}
 \description{
 Create a \code{.xls} file
+}
+\examples{
+create_temp_xls_filename()
+}
+\author{
+Richèl J.C. Bilderbeek
 }

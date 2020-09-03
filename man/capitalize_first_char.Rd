@@ -2,15 +2,22 @@
 % Please edit documentation in R/capitalize_first_char.R
 \name{capitalize_first_char}
 \alias{capitalize_first_char}
-\title{Convert the first character to upper case}
+\title{Convert the first character to upper case.}
 \usage{
 capitalize_first_char(s)
 }
 \arguments{
 \item{s}{a string}
 }
+\value{
+the string, with the first letter in uppercase
+}
 \description{
-Convert the first character to upper case
+Convert the first character to upper case. If the first
+character is upper case, nothing will happen.
+}
+\examples{
+capitalize_first_char("hello")
 }
 \author{
 Richèl J.C. Bilderbeek

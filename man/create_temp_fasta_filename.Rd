@@ -6,6 +6,16 @@
 \usage{
 create_temp_fasta_filename()
 }
+\value{
+a path to a non-existing file,
+for example, \code{/home/myusername/.cache/temp_582046426735.fasta}
+}
 \description{
 Create a \code{.fasta} file
+}
+\examples{
+create_temp_fasta_filename()
+}
+\author{
+Richèl J.C. Bilderbeek
 }
