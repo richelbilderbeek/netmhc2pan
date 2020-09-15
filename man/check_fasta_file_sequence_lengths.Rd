@@ -18,6 +18,16 @@ Nothing.
 Check if the lengths of the sequences in a FASTA file
 are at least equal to the desired peptide lengths.
 }
+\examples{
+# FASTA file in which all proteons have a length of at keast 13
+fasta_filename <- system.file(
+  "extdata", "example.fasta", package = "netmhc2pan"
+)
+check_fasta_file_sequence_lengths(
+  fasta_filename = fasta_filename,
+  peptide_length = 13
+)
+}
 \author{
 Richèl J.C. Bilderbeek
 }

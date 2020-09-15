@@ -14,6 +14,12 @@ for example \code{3.2}.
 Use \link{get_default_netmhc2pan_version} to get the default
 NetMHCIIpan version}
 }
+\value{
+the filename of the NetMHC2pan archive file
+}
 \description{
 Get the filename of the NetMHC2pan archive file
+}
+\examples{
+get_netmhc2pan_archive_filename()
 }

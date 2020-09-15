@@ -20,6 +20,9 @@ the full path to the NetMHC2pan sub-folder
 \description{
 Get the full path to the NetMHC2pan sub-folder
 }
+\examples{
+get_default_netmhc2pan_subfolder()
+}
 \author{
 Richèl J.C. Bilderbeek
 }

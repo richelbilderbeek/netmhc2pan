@@ -23,6 +23,9 @@ Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 Use \link{get_default_netmhc2pan_folder} to see the location
 of the default NetMHCIIpan folder}
 }
+\value{
+Nothing
+}
 \description{
 Install NetMHCIIpan to a local folder.
 }

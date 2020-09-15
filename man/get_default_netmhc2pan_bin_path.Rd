@@ -6,8 +6,14 @@
 \usage{
 get_default_netmhc2pan_bin_path()
 }
+\value{
+the full path to the default NetMHC2pan binary
+}
 \description{
 Get the full path to the default NetMHC2pan binary
+}
+\examples{
+get_default_netmhc2pan_bin_path()
 }
 \author{
 Richèl J.C. Bilderbeek

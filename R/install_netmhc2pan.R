@@ -2,6 +2,7 @@
 #'
 #' Install NetMHCIIpan to a local folder.
 #' @inheritParams default_params_doc
+#' @return Nothing
 #' @examples
 #' \dontrun{
 #'   install_netmhc2pan()
@@ -38,6 +39,11 @@ install_netmhc2pan <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
+#' @return Nothing
+#' @examples
+#' \dontrun{
+#'   install_netmhc2pan_bin()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_bin <- function(
@@ -107,6 +113,11 @@ install_netmhc2pan_bin <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
+#' @return Nothing
+#' @examples
+#' \dontrun{
+#'   install_netmhc2pan_data()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_data <- function(
@@ -152,6 +163,11 @@ install_netmhc2pan_data <- function(
 
 #' Install the NetMHCIIpan binary to a local folder
 #' @inheritParams default_params_doc
+#' @return Nothing
+#' @examples
+#' \dontrun{
+#'   set_up_netmhc2pan()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 set_up_netmhc2pan <- function(

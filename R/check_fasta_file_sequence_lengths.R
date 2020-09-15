@@ -4,9 +4,18 @@
 #' are at least equal to the desired peptide lengths.
 #' @inheritParams default_params_doc
 #' @return Nothing.
+#' @examples
+#' # FASTA file in which all proteons have a length of at keast 13
+#' fasta_filename <- system.file(
+#'   "extdata", "example.fasta", package = "netmhc2pan"
+#' )
+#' check_fasta_file_sequence_lengths(
+#'   fasta_filename = fasta_filename,
+#'   peptide_length = 13
+#' )
 #' @author Richèl J.C. Bilderbeek
 #' @export
-check_fasta_file_sequence_lengths <- function( # nolint indeed a long name
+check_fasta_file_sequence_lengths <- function(# nolint indeed a long name
   fasta_filename,
   peptide_length
 ) {

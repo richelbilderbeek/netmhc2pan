@@ -6,6 +6,15 @@
 \usage{
 get_default_netmhc2pan_version()
 }
+\value{
+the default NetMHC2pan version used
+}
 \description{
 Get the default NetMHC2pan version used
+}
+\examples{
+get_default_netmhc2pan_version()
+}
+\author{
+Richèl J.C. Bilderbeek
 }

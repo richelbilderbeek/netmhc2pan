@@ -10,7 +10,17 @@ is_netmhc2pan_haplotype(mhc_haplotype)
 \item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 }
+\value{
+TRUE if the haplotype is a valid NetMHCIIpan haplotype
+}
 \description{
 Determines if a haplotype has the same notation
 as a NetMHC2pan haplotype
+}
+\examples{
+is_netmhc2pan_haplotype("DRB1_0311")
+is_netmhc2pan_haplotype("nonsense")
+}
+\author{
+Richèl J.C. Bilderbeek
 }
