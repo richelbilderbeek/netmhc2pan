@@ -30,7 +30,7 @@ before_script:
   # LAPACK
   - sudo apt-get install liblapack-dev -y
   # Fix Rlapack error, from https://github.com/EBI-predocs/research-software/issues/72#issuecomment-387371428
-  - ln -s usr/lib/R/modules/lapack.so usr/lib/R/modules/libRlapack.so
+  # - ln -s usr/lib/R/modules/lapack.so usr/lib/R/modules/libRlapack.so
   # proselint
   - sudo pip install proselint
 
