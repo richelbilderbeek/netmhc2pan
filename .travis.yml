@@ -29,6 +29,8 @@ before_script:
   - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then ./scripts/install_netmhc2pan.sh; fi
   # LAPACK
   - sudo apt-get install liblapack-dev -y
+  # Fix Rlapack error, from https://github.com/EBI-predocs/research-software/issues/72#issuecomment-387371428
+  - ln -s usr/lib/R/modules/lapack.so usr/lib/R/modules/libRlapack.so
   # proselint
   - sudo pip install proselint
 
