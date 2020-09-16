@@ -27,6 +27,8 @@ before_script:
   - which tcsh
   # NetMHCIIpan
   - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then ./scripts/install_netmhc2pan.sh; fi
+  # LAPACK
+  - sudo apt-get install liblapack-dev -y
   # proselint
   - sudo pip install proselint
 
