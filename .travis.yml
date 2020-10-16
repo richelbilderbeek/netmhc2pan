@@ -28,8 +28,6 @@ before_script:
   - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then ./scripts/install_netmhc2pan.sh; fi
   # LAPACK
   - sudo apt-get install liblapack-dev -y
-  # Fix Rlapack error, from https://github.com/EBI-predocs/research-software/issues/72#issuecomment-387371428
-  # - ln -s usr/lib/R/modules/lapack.so usr/lib/R/modules/libRlapack.so
   # proselint
   - sudo pip install proselint
 
@@ -42,12 +40,12 @@ after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
   # Download thesis
-  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
 after_failure:
   - Rscript -e 'remotes::install_github("richelbilderbeek/netmhc2pan")'
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
   - ls
   # Download thesis
-  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
