@@ -5,8 +5,10 @@
 #' @inheritParams default_params_doc
 #' @return TRUE if the haplotype is a valid NetMHCIIpan haplotype
 #' @examples
-#' is_netmhc2pan_haplotype("DRB1_0311")
-#' is_netmhc2pan_haplotype("nonsense")
+#' if (is_netmhc2pan_installed()) {
+#'   is_netmhc2pan_haplotype("DRB1_0311")
+#'   is_netmhc2pan_haplotype("nonsense")
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_haplotype <- function(mhc_haplotype) {

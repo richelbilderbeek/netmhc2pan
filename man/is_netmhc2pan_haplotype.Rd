@@ -18,8 +18,10 @@ Determines if a haplotype has the same notation
 as a NetMHC2pan haplotype
 }
 \examples{
-is_netmhc2pan_haplotype("DRB1_0311")
-is_netmhc2pan_haplotype("nonsense")
+if (is_netmhc2pan_installed()) {
+  is_netmhc2pan_haplotype("DRB1_0311")
+  is_netmhc2pan_haplotype("nonsense")
+}
 }
 \author{
 Richèl J.C. Bilderbeek
