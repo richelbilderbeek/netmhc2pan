@@ -28,12 +28,12 @@ library(netmhc2pan)
 This demo assumes NetMHCIIpan is installed.
 Installation cannot be done `netmhc2pan`, as one needs
 to request a download link at 
-[http://www.cbs.dtu.dk/services/NetMHCIIpan/](http://www.cbs.dtu.dk/services/NetMHCIIpan).
+[https://www.cbs.dtu.dk/services/NetMHCIIpan/](https://www.cbs.dtu.dk/services/NetMHCIIpan).
 
 To install `netmhc2pan`, use `install_netmhc2pan` with the download link:
 
 ```
-install_netmhc2pan("http://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
+install_netmhc2pan("https://www.cbs.dtu.dk/download/33A6B0AC-0F2E-11E9-B4D1-8ABCB9CD16B5/")
 ```
 
 The installation of `netmhc2pan` is checked, with

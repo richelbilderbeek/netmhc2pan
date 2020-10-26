@@ -32,7 +32,7 @@ See \link{get_netmhc2pan_alleles} for a full list}
 \item{do_filter}{set to TRUE if the results of NetMHCIIpan must be filtered}
 
 \item{download_url}{NetMHCIIpan download URL, for example,
-\code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
+\code{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
 
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
 

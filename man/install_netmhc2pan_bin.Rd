@@ -12,7 +12,7 @@ install_netmhc2pan_bin(
 }
 \arguments{
 \item{download_url}{NetMHCIIpan download URL, for example,
-\code{http://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
+\code{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
 
 \item{netmhc2pan_archive_filename}{the NetMHC2pan archive
 filename, for example \code{netMHCIIpan-3.2.Linux.tar.gz},
