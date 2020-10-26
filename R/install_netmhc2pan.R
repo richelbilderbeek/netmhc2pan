@@ -133,7 +133,7 @@ install_netmhc2pan_data <- function(
   }
 
   url <- file.path(
-    "http://www.cbs.dtu.dk/services",
+    "https://www.cbs.dtu.dk/services",
     capitalize_first_char(basename(get_default_netmhc2pan_subfolder())),
     "data.Linux.tar.gz"
   )
