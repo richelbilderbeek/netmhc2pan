@@ -1,5 +1,9 @@
 # netmhc2pan
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/netmhc2pan)](https://cran.r-project.org/package=netmhc2pan)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/netmhc2pan)]( https://CRAN.R-project.org/package=netmhc2pan)
+[![](http://cranlogs.r-pkg.org/badges/netmhc2pan)](https://CRAN.R-project.org/package=netmhc2pan)
+
 Branch |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)                                                                             |[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
 -------|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 master |[![Build Status](https://travis-ci.org/richelbilderbeek/netmhc2pan.svg?branch=master)](https://travis-ci.org/richelbilderbeek/netmhc2pan) |[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/master)
