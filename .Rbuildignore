@@ -2,5 +2,6 @@
 ^netmhc2pan\.Rproj$
 ^\.Rproj\.user$
 ^scripts$
+^NEWS\.md$
 ^pics$
 LICENSE
