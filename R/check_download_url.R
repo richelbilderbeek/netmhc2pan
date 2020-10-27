@@ -19,13 +19,36 @@ check_download_url <- function(
       "'url': ", url
     )
   }
-  netmhc2pan::check_can_create_file(filename = temp_local_file, overwrite = FALSE)
-  suppressWarnings(
-    utils::download.file(
-      url = url,
-      destfile = temp_local_file,
-      quiet = !verbose
-    )
+  netmhc2pan::check_can_create_file(
+    filename = temp_local_file,
+    overwrite = FALSE
   )
+  tryCatch({
+    suppressWarnings(
+      utils::download.file(
+        url = url,
+        destfile = temp_local_file,
+        quiet = !verbose
+      )
+    )
+  }, error = function(e) {
+      stop(
+        "'download_url' is invalid.\n",
+        "URL: ", url, "\n",
+        "Request a download URL at the NetMHCIIpan request page at\n",
+        "\n",
+        paste0(
+          "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-",
+          get_default_netmhc2pan_version(),
+          "\n"
+        ),
+        "\n",
+        "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
+        "\n",
+        "Full error message: \n",
+        "\n",
+        e
+      )
+  })
   file.remove(temp_local_file)
 }

@@ -14,3 +14,10 @@ test_that("be verbose", {
     )
   }
 })
+
+test_that("error message for invalid URL", {
+  expect_error(
+    check_download_url(download_url = "does_not_exist"),
+    "YouTube"
+  )
+})

@@ -21,3 +21,16 @@ test_that("use", {
   }
 
 })
+
+test_that("uninstall NetMHCIIpan from a custom location", {
+
+  if (!is_on_travis()) return()
+  if (!is_url_valid()) return()
+
+  netmhc2pan_folder_name <- tempfile(pattern = "netmhc2pan_")
+  install_netmhc2pan(netmhc2pan_folder_name = netmhc2pan_folder_name)
+  expect_silent(
+    uninstall_netmhc2pan(netmhc2pan_folder_name = netmhc2pan_folder_name)
+  )
+  expect_false(dir.exists(netmhc2pan_folder_name))
+})

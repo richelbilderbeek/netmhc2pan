@@ -38,7 +38,10 @@ install_netmhc2pan <- function(
     netmhc2pan_folder_name
   )
   if (!is_data_installed) { # nolint netmhc2pan function
-    netmhc2pan::install_netmhc2pan_data(netmhc2pan_folder_name)
+    netmhc2pan::install_netmhc2pan_data(
+      netmhc2pan_folder_name = netmhc2pan_folder_name,
+      verbose = verbose
+    )
   }
   is_set_up <- netmhc2pan::is_netmhc2pan_set_up(netmhc2pan_folder_name)
   if (!is_set_up) {
@@ -141,7 +144,8 @@ install_netmhc2pan_bin <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_data <- function(
-  netmhc2pan_folder_name = rappdirs::user_data_dir()
+  netmhc2pan_folder_name = rappdirs::user_data_dir(),
+  verbose = FALSE
 ) {
   data_folder_path <- file.path(
     netmhc2pan_folder_name,
@@ -167,7 +171,8 @@ install_netmhc2pan_data <- function(
 
   utils::download.file(
     url = url,
-    destfile = local_path
+    destfile = local_path,
+    quiet = !verbose
   )
   testit::assert(file.exists(local_path))
   # Linux has a tar file
