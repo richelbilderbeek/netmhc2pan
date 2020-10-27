@@ -106,7 +106,7 @@ install_netmhc2pan_bin <- function(
       )[1, 1]
       stop(
         "'download_url' is invalid.\n",
-        "URL:", url, "\n",
+        "URL: ", url, "\n",
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
         paste0(
@@ -114,6 +114,8 @@ install_netmhc2pan_bin <- function(
           netmhc2pan_version,
           "\n"
         ),
+        "\n",
+        "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
         "\n",
         "Full error message: \n",
         "\n",
