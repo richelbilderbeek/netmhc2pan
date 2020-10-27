@@ -29,13 +29,15 @@ is_netmhc2pan_installed <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_netmhc2pan_bin_installed <- function(
-  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
+  verbose = FALSE
 ) {
   bin_file_path <- file.path(
     netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
+  if (verbose) message("bin_file_path: '", bin_file_path, "'")
   file.exists(bin_file_path)
 }
 

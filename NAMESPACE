@@ -2,6 +2,7 @@
 
 export(capitalize_first_char)
 export(check_alleles)
+export(check_can_create_file)
 export(check_download_url)
 export(check_fasta_file_sequence_lengths)
 export(check_netmhc2pan_installation)

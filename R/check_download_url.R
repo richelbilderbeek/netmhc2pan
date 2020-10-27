@@ -19,8 +19,7 @@ check_download_url <- function(
       "'url': ", url
     )
   }
-  writeLines("some random text to test if local path is writable", temp_local_file)
-  file.remove(temp_local_file)
+  netmhc2pan::check_can_create_file(filename = temp_local_file, overwrite = FALSE)
   suppressWarnings(
     utils::download.file(
       url = url,

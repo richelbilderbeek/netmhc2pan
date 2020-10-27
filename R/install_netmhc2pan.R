@@ -23,11 +23,13 @@ install_netmhc2pan <- function(
     temp_local_file = temp_local_file
   )
   is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(
-    netmhc2pan_folder_name = netmhc2pan_folder_name
+    netmhc2pan_folder_name = netmhc2pan_folder_name,
+    verbose = verbose
   )
   if (!is_bin_installed) {
     netmhc2pan::install_netmhc2pan_bin(
       download_url = download_url,
+      verbose = verbose,
       netmhc2pan_archive_filename = netmhc2pan_archive_filename,
       netmhc2pan_folder_name = netmhc2pan_folder_name
     )
@@ -56,6 +58,7 @@ install_netmhc2pan <- function(
 #' @export
 install_netmhc2pan_bin <- function(
   download_url = get_netmhc2pan_url(),
+  verbose = FALSE,
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
@@ -64,8 +67,17 @@ install_netmhc2pan_bin <- function(
     basename(get_default_netmhc2pan_subfolder()),
     basename(get_default_netmhc2pan_bin_path())
   )
+  url <- file.path(download_url, netmhc2pan_archive_filename)
+  local_path <- file.path(netmhc2pan_folder_name, netmhc2pan_archive_filename)
+
+  if (verbose) {
+    message(
+      "Installing NetMHCIIpan from ", download_url,
+      " (full URL is ", url, ") to ", local_path
+    )
+  }
   if (file.exists(bin_path)) {
-    stop("NetMHCIIpan binary is already installed")
+    stop("NetMHCIIpan binary is already installed at '", bin_path, "'")
   }
 
   dir.create(
@@ -74,14 +86,14 @@ install_netmhc2pan_bin <- function(
     recursive = TRUE
   )
 
-  url <- file.path(download_url, netmhc2pan_archive_filename)
-  local_path <- file.path(netmhc2pan_folder_name, netmhc2pan_archive_filename)
+  netmhc2pan::check_can_create_file(filename = local_path, overwrite = FALSE)
+
   tryCatch(
     suppressWarnings(
       utils::download.file(
         url = url,
         destfile = local_path,
-        quiet = TRUE
+        quiet = !verbose
       )
     ),
     error = function(e) {
@@ -151,6 +163,8 @@ install_netmhc2pan_data <- function(
     "data.Linux.tar.gz"
   )
   dir.create(dirname(local_path), showWarnings = FALSE, recursive = TRUE)
+  netmhc2pan::check_can_create_file(filename = local_path, overwrite = FALSE)
+
   utils::download.file(
     url = url,
     destfile = local_path
