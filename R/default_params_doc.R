@@ -28,6 +28,8 @@
 #' @param protein_sequence a protein sequence, for example \code{FAMILYVW}
 #' @param temp_fasta_filename name for a temporary FASTA file,
 #'   which will be deleted automatically
+#' @param temp_local_file path to the temporary file to store the URL to.
+#'   This file will be deleted afterwards.
 #' @param temp_xls_filename name for a temporary \code{xls} file,
 #'   which will be deleted automatically
 #' @param verbose set to TRUE for more output
@@ -51,6 +53,7 @@ default_params_doc <- function(
   peptides,
   protein_sequence,
   temp_fasta_filename,
+  temp_local_file,
   temp_xls_filename,
   verbose,
   xls_filename

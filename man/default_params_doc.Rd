@@ -20,6 +20,7 @@ default_params_doc(
   peptides,
   protein_sequence,
   temp_fasta_filename,
+  temp_local_file,
   temp_xls_filename,
   verbose,
   xls_filename
@@ -67,6 +68,9 @@ NetMHCIIpan version}
 
 \item{temp_fasta_filename}{name for a temporary FASTA file,
 which will be deleted automatically}
+
+\item{temp_local_file}{path to the temporary file to store the URL to.
+This file will be deleted afterwards.}
 
 \item{temp_xls_filename}{name for a temporary \code{xls} file,
 which will be deleted automatically}

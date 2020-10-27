@@ -5,23 +5,25 @@
 #' @export
 is_url_valid <- function(
   download_url = get_netmhc2pan_url(),
-  netmhc2pan_archive_filename = get_netmhc2pan_archive_filename()
+  verbose = FALSE,
+  netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
+  temp_local_file = tempfile(pattern = "netmhc2pan_is_url_valid_")
 ) {
-  url <- file.path(download_url, netmhc2pan_archive_filename)
-  local_path <- tempfile()
   is_valid <- FALSE
   tryCatch({
       suppressWarnings(
-        utils::download.file(
-          url = url,
-          destfile = local_path,
-          quiet = TRUE
+        check_download_url(
+          download_url = download_url,
+          verbose = verbose,
+          netmhc2pan_archive_filename = netmhc2pan_archive_filename,
+          temp_local_file = temp_local_file
         )
       )
       is_valid <- TRUE
-      file.remove(local_path)
     },
-    error = function(e) {} # nolint ignore error
+    error = function(e) {
+      if (verbose) message("Error message: '", e, "'")
+    }
   )
   is_valid
 }
