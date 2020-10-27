@@ -69,7 +69,7 @@ test_that("abuse", {
       fasta_filename = fasta_filename,
       alleles = "HLA-DPA10105-DPB112501"
     ),
-    "'fasta_filename' is not a valid FASTA file"
+    "no line starting with a > character found"
   )
 
 

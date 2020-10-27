@@ -3,6 +3,7 @@ test_that("use", {
 })
 
 test_that("be verbose", {
+  if (!is_on_travis()) return()
   expect_message(
     is_url_valid(verbose = TRUE),
     "download_url"
