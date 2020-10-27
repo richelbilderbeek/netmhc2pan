@@ -39,6 +39,7 @@ after_success:
   - # No local files created
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
+  - Rscript scripts/issue_3.R
   # Download thesis
   - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
