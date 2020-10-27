@@ -7,5 +7,5 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_netmhc2pan_url <- function() {
-  "https://services.healthtech.dtu.dk/download/f219f0b1-70c0-495b-94b1-64c4cb356919" # nolint indeed a long URL
+  "https://services.healthtech.dtu.dk/download/504735c5-6875-402a-9962-34fc0f6568ee" # nolint indeed a long URL
 }
