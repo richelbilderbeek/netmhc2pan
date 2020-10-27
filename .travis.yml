@@ -32,10 +32,10 @@ before_script:
   - sudo pip install proselint
 
 after_success:
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'
-  - Rscript -e 'goodpractice::gp()'
-  - proselint *.md | egrep -v "typography\.symbols\.curly_quotes"
+  - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then Rscript -e 'covr::codecov()'; fi
+  - if [[ "$INSTALL_NETMHC2PAN" == true ]]; then Rscript -e 'goodpractice::gp()'; fi
+  - if [[ "$INSTALL_NETMHC2PAN" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
+  - if [[ "$INSTALL_NETMHC2PAN" == false ]]; then proselint *.md | egrep -v "typography\.symbols\.curly_quotes"; fi
   - # No local files created
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
