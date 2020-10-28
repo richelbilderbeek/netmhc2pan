@@ -23,9 +23,10 @@ install_netmhc2pan_bin <- function(
     stop("NetMHCIIpan binary is already installed at '", bin_path, "'")
   }
 
-  url <- file.path(download_url, netmhc2pan_archive_filename)
-  netmhc2pan_tarfile_path <- file.path(netmhc2pan_folder_name, netmhc2pan_archive_filename)
-
+  netmhc2pan_tarfile_path <- file.path(
+    netmhc2pan_folder_name,
+    netmhc2pan_archive_filename
+  )
   dir.create(
     path = netmhc2pan_folder_name,
     showWarnings = FALSE,
@@ -42,14 +43,11 @@ install_netmhc2pan_bin <- function(
     netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
     temp_local_file = temp_local_file
   )
-  testit::assert(file.exists(netmhc2pan_tarfile_path))
-  # Linux has a tar file
-  utils::untar(
-    tarfile = netmhc2pan_tarfile_path,
-    exdir = path.expand(netmhc2pan_folder_name)
+  netmhc2pan::install_netmhc2pan_bin_from_file(
+    netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
+    verbose = verbose,
+    netmhc2pan_archive_filename = netmhc2pan_archive_filename,
+    netmhc2pan_folder_name = netmhc2pan_folder_name
   )
-  if (!file.exists(bin_path)) {
-    stop("NetMHCIIpan binary not found at path '", bin_path, "'")
-  }
   testthat::expect_true(file.exists(bin_path))
 }
