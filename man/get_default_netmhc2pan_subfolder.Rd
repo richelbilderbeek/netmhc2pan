@@ -5,10 +5,18 @@
 \title{Get the full path to the NetMHC2pan sub-folder}
 \usage{
 get_default_netmhc2pan_subfolder(
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   netmhc2pan_version = get_default_netmhc2pan_version()
 )
 }
 \arguments{
+\item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+From this location, a subfolder for NetMHCIIpan is created.
+Use \link{get_default_netmhc2pan_folder} to see the location
+of the default NetMHCIIpan folder.
+Use \link{get_default_netmhc2pan_subfolder} to see the location
+of the default NetMHCIIpan subfolder.}
+
 \item{netmhc2pan_version}{the NetMHCIIpan version,
 for example \code{3.2}.
 Use \link{get_default_netmhc2pan_version} to get the default

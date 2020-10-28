@@ -6,6 +6,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_netmhc2pan_subfolder <- function( # nolint indeed a long function name
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   netmhc2pan_version = get_default_netmhc2pan_version()
 ) { # nolint indeed a long name, I keep it for the sake of readability
   file.path(
@@ -13,7 +14,7 @@ get_default_netmhc2pan_subfolder <- function( # nolint indeed a long function na
     # The Travis build script sources this function before installing
     # netmhc2pan. sourcing this will then result in a 'cannot find
     # package netmhc2pan' error
-    get_default_netmhc2pan_folder(),
+    netmhc2pan_folder_name,
     paste0("netMHCIIpan-", netmhc2pan_version)
   )
 }

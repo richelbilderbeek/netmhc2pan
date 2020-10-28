@@ -2,10 +2,11 @@ test_that("install NetMHCIIpan to a custom location", {
 
   if (!is_on_travis()) return()
   if (!is_url_valid()) return()
+  skip("Issue #3")
 
   netmhc2pan_folder_name <- tempfile(pattern = "netmhc2pan_")
   expect_silent(
-    install_netmhc2pan_from_file(
+    install_netmhc2pan_bin_from_file(
       netmhc2pan_folder_name = netmhc2pan_folder_name
     )
   )

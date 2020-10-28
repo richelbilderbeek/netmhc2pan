@@ -4,7 +4,14 @@
 \alias{get_default_netmhc2pan_bin_path}
 \title{Get the full path to the default NetMHC2pan binary}
 \usage{
-get_default_netmhc2pan_bin_path()
+get_default_netmhc2pan_bin_path(
+  netmhc2pan_subfolder = get_default_netmhc2pan_subfolder()
+)
+}
+\arguments{
+\item{netmhc2pan_subfolder}{the subfolder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_subfolder} to see the location
+of the default NetMHCIIpan subfolder}
 }
 \value{
 the full path to the default NetMHC2pan binary

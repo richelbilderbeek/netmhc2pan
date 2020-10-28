@@ -8,8 +8,11 @@ uninstall_netmhc2pan(netmhc2pan_folder_name = get_default_netmhc2pan_folder())
 }
 \arguments{
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+From this location, a subfolder for NetMHCIIpan is created.
 Use \link{get_default_netmhc2pan_folder} to see the location
-of the default NetMHCIIpan folder}
+of the default NetMHCIIpan folder.
+Use \link{get_default_netmhc2pan_subfolder} to see the location
+of the default NetMHCIIpan subfolder.}
 }
 \description{
 Uninstall NetMHCIIpan

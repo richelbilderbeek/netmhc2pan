@@ -11,11 +11,10 @@ test_that("abuse", {
   if (!is_on_travis()) return()
   if (!is_url_valid()) return()
 
-  netmhc2pan_folder_name <- tempfile()
-  if (dir.exists(netmhc2pan_folder_name)) {
-    unlink(netmhc2pan_folder_name, recursive = TRUE)
-  }
-  expect_true(!dir.exists(netmhc2pan_folder_name))
+  netmhc2pan_folder_name <- tempfile(
+    pattern = "netmhc2pan_install_netmhc2pan_bin_"
+  )
+  expect_false(dir.exists(netmhc2pan_folder_name))
 
   # Invalid URL
   expect_error(

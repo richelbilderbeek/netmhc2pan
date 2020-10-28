@@ -14,6 +14,8 @@ default_params_doc(
   mhc_haplotype,
   netmhc2pan_archive_filename,
   netmhc2pan_folder_name,
+  netmhc2pan_subfolder,
+  netmhc2pan_tarfile_path,
   netmhc2pan_version,
   os,
   peptide_length,
@@ -49,8 +51,18 @@ which is used in installation of NetMHC2pan.
 Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
+From this location, a subfolder for NetMHCIIpan is created.
 Use \link{get_default_netmhc2pan_folder} to see the location
-of the default NetMHCIIpan folder}
+of the default NetMHCIIpan folder.
+Use \link{get_default_netmhc2pan_subfolder} to see the location
+of the default NetMHCIIpan subfolder.}
+
+\item{netmhc2pan_subfolder}{the subfolder (to be) used by NetMHCIIpan.
+Use \link{get_default_netmhc2pan_subfolder} to see the location
+of the default NetMHCIIpan subfolder}
+
+\item{netmhc2pan_tarfile_path}{path to where the NetMHC2pan
+tarball file will be saved to}
 
 \item{netmhc2pan_version}{the NetMHCIIpan version,
 for example \code{3.2}.
