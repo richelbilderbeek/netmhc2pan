@@ -1,9 +1,31 @@
-test_that("use", {
-  if (is_netmhc2pan_bin_installed()) return()
+test_that("install must be silent by default", {
   if (!is_url_valid()) return()
 
-  expect_silent(install_netmhc2pan_bin())
-  expect_message(install_netmhc2pan_bin(verbose = TRUE))
+  netmhc2pan_folder_name <- tempfile(
+    pattern = "netmhc2pan_install_netmhc2pan_bin_"
+  )
+  expect_false(dir.exists(netmhc2pan_folder_name))
+  expect_silent(
+    install_netmhc2pan_bin(
+      netmhc2pan_folder_name = netmhc2pan_folder_name
+    )
+  )
+})
+
+test_that("verbose install must produce", {
+  if (!is_url_valid()) return()
+
+  netmhc2pan_folder_name <- tempfile(
+    pattern = "netmhc2pan_install_netmhc2pan_bin_"
+  )
+  expect_false(dir.exists(netmhc2pan_folder_name))
+
+  expect_message(
+    install_netmhc2pan_bin(
+      netmhc2pan_folder_name = netmhc2pan_folder_name,
+      verbose = TRUE
+    )
+  )
 })
 
 test_that("abuse", {
