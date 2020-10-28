@@ -53,15 +53,15 @@ check_netmhc2pan_installation()
 
 Request a new download link
 
-#### `cannot open URL`
+#### `cannot open URL 'https://services.healthtech.dtu.dk/download/[number]/netMHCIIpan-3.2.Linux.tar.gz'`
 
 From a fresh download link, you *can* download the file, 
 yet not install using the `install_netmhc2pan` function.
 
-In that case, use the `install_netmhc2pan_from_file` function:
+In that case, use the `install_netmhc2pan_bin_from_file` function:
  
 ```
-install_netmhc2pan_from_file("netMHCIIpan-3.2.Linux.tar.gz")
+install_netmhc2pan_bin_from_file("netMHCIIpan-3.2.Linux.tar.gz")
 ```
 
 ## Usage

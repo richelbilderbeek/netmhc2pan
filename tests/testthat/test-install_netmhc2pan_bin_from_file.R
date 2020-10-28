@@ -1,4 +1,4 @@
-test_that("install NetMHCIIpan to a custom location", {
+test_that("install NetMHCIIpan binary to a custom location", {
 
   if (!is_on_travis()) return()
   if (!is_url_valid()) return()
