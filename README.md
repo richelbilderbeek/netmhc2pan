@@ -47,7 +47,22 @@ the goal of producing a helpful error message:
 check_netmhc2pan_installation()
 ```
 
+### Installation troubleshooting
 
+#### URL is expired
+
+Request a new download link
+
+#### `cannot open URL`
+
+From a fresh download link, you *can* download the file, 
+yet not install using the `install_netmhc2pan` function.
+
+In that case, use the `install_netmhc2pan_from_file` function:
+ 
+```
+install_netmhc2pan_from_file("netMHCIIpan-3.2.Linux.tar.gz")
+```
 
 ## Usage
 
