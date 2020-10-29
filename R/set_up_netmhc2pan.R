@@ -8,8 +8,12 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 set_up_netmhc2pan <- function(
-  netmhc2pan_folder_name = get_default_netmhc2pan_folder()
+  netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
+  verbose = FALSE
 ) {
+  if (verbose) {
+    message("Set up NetMHCIIpan in folder '", netmhc2pan_folder_name, "'")
+  }
   bin_path <- file.path(
     netmhc2pan_folder_name,
     basename(get_default_netmhc2pan_subfolder()),

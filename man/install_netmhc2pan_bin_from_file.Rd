@@ -5,15 +5,15 @@
 \title{Install the NetMHCIIpan binary to a local folder}
 \usage{
 install_netmhc2pan_bin_from_file(
-  netmhc2pan_tarfile_path,
+  netmhc2pan_bin_tarfile_path,
   verbose = FALSE,
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 )
 }
 \arguments{
-\item{netmhc2pan_tarfile_path}{path to where the NetMHC2pan
-tarball file will be saved to}
+\item{netmhc2pan_bin_tarfile_path}{path of the
+NetMHCIIpan binary tarball file}
 
 \item{verbose}{set to TRUE for more output}
 
@@ -34,11 +34,6 @@ Nothing
 }
 \description{
 Install the NetMHCIIpan binary to a local folder
-}
-\examples{
-\dontrun{
-  install_netmhc2pan_bin()
-}
 }
 \author{
 Richèl J.C. Bilderbeek

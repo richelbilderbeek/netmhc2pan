@@ -8,14 +8,16 @@ documentation.}
 default_params_doc(
   alleles,
   do_filter,
-  download_url,
   fasta_filename,
   folder_name,
   mhc_haplotype,
   netmhc2pan_archive_filename,
+  netmhc2pan_bin_tarfile_path,
+  netmhc2pan_bin_url,
+  netmhc2pan_data_tarfile_path,
+  netmhc2pan_data_url,
   netmhc2pan_folder_name,
   netmhc2pan_subfolder,
-  netmhc2pan_tarfile_path,
   netmhc2pan_version,
   os,
   peptide_length,
@@ -34,9 +36,6 @@ See \link{get_netmhc2pan_alleles} for a full list}
 
 \item{do_filter}{set to TRUE if the results of NetMHCIIpan must be filtered}
 
-\item{download_url}{NetMHCIIpan download URL, for example,
-\code{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}}
-
 \item{fasta_filename}{the name of a FASTA file with protein sequences}
 
 \item{folder_name}{the folder to install NetMHCIIpan, which is
@@ -50,6 +49,24 @@ filename, for example \code{netMHCIIpan-3.2.Linux.tar.gz},
 which is used in installation of NetMHC2pan.
 Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 
+\item{netmhc2pan_bin_tarfile_path}{path of the
+NetMHCIIpan binary tarball file}
+
+\item{netmhc2pan_bin_url}{URL to download the
+NetMHCIIpan binary tarball file from,
+similar to, for example,
+\url{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}.
+Use \link{get_netmhc2pan_bin_url} to get the default URL.}
+
+\item{netmhc2pan_data_tarfile_path}{path of the
+NetMHCIIpan data tarball file}
+
+\item{netmhc2pan_data_url}{URL to download the
+NetMHCIIpan data tarball file from,
+similar to, for example,
+\url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
+Use \link{get_netmhc2pan_data_url} to get the default URL.}
+
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
 From this location, a subfolder for NetMHCIIpan is created.
 Use \link{get_default_netmhc2pan_folder} to see the location
@@ -60,9 +77,6 @@ of the default NetMHCIIpan subfolder.}
 \item{netmhc2pan_subfolder}{the subfolder (to be) used by NetMHCIIpan.
 Use \link{get_default_netmhc2pan_subfolder} to see the location
 of the default NetMHCIIpan subfolder}
-
-\item{netmhc2pan_tarfile_path}{path to where the NetMHC2pan
-tarball file will be saved to}
 
 \item{netmhc2pan_version}{the NetMHCIIpan version,
 for example \code{3.2}.

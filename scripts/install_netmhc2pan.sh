@@ -15,7 +15,7 @@ cat R/capitalize_first_char.R >> tempscript.R
 cat R/get_default_netmhc2pan_bin_path.R >> tempscript.R
 cat R/get_default_netmhc2pan_folder.R >> tempscript.R
 cat R/get_default_netmhc2pan_subfolder.R >> tempscript.R
-cat R/get_netmhc2pan_url.R >> tempscript.R
+cat R/get_netmhc2pan_bin_url.R >> tempscript.R
 cat R/is_netmhc2pan_installed.R >> tempscript.R
 echo "install_netmhc2pan()" >> tempscript.R
 sed -i'.orginal' "s/netmhc2pan:://g" tempscript.R

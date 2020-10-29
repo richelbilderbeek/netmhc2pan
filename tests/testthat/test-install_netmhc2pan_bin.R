@@ -44,7 +44,7 @@ test_that("abuse", {
   expect_error(
     install_netmhc2pan_bin(
       netmhc2pan_folder_name = netmhc2pan_folder_name,
-      download_url = "nonsense"
+      netmhc2pan_bin_url = "nonsense"
     ),
     "'download_url' is invalid"
   )

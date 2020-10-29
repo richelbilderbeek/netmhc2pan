@@ -1,4 +1,6 @@
-#' Install the NetMHCIIpan binary to a local folder
+#' Download the NetMHCIIpan binary
+#'
+#' Download the NetMHCIIpan binary tarball file
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
@@ -7,41 +9,44 @@
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
-download_netmhc2pan <- function(
-  download_url = get_netmhc2pan_url(),
+download_netmhc2pan_bin <- function(
+  netmhc2pan_bin_url = get_netmhc2pan_bin_url(),
+  netmhc2pan_bin_tarfile_path = get_default_netmhc2pan_bin_tarfile_path(),
   verbose = FALSE,
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
-  netmhc2pan_tarfile_path = get_default_netmhc2pan_tarfile_path(),
   temp_local_file = tempfile(pattern = "netmhc2pan_download_netmhc2pan_")
 ) {
-  netmhc2pan::check_download_url(
-    download_url = download_url,
+  netmhc2pan::check_netmhc2pan_bin_url(
+    netmhc2pan_bin_url = netmhc2pan_bin_url,
     verbose = verbose,
     netmhc2pan_archive_filename = netmhc2pan_archive_filename,
     temp_local_file = temp_local_file
   )
 
-  url <- file.path(download_url, netmhc2pan_archive_filename)
+  url <- file.path(netmhc2pan_bin_url, netmhc2pan_archive_filename)
 
   if (verbose) {
     message(
-      "Downloading NetMHCIIpan from ", download_url,
-      " (full URL is ", url, ") to ", netmhc2pan_tarfile_path
+      "Downloading NetMHCIIpan from ", netmhc2pan_bin_url,
+      " (full URL is ", url, ") to ", netmhc2pan_bin_tarfile_path
     )
   }
   dir.create(
-    path = dirname(netmhc2pan_tarfile_path),
+    path = dirname(netmhc2pan_bin_tarfile_path),
     showWarnings = FALSE,
     recursive = TRUE
   )
 
-  netmhc2pan::check_can_create_file(filename = netmhc2pan_tarfile_path, overwrite = FALSE)
+  netmhc2pan::check_can_create_file(
+    filename = netmhc2pan_bin_tarfile_path,
+    overwrite = FALSE
+  )
 
   tryCatch(
     suppressWarnings(
       utils::download.file(
         url = url,
-        destfile = netmhc2pan_tarfile_path,
+        destfile = netmhc2pan_bin_tarfile_path,
         quiet = !verbose
       )
     ),
@@ -51,7 +56,7 @@ download_netmhc2pan <- function(
         "[:digit:]\\.[:digit:]"
       )[1, 1]
       stop(
-        "'download_url' is invalid.\n",
+        "'netmhc2pan_bin_url' is invalid.\n",
         "URL: ", url, "\n",
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
@@ -69,5 +74,5 @@ download_netmhc2pan <- function(
       )
     }
   )
-  testit::assert(file.exists(netmhc2pan_tarfile_path))
+  testit::assert(file.exists(netmhc2pan_bin_tarfile_path))
 }

@@ -4,7 +4,7 @@
 #' @inheritParams default_params_doc
 #' @export
 is_url_valid <- function(
-  download_url = get_netmhc2pan_url(),
+  netmhc2pan_bin_url = get_netmhc2pan_bin_url(),
   verbose = FALSE,
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   temp_local_file = tempfile(pattern = "netmhc2pan_is_url_valid_")
@@ -12,8 +12,8 @@ is_url_valid <- function(
   is_valid <- FALSE
   tryCatch({
       suppressWarnings(
-        check_download_url(
-          download_url = download_url,
+        check_netmhc2pan_bin_url(
+          netmhc2pan_bin_url = netmhc2pan_bin_url,
           verbose = verbose,
           netmhc2pan_archive_filename = netmhc2pan_archive_filename,
           temp_local_file = temp_local_file

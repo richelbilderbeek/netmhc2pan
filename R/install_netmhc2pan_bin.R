@@ -1,4 +1,6 @@
 #' Install the NetMHCIIpan binary to a local folder
+#'
+#' Install the NetMHCIIpan binary to a local folder.
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
@@ -8,7 +10,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_bin <- function(
-  download_url = get_netmhc2pan_url(),
+  netmhc2pan_bin_url = get_netmhc2pan_bin_url(),
   verbose = FALSE,
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
@@ -36,11 +38,11 @@ install_netmhc2pan_bin <- function(
     filename = netmhc2pan_tarfile_path,
     overwrite = FALSE
   )
-  netmhc2pan::download_netmhc2pan(
-    download_url = download_url,
+  netmhc2pan::download_netmhc2pan_bin(
+    netmhc2pan_bin_url = netmhc2pan_bin_url,
+    netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
     verbose = verbose,
     netmhc2pan_archive_filename = netmhc2pan_archive_filename,
-    netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
     temp_local_file = temp_local_file
   )
   netmhc2pan::install_netmhc2pan_bin_from_file(

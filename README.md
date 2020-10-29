@@ -40,13 +40,6 @@ and expires after four hours.
 install_netmhc2pan("https://services.healthtech.dtu.dk/download/fb4dee93-ddbb-4639-ab21-45fdfd0ed23e")
 ```
 
-The installation of `netmhc2pan` is checked, with
-the goal of producing a helpful error message:
-
-```{r}
-check_netmhc2pan_installation()
-```
-
 ### Installation troubleshooting
 
 #### URL is expired
@@ -62,6 +55,34 @@ In that case, use the `install_netmhc2pan_bin_from_file` function:
  
 ```
 install_netmhc2pan_bin_from_file("netMHCIIpan-3.2.Linux.tar.gz")
+```
+
+This function assumes that the file `netMHCIIpan-3.2.Linux.tar.gz` is in the working
+directory.
+
+After this, install like normal:
+
+```
+install_netmhc2pan()
+```
+
+#### `cannot open URL 'https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz'`
+
+This happens when the university website is down.
+
+In that case, use the `install_netmhc2pan_data_from_file` function:
+ 
+```
+install_netmhc2pan_data_from_file("data.Linux.tar.gz")
+```
+
+This function assumes that the file `data.Linux.tar.gz` is in the working
+directory.
+
+After this, install like normal:
+
+```
+install_netmhc2pan()
 ```
 
 ## Usage
