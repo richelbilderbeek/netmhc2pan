@@ -6,5 +6,5 @@ get_netmhc2pan_url <- function() {
   message(
     "'get_netmhc2pan_url' is deprecated, use 'get_netmhc2pan_bin_url' instead"
   )
-  netmhc2an::get_netmhc2pan_bin_url()
+  netmhc2pan::get_netmhc2pan_bin_url()
 }
