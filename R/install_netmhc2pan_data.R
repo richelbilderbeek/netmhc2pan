@@ -32,7 +32,6 @@ install_netmhc2pan_data <- function(
     basename(get_default_netmhc2pan_subfolder()),
     "data.Linux.tar.gz"
   )
-  netmhc2pan_data_tarfile_path <- local_path
 
   dir.create(dirname(local_path), showWarnings = FALSE, recursive = TRUE)
   netmhc2pan::check_can_create_file(filename = local_path, overwrite = FALSE)

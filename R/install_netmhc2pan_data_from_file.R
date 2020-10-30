@@ -12,7 +12,7 @@
 #' @return Nothing
 #' @author Richèl J.C. Bilderbeek
 #' @export
-install_netmhc2pan_data_from_file <- function(
+install_netmhc2pan_data_from_file <- function( # nolint long function name indeed
   netmhc2pan_data_tarfile_path,
   netmhc2pan_folder_name = rappdirs::user_data_dir(),
   verbose = FALSE
@@ -24,7 +24,7 @@ install_netmhc2pan_data_from_file <- function(
     "data"
   )
   if (file.exists(data_folder_path)) {
-    stop("NetMHCIIpan data is already installed at '", data_folder_path ,"'")
+    stop("NetMHCIIpan data is already installed at '", data_folder_path, "'")
   }
 
   local_path <- file.path(
