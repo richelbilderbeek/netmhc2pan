@@ -4,8 +4,12 @@ test_that("use", {
 
 test_that("be verbose", {
   if (!is_on_travis()) return()
+
   expect_message(
-    is_url_valid(verbose = TRUE),
-    "download_url"
+    is_url_valid(
+      netmhc2pan_bin_url = "invalid",
+      verbose = TRUE
+    ),
+    "netmhc2pan_bin_url"
   )
 })

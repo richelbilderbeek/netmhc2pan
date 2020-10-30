@@ -14,10 +14,10 @@ check_netmhc2pan_bin_url <- function(
   url <- file.path(netmhc2pan_bin_url, netmhc2pan_archive_filename)
   if (verbose) {
     message(
-      "'netmhc2pan_bin_url': ", netmhc2pan_bin_url, " \n",
-      "'netmhc2pan_archive_filename': ", netmhc2pan_archive_filename, " \n",
-      "'temp_local_file': ", temp_local_file, " \n",
-      "'url': ", url
+      "netmhc2pan_bin_url: ", netmhc2pan_bin_url, " \n",
+      "netmhc2pan_archive_filename: ", netmhc2pan_archive_filename, " \n",
+      "temp_local_file: ", temp_local_file, " \n",
+      "url: ", url
     )
   }
   netmhc2pan::check_can_create_file(

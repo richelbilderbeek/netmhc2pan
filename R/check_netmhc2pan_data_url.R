@@ -12,8 +12,8 @@ check_netmhc2pan_data_url <- function(
 ) {
   if (verbose) {
     message(
-      "'netmhc2pan_data_url': ", netmhc2pan_data_url, " \n",
-      "'temp_local_file': ", temp_local_file, " \n"
+      "netmhc2pan_data_url: ", netmhc2pan_data_url, " \n",
+      "temp_local_file: ", temp_local_file, " \n"
     )
   }
   netmhc2pan::check_can_create_file(
