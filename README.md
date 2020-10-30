@@ -68,7 +68,7 @@ install_netmhc2pan()
 
 #### `cannot open URL 'https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz'`
 
-This happens when the university website is down.
+This happens when the university website is down (yes, this has happened!).
 
 In that case, use the `install_netmhc2pan_data_from_file` function:
  
@@ -168,10 +168,10 @@ protein, as it is in the top 6.5% of best binders.
 works on. Currently, only Linux is supported:
 
 Operating system|Supported by NetMHCIIpan|Supported by `netmhc2pan`
----|---|---
-Darwin|Y|N
-Linux|Y|Y
-Windows|N|N
+----------------|------------------------|-------------------------
+Darwin          |Y                       |N
+Linux           |Y                       |Y
+Windows         |N                       |N
 
 ### How to solve `Can't locate Env.pm in @INC`?
 
@@ -182,6 +182,15 @@ Install the Perl `Env` package with:
 ```
 
 See notes at [this Issue](https://github.com/richelbilderbeek/netmhc2pan/issues/1).
+
+### Are there similar packages?
+
+These are the ones I use:
+
+ * [mhcnuggetsr](https://github.com/richelbilderbeek/mhcnuggetsr): predicts
+   IC50 values for MHC-I and MHC-II haplotypes
+ * [epitope-prediction](https://github.com/jtextor/epitope-prediction): predicts
+   IC50 values for MHC-I haplotypes
 
 ## References
 
