@@ -42,7 +42,7 @@ the goal of producing a helpful error message:
 ```{r}
 tryCatch(
   check_netmhc2pan_installation(),
-  error = function(e) print(e)
+  error = function(e) message(e)
 )
 ```
 
@@ -52,7 +52,7 @@ We work on a protein:
 fasta_filename <- system.file(
   "extdata", "example.fasta", package = "netmhc2pan"
 )
-cat(readLines(fasta_filename), sep = "\n")
+message(readLines(fasta_filename), sep = "\n")
 ```
 
 We need to pick an allele. There are many alleles:

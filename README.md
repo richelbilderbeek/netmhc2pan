@@ -98,7 +98,7 @@ fasta_filename <- system.file(
 This is how to content of such a FASTA file looks like:
 
 ```{r}
-cat(readLines(fasta_filename), sep = "\n")
+message(readLines(fasta_filename), sep = "\n")
 ```
 
 ```

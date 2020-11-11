@@ -7,7 +7,7 @@
 netmhc2pan_report <- function(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  kat <- function(x) cat(x, sep = "\n")
+  kat <- function(x) message(x, sep = "\n")
   kat("***************")
   kat("* NetMHC2pan *")
   kat("***************")

@@ -1,3 +1,3 @@
 test_that("use", {
-  expect_output(netmhc2pan_report())
+  expect_message(netmhc2pan_report())
 })
