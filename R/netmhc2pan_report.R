@@ -23,5 +23,5 @@ netmhc2pan_report <- function(
   kat("***************")
   kat("* sessionInfo *")
   kat("***************")
-  print(utils::sessionInfo())
+  message(utils::sessionInfo())
 }
