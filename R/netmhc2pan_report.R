@@ -20,8 +20,8 @@ netmhc2pan_report <- function(
   kat(paste0("bin installed: ", netmhc2pan::is_netmhc2pan_bin_installed(f)))
   kat(paste0("data installed: ", netmhc2pan::is_netmhc2pan_data_installed(f)))
   kat(paste0("is set up: ", netmhc2pan::is_netmhc2pan_set_up(f)))
-  kat("***************")
-  kat("* sessionInfo *")
-  kat("***************")
-  message(utils::sessionInfo())
+  kat("****************")
+  kat("* session info *")
+  kat("****************")
+  message(paste0(devtools::session_info(), collapse = "\n"))
 }
