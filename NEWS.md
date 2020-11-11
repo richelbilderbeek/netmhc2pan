@@ -11,6 +11,7 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * Added `verbose` argument to install functions
+  * Process CRAN feedback, thanks Gregor Seyer
 
 ### BUG FIXES
 
