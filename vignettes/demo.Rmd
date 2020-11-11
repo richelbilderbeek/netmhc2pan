@@ -43,7 +43,7 @@ the goal of producing a helpful error message:
 ```{r}
 tryCatch(
   check_netmhc2pan_installation(),
-  error = function(e) message(e)
+  error = function(e) print(e)
 )
 ```
 
