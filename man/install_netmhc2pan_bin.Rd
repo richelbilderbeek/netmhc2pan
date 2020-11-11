@@ -43,7 +43,7 @@ Nothing
 Install the NetMHCIIpan binary to a local folder.
 }
 \examples{
-\dontrun{
+\donttest{
   install_netmhc2pan_bin()
 }
 }

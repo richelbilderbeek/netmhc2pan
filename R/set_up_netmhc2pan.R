@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   set_up_netmhc2pan()
 #' }
 #' @author Richèl J.C. Bilderbeek

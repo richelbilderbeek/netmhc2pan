@@ -5,8 +5,11 @@ Authors@R: c(
     person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")),
     person("Byungkuk", "Min", role = "ctb"))
 Maintainer: Richèl J.C. Bilderbeek <richel@richelbilderbeek.nl>
-Description: 'NetMHCIIpan' is a tool to predict the
-    binding strength of a short peptide to an MHC-II complex.
+Description: The field of immunology benefits from software that can
+    predict which peptide sequences trigger an immune response.
+    'NetMHCIIpan' is a such a tool: it predicts the
+    binding strength of a short peptide to a Major Histocompatibility
+    Complex class II (MHC-II) molecule.
     'NetMHCIIpan' can be used from a web server at 
     <https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2/>
     or from the command-line, using a local installation. This package

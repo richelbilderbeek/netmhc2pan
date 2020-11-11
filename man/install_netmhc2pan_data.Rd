@@ -38,7 +38,7 @@ This data can be downloaded from
 without filling in a contact form.
 }
 \examples{
-\dontrun{
+\donttest{
   install_netmhc2pan_data()
 }
 }

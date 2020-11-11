@@ -4,7 +4,7 @@
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'   install_netmhc2pan_bin()
 #' }
 #' @author Richèl J.C. Bilderbeek

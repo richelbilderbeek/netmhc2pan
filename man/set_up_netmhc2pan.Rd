@@ -26,7 +26,7 @@ Nothing
 Install the NetMHCIIpan binary to a local folder
 }
 \examples{
-\dontrun{
+\donttest{
   set_up_netmhc2pan()
 }
 }

@@ -39,7 +39,7 @@ Nothing
 Download the NetMHCIIpan binary tarball file
 }
 \examples{
-\dontrun{
+\donttest{
   install_netmhc2pan_bin()
 }
 }

@@ -61,7 +61,7 @@ These are three steps:
 }
 }
 \examples{
-\dontrun{
+\donttest{
   install_netmhc2pan()
 }
 }

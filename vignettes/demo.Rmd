@@ -1,5 +1,5 @@
 ---
-title: "Demo"
+title: "Binding strength prediction"
 author: "Richel J.C. Bilderbeek"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -16,10 +16,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-This demo shows how to determine which parts of proteins
-bind strongly to MHC2 alleles. NetMHCIIpan is a tool that
-estimates the binding strength of protein epitopes
-to MHC2 alleles. `netmhc2pan` allows to do so from R.
+This demo shows how to predict the binding strength
+of peptides to different Major Histocompatibility
+Class II (MHC-II) haplotypes. 
+
+First load the library:
 
 ```{r}
 library(netmhc2pan)
@@ -46,38 +47,61 @@ tryCatch(
 )
 ```
 
-We work on a protein:
+Now, lets use the sequence of an example protein:
 
 ```{r}
-fasta_filename <- system.file(
-  "extdata", "example.fasta", package = "netmhc2pan"
-)
-message(readLines(fasta_filename), sep = "\n")
+sequence <- "FAMILYVWFAMILYV"
+message(sequence)
 ```
 
-We need to pick an allele. There are many alleles:
+Now, we need to select an MHC-II haplotype. There are many alleles,
+so first we count the number of haplotypes:
 
 ```{r}
 if (is_netmhc2pan_installed()) {
-  all_alleles <- get_netmhc2pan_alleles()
-  length(all_alleles)
+  mhc_haplotypes <- get_netmhc2pan_alleles()
+  length(mhc_haplotypes)
 }
 ```
 
-We simply pick the first two alleles:
+Now, we simply pick the first haplotype:
 
 ```{r}
 if (is_netmhc2pan_installed()) {
-  alleles <- all_alleles[1:2]
+  mhc_haplotype <- mhc_haplotypes[1]
 }
 ```
 
+Now, we can predict how strong our peptide binds to our allele, by obtaining the Inhibitory Concentration 50% (IC50) 
+value in nanomolars (nM), of which lower values indicate stronger
+binders:
+
 ```{r}
 if (is_netmhc2pan_installed()) {
-  bindings <- run_netmhc2pan(
-    fasta_filename = fasta_filename,
-    alleles = alleles
+  knitr::kable(
+    predict_ic50(
+      peptides = sequence,
+      mhc_haplotype = mhc_haplotype
+    )
   )
-  knitr::kable(bindings)
+  
 }
 ```
+To investigate if whole a protein is immunogenic, we need to
+obtain the IC50 values for all its cleaved products.
+As the MHC-II molecules prefers 13 amino acids residues,
+we can get the IC50 values for each residue as such:
+
+```{r}
+if (is_netmhc2pan_installed()) {
+  knitr::kable(
+    predict_ic50s(
+      protein_sequence = "AVLWAGVAFLAFLQLTALVLNLL",
+      peptide_length = 13,
+      mhc_haplotype = mhc_haplotype
+    )
+  )
+  
+}
+```
+
