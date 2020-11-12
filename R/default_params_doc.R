@@ -17,7 +17,7 @@
 #' @param netmhc2pan_bin_url URL to download the
 #'   NetMHCIIpan binary tarball file from,
 #'   similar to, for example,
-#'   \url{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}.
+#'   \code{https://www.cbs.dtu.dk/download/12345678-1234-1234-1234-123456789ABC}.
 #'   Use \link{get_netmhc2pan_bin_url} to get the default URL.
 #' @param netmhc2pan_data_tarfile_path path of the
 #'   NetMHCIIpan data tarball file
