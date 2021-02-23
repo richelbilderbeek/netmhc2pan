@@ -41,12 +41,12 @@ after_success:
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
   - Rscript scripts/issue_3.R
   # Download thesis
-  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
+  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
 
 after_failure:
   - Rscript -e 'remotes::install_github("richelbilderbeek/netmhc2pan")'
   - Rscript -e 'netmhc2pan::netmhc2pan_report()'
   - ls
   # Download thesis
-  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
+  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
 
