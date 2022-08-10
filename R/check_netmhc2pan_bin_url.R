@@ -38,11 +38,8 @@ check_netmhc2pan_bin_url <- function(
         "URL: ", url, "\n",
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
-        paste0(
-          "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-",
-          get_default_netmhc2pan_version(),
-          "\n"
-        ),
+        "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2",
+        "(under the Downloads tab, use version 3.2)\n",
         "\n",
         "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
         "\n",
