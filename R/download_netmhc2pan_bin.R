@@ -61,7 +61,7 @@ download_netmhc2pan_bin <- function(
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
         "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 \n",
-        "(under the Downloads tab, use version 3.2)"
+        "(under the Downloads tab, use version 3.2)\n",
         "\n",
         "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
         "\n",
