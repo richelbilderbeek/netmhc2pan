@@ -18,10 +18,10 @@ R package for [NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMH
 
 ## Install
 
-Use `usethis` (or `devtools`) to install the `netmhc2pan` package:
+Use `remotes` to install the `netmhc2pan` package:
 
 ```{r}
-usethis::install_github("richelbilderbeek/netmhc2pan")
+remotes::install_github("richelbilderbeek/netmhc2pan")
 ```
 
 Load the `netmhc2pan` library:
@@ -33,7 +33,7 @@ library(netmhc2pan)
 Install NetMHCIIpan to a default folder using `netmhc2pan` and a download URL.
 The download URL can be obtained from the 
 NetMHCIIpan website at
-[https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2)
+[https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) (at the 'Downloads' tab)
 and expires after four hours.
 
 ```{r}
