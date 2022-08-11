@@ -1,4 +1,3 @@
-
 test_that("set_up_netmhc2pan", {
 
   if (!is_on_travis()) return()

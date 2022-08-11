@@ -36,11 +36,30 @@ install_netmhc2pan_data <- function(
   dir.create(dirname(local_path), showWarnings = FALSE, recursive = TRUE)
   netmhc2pan::check_can_create_file(filename = local_path, overwrite = FALSE)
 
-  utils::download.file(
-    url = netmhc2pan_data_url,
-    destfile = local_path,
-    quiet = !verbose
-  )
+  if (1 + 1 == 2) {
+    # Need unsecure download
+    #
+    # richel@N141CU:~$ wget https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz
+    # --2022-08-11 07:21:23--  https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz
+    # Resolving www.cbs.dtu.dk (www.cbs.dtu.dk)... 192.38.87.75
+    # Connecting to www.cbs.dtu.dk (www.cbs.dtu.dk)|192.38.87.75|:443... connected.
+    # ERROR: no certificate subject alternative name matches
+    # requested host name ‘www.cbs.dtu.dk’.
+    # To connect to www.cbs.dtu.dk insecurely, use `--no-check-certificate'.
+    utils::download.file(
+      url = netmhc2pan_data_url,
+      destfile = local_path,
+      quiet = !verbose,
+      method = "curl",
+      extra = "-k -L"
+    )
+  } else {
+    utils::download.file(
+      url = netmhc2pan_data_url,
+      destfile = local_path,
+      quiet = !verbose
+    )
+  }
   testit::assert(file.exists(local_path))
   # Linux has a tar file
   utils::untar(
