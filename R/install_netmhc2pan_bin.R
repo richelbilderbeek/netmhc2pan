@@ -25,7 +25,7 @@ install_netmhc2pan_bin <- function(
     stop("NetMHCIIpan binary is already installed at '", bin_path, "'")
   }
 
-  netmhc2pan_tarfile_path <- file.path(
+  netmhc2pan_bin_tarfile_path <- file.path(
     netmhc2pan_folder_name,
     netmhc2pan_archive_filename
   )
@@ -35,18 +35,18 @@ install_netmhc2pan_bin <- function(
     recursive = TRUE
   )
   netmhc2pan::check_can_create_file(
-    filename = netmhc2pan_tarfile_path,
+    filename = netmhc2pan_bin_tarfile_path,
     overwrite = FALSE
   )
   netmhc2pan::download_netmhc2pan_bin(
     netmhc2pan_bin_url = netmhc2pan_bin_url,
-    netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
+    netmhc2pan_bin_tarfile_path = netmhc2pan_bin_tarfile_path,
     verbose = verbose,
     netmhc2pan_archive_filename = netmhc2pan_archive_filename,
     temp_local_file = temp_local_file
   )
   netmhc2pan::install_netmhc2pan_bin_from_file(
-    netmhc2pan_tarfile_path = netmhc2pan_tarfile_path,
+    netmhc2pan_bin_tarfile_path = netmhc2pan_bin_tarfile_path,
     verbose = verbose,
     netmhc2pan_archive_filename = netmhc2pan_archive_filename,
     netmhc2pan_folder_name = netmhc2pan_folder_name
