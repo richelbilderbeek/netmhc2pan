@@ -192,6 +192,18 @@ These are the ones I use:
  * [epitope-prediction](https://github.com/jtextor/epitope-prediction): predicts
    IC50 values for MHC-I haplotypes
 
+### I am a non-academic user, can you help me obtain NetMHCIIpan?
+
+No. 
+
+Note that I -the maintainer of this package- have the same problem.
+DTU will not make an exception, here is a quote from Morten Nielsen:
+
+> The university is very strict on these issues, 
+> and we will not able able to grant you access to the tool 
+> if you cannot provide an email address from an academic institution. 
+> I am sorry about this. 
+
 ## References
 
  * [1] Improved methods for predicting peptide binding affinity to MHC class II molecules.
