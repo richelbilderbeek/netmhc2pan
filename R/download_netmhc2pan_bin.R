@@ -42,34 +42,38 @@ download_netmhc2pan_bin <- function(
     overwrite = FALSE
   )
 
-  tryCatch(
-    suppressWarnings(
-      utils::download.file(
-        url = url,
-        destfile = netmhc2pan_bin_tarfile_path,
-        quiet = !verbose
-      )
-    ),
-    error = function(e) {
-      netmhc2pan_version <- stringr::str_match(
-        netmhc2pan_archive_filename,
-        "[:digit:]\\.[:digit:]"
-      )[1, 1]
-      stop(
-        "'netmhc2pan_bin_url' is invalid.\n",
-        "URL: ", url, "\n",
-        "Request a download URL at the NetMHCIIpan request page at\n",
-        "\n",
-        "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 \n",
-        "(under the Downloads tab, use version 3.2)\n",
-        "\n",
-        "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
-        "\n",
-        "Full error message: \n",
-        "\n",
-        e
-      )
-    }
-  )
+  if (1 == 2) {
+    # This is what 'check_netmhc2pan_bin_url' checks
+    tryCatch(
+      suppressWarnings(
+        utils::download.file(
+          url = url,
+          destfile = netmhc2pan_bin_tarfile_path,
+          quiet = !verbose
+        )
+      ),
+      error = function(e) {
+        netmhc2pan_version <- stringr::str_match(
+          netmhc2pan_archive_filename,
+          "[:digit:]\\.[:digit:]"
+        )[1, 1]
+        stop(
+          "'netmhc2pan_bin_url' is invalid.\n",
+          "URL: ", url, "\n",
+          "Request a download URL at the NetMHCIIpan request page at\n",
+          "\n",
+          "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 \n",
+          "(under the Downloads tab, use version 3.2)\n",
+          "\n",
+          "Tip: see the YouTube video at https://youtu.be/08A_kf4v2UA\n",
+          "\n",
+          "Full error message: \n",
+          "\n",
+          e
+        )
+      }
+    )
+  }
+
   testit::assert(file.exists(netmhc2pan_bin_tarfile_path))
 }
