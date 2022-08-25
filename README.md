@@ -204,6 +204,10 @@ DTU will not make an exception, here is a quote from Morten Nielsen:
 > if you cannot provide an email address from an academic institution. 
 > I am sorry about this. 
 
+## Links
+
+ * ['netmhc2pan' CRAN page](https://CRAN.R-project.org/package=netmhc2pan)
+
 ## References
 
  * [1] Improved methods for predicting peptide binding affinity to MHC class II molecules.
