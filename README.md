@@ -204,6 +204,32 @@ DTU will not make an exception, here is a quote from Morten Nielsen:
 > if you cannot provide an email address from an academic institution. 
 > I am sorry about this. 
 
+## Troubleshooting
+
+### `problem copying [file]: Permission denied`
+
+When installing the package as documented ...
+
+```r
+remotes::install_github("richelbilderbeek/netmhc2pan")
+```
+
+... you get warnings such as these:
+
+
+```
+Warning messages:
+
+1: In file.copy(savedcopy, lib, recursive = TRUE) :
+
+  problem copying C:\Users\johndoe\Documents\R\win-library\4.1\00LOCK\xfun\libs\x64\xfun.dll to C:\Users\johndoe\Documents\R\win-library\4.1\xfun\libs\x64\xfun.dll: Permission denied
+```
+
+It means that you cannot install R packages there.
+
+As this has nothing to do with this package, 
+I suggest to contact your IT department to let them help you out.
+
 ## Links
 
  * ['netmhc2pan' CRAN page](https://CRAN.R-project.org/package=netmhc2pan)
