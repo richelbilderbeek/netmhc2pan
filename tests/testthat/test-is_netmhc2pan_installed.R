@@ -4,7 +4,7 @@ test_that("use", {
 })
 
 test_that("use", {
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   if (is_netmhc2pan_installed()) {
@@ -24,7 +24,7 @@ test_that("use", {
 
 test_that("uninstall NetMHCIIpan from a custom location", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile(pattern = "netmhc2pan_")

@@ -1,6 +1,6 @@
 test_that("use", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   # Data tarball: use local version if available

@@ -1,6 +1,6 @@
 test_that("set_up_netmhc2pan", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile()

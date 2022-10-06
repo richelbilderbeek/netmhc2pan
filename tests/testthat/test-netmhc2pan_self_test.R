@@ -8,7 +8,7 @@ test_that("use", {
 
 test_that("install NetMHCIIpan to a custom location", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   # Binary tarball: use local version if available

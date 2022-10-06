@@ -1,6 +1,6 @@
 test_that("install NetMHCIIpan binary to a custom location", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_bin_tarfile_path <- tempfile("install_netmhc2pan_bin_from_file_")

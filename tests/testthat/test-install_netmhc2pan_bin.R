@@ -1,5 +1,5 @@
 test_that("install must be silent by default", {
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile(
@@ -14,7 +14,7 @@ test_that("install must be silent by default", {
 })
 
 test_that("verbose install must produce", {
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile(
@@ -32,7 +32,7 @@ test_that("verbose install must produce", {
 
 test_that("abuse", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile(

@@ -1,6 +1,6 @@
 test_that("install_netmhc2pan_data", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempdir()

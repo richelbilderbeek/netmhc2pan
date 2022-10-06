@@ -7,7 +7,7 @@ test_that("use", {
 })
 
 test_that("be verbose", {
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (is_url_valid()) {
     expect_message(
       check_netmhc2pan_bin_url(verbose = TRUE)

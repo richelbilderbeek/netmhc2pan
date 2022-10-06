@@ -10,7 +10,7 @@ test_that("uninstall absent NetMHCIIpan must throw", {
 
 test_that("see if NetMHCIIpan is detected at a custom location", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_url_valid()) return()
 
   netmhc2pan_folder_name <- tempfile(pattern = "netmhc2pan_")
