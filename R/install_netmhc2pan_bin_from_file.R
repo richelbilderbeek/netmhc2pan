@@ -27,13 +27,23 @@ install_netmhc2pan_bin_from_file <- function( # nolint indeed a long function na
     stop("NetMHCIIpan binary is already installed at '", bin_path, "'")
   }
 
+  if (!file.exists(netmhc2pan_bin_tarfile_path)) {
+    stop(
+      "'netmhc2pan_bin_tarfile_path' file with path '",
+        netmhc2pan_bin_tarfile_path, "' not found. \n",
+      "Tip 1: it is recommended to not have spaces in your path\n ",
+      "Tip 2: did you make a typo in the path?"
+    )
+  }
+
   dir.create(
     path = netmhc2pan_folder_name,
     showWarnings = FALSE,
     recursive = TRUE
   )
 
-  testit::assert(file.exists(netmhc2pan_bin_tarfile_path))
+  testthat::expect_true(file.exists(netmhc2pan_bin_tarfile_path))
+
   # Linux has a tar file
   utils::untar(
     tarfile = netmhc2pan_bin_tarfile_path,

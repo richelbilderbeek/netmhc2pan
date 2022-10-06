@@ -23,3 +23,13 @@ test_that("install NetMHCIIpan binary to a custom location", {
   )
   unlink(netmhc2pan_folder_name, recursive = TRUE)
 })
+
+test_that("(6) give expressive error message", {
+
+  expect_error(
+    install_netmhc2pan_bin_from_file(
+      netmhc2pan_bin_tarfile_path = "absent"
+    ),
+    "'netmhc2pan_bin_tarfile_path' file with path 'absent' not found"
+  )
+})
