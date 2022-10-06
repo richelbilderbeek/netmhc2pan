@@ -6,7 +6,8 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * None
+  * Add `is_on_ci`, `is_on_github_actions` and `is_on_appveyor`
+    to detect which platforms tests are run on
   
 ### MINOR IMPROVEMENTS
 
