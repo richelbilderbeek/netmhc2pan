@@ -13,6 +13,7 @@ Newest versions at top.
 
   * Added `verbose` argument to install functions
   * Process CRAN feedback, thanks Gregor Seyer
+  * Remove dependency on archived `assertive` package
 
 ### BUG FIXES
 

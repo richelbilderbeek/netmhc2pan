@@ -8,7 +8,9 @@ is_netmhc2pan_installed <- function(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   verbose = FALSE
 ) {
-  assertive::is_if_condition(verbose)
+  testthat::expect_equal(length(verbose), 1)
+  testthat::expect_false(is.na(verbose))
+  testthat::expect_true(is.logical(verbose))
   is_installed <- FALSE
   tryCatch({
     netmhc2pan::check_netmhc2pan_installation(
