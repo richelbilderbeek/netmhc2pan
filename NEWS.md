@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## netmhc2pan 1.3.1 (unreleased)
+## netmhc2pan 1.3.1 (2023-11-07)
 
 ### NEW FEATURES
 
