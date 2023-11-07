@@ -60,7 +60,7 @@ tryCatch(
       "URL: ", url, "\n",
       "Request a download URL at the NetMHCIIpan request page at\n",
       "\n",
-      "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 \n",
+      "https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/ \n",
       "(under the Downloads tab, use version 3.2)\n",
       "\n",
       "Tips:\n",

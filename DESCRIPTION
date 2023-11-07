@@ -12,7 +12,7 @@ Description: The field of immunology benefits from software that can
     binding strength of a short peptide to a Major Histocompatibility
     Complex class II (MHC-II) molecule.
     'NetMHCIIpan' can be used from a web server at 
-    <https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2/>
+    <https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/>
     or from the command-line, using a local installation. This package
     allows to call 'NetMHCIIpan' from R.
 License: GPL-3
@@ -32,7 +32,7 @@ Suggests:
     testthat,
     spelling
 VignetteBuilder: knitr
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Language: en-US
 URL: https://github.com/richelbilderbeek/netmhc2pan/
 BugReports: https://github.com/richelbilderbeek/netmhc2pan/issues
