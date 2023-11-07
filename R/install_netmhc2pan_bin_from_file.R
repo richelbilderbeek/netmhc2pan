@@ -9,48 +9,13 @@ install_netmhc2pan_bin_from_file <- function( # nolint indeed a long function na
   netmhc2pan_archive_filename = get_netmhc2pan_archive_filename(),
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  if (verbose) {
-    message(
-      "Installing NetMHCIIpan binary from file '",
-      netmhc2pan_bin_tarfile_path, "' into folder '", netmhc2pan_folder_name,
-      "'. \n"
-    )
-
-  }
-  bin_path <- file.path(
-    netmhc2pan_folder_name,
-    basename(get_default_netmhc2pan_subfolder()),
-    basename(get_default_netmhc2pan_bin_path())
+  stop(
+    "Deprecated, as this violates CRAN policy.\n ",
+    " \n",
+    "Tip: use 'netmhc2paninstall' from \n",
+    "https://github.com/richelbilderbeek/netmhc2paninstall: \n",
+    " \n",
+    "remotes::install_github(\"richelbilderbeek/netmhc2paninstall\") \n",
+    "netmhc2paninstall::install_netmhc2pan_bin_from_file() \n"
   )
-
-  if (file.exists(bin_path)) {
-    stop("NetMHCIIpan binary is already installed at '", bin_path, "'")
-  }
-
-  if (!file.exists(netmhc2pan_bin_tarfile_path)) {
-    stop(
-      "'netmhc2pan_bin_tarfile_path' file with path '",
-        netmhc2pan_bin_tarfile_path, "' not found. \n",
-      "Tip 1: it is recommended to not have spaces in your path\n ",
-      "Tip 2: did you make a typo in the path?"
-    )
-  }
-
-  dir.create(
-    path = netmhc2pan_folder_name,
-    showWarnings = FALSE,
-    recursive = TRUE
-  )
-
-  testthat::expect_true(file.exists(netmhc2pan_bin_tarfile_path))
-
-  # Linux has a tar file
-  utils::untar(
-    tarfile = netmhc2pan_bin_tarfile_path,
-    exdir = path.expand(netmhc2pan_folder_name)
-  )
-  if (!file.exists(bin_path)) {
-    stop("NetMHCIIpan binary not found at path '", bin_path, "'")
-  }
-  testit::assert(file.exists(bin_path))
 }

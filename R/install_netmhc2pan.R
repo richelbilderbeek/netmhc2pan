@@ -27,30 +27,13 @@ install_netmhc2pan <- function(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
   temp_local_file = tempfile(pattern = "netmhc2pan_install_netmhc2pan_")
 ) {
-  is_bin_installed <- netmhc2pan::is_netmhc2pan_bin_installed(
-    netmhc2pan_folder_name = netmhc2pan_folder_name,
-    verbose = verbose
+  stop(
+    "Deprecated, as this violates CRAN policy.\n ",
+    " \n",
+    "Tip: use 'netmhc2paninstall' from \n",
+    "https://github.com/richelbilderbeek/netmhc2paninstall: \n",
+    " \n",
+    "remotes::install_github(\"richelbilderbeek/netmhc2paninstall\") \n",
+    "netmhc2paninstall::install_netmhc2pan() \n"
   )
-  if (!is_bin_installed) {
-    netmhc2pan::install_netmhc2pan_bin(
-      netmhc2pan_bin_url = netmhc2pan_bin_url,
-      verbose = verbose,
-      netmhc2pan_archive_filename = netmhc2pan_archive_filename,
-      netmhc2pan_folder_name = netmhc2pan_folder_name
-    )
-  }
-  is_data_installed <- netmhc2pan::is_netmhc2pan_data_installed(
-    netmhc2pan_folder_name
-  )
-  if (!is_data_installed) { # nolint netmhc2pan function
-    netmhc2pan::install_netmhc2pan_data(
-      netmhc2pan_folder_name = netmhc2pan_folder_name,
-      verbose = verbose
-    )
-  }
-  is_set_up <- netmhc2pan::is_netmhc2pan_set_up(netmhc2pan_folder_name)
-  if (!is_set_up) {
-    netmhc2pan::set_up_netmhc2pan(netmhc2pan_folder_name)
-  }
-  # Cannot install tcsh here
 }

@@ -38,11 +38,6 @@ Nothing
 \description{
 Download the NetMHCIIpan binary tarball file
 }
-\examples{
-\donttest{
-  install_netmhc2pan_bin()
-}
-}
 \author{
 Richèl J.C. Bilderbeek
 }
