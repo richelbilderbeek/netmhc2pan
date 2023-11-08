@@ -7,6 +7,7 @@ Newest versions at top.
 ### NEW FEATURES
 
   * Update URLs
+  * Documentation always specifies the return values of a function
   
 ### MINOR IMPROVEMENTS
 
