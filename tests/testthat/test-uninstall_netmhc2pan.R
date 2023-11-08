@@ -1,25 +1,7 @@
-test_that("uninstall absent NetMHCIIpan must throw", {
-
-  if (is_netmhc2pan_installed()) return()
+test_that("deprecated", {
 
   expect_error(
-    uninstall_netmhc2pan(netmhc2pan_folder_name = "/abs/ent"), # nolint use absolute path
-    "Cannot uninstall absent NetMHCIIpan at"
+    uninstall_netmhc2pan(),
+    "Deprecated"
   )
-})
-
-test_that("see if NetMHCIIpan is detected at a custom location", {
-
-  if (!is_on_ci()) return()
-  if (!is_url_valid()) return()
-
-  netmhc2pan_folder_name <- tempfile(pattern = "netmhc2pan_")
-  expect_false(
-    is_netmhc2pan_installed(netmhc2pan_folder_name = netmhc2pan_folder_name)
-  )
-  install_netmhc2pan(netmhc2pan_folder_name = netmhc2pan_folder_name)
-  expect_true(
-    is_netmhc2pan_installed(netmhc2pan_folder_name = netmhc2pan_folder_name)
-  )
-  unlink(netmhc2pan_folder_name, recursive = TRUE)
 })

@@ -10,6 +10,13 @@ to_netmhc2pan_name(mhc_haplotype)
 \item{mhc_haplotype}{one MHC haplotype, e.g. \code{DRB1_0101}.
 See \link{get_netmhc2pan_alleles} for a full list}
 }
+\value{
+the haplotype name in NetMHC2pan notation
+}
 \description{
 Convert a formal MHC-II haplotype name to the notation used by NetMHC2pan.
+}
+\examples{
+to_netmhc2pan_name("HLA-DRB1*0101")
+to_netmhc2pan_name("HLA-DQA1*0501/DQB1*0201")
 }

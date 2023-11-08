@@ -2,7 +2,8 @@
 % Please edit documentation in R/netmhc2pan_report.R
 \name{netmhc2pan_report}
 \alias{netmhc2pan_report}
-\title{Create a \code{netmhc2pan} report, to be used when reporting bugs}
+\title{Show a \code{netmhc2pan} report using \link{message},
+to be used when reporting bugs}
 \usage{
 netmhc2pan_report(netmhc2pan_folder_name = get_default_netmhc2pan_folder())
 }
@@ -14,8 +15,12 @@ of the default NetMHCIIpan folder.
 Use \link{get_default_netmhc2pan_subfolder} to see the location
 of the default NetMHCIIpan subfolder.}
 }
+\value{
+Nothing, it is called for its side effects
+}
 \description{
-Create a \code{netmhc2pan} report, to be used when reporting bugs
+Show a \code{netmhc2pan} report using \link{message},
+to be used when reporting bugs
 }
 \examples{
 netmhc2pan_report()

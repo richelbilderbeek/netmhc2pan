@@ -9,7 +9,14 @@ read_netmhc2pan_xls_output(xls_filename)
 \arguments{
 \item{xls_filename}{name of an \code{xls} file}
 }
+\value{
+a table
+}
 \description{
 Read the output produced by MHC2pan,
 which is an \code{XLS} file by default.
+}
+\examples{
+xls_filename <- system.file("extdata", "example.xls", package = "netmhc2pan")
+read_netmhc2pan_xls_output(xls_filename)
 }

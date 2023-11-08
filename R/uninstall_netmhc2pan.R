@@ -1,22 +1,18 @@
 #' Uninstall NetMHCIIpan
 #' @inheritParams default_params_doc
+#' @return Nothing
 #' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_netmhc2pan <- function(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder()
 ) {
-  if (!is_netmhc2pan_installed(netmhc2pan_folder_name)
-  ) {
-    stop(
-      "Cannot uninstall absent NetMHCIIpan ",
-      "at folder '", netmhc2pan_folder_name, "'"
-    )
-  }
-  bin_file_path <- file.path(
-    netmhc2pan_folder_name,
-    basename(get_default_netmhc2pan_subfolder()),
-    basename(get_default_netmhc2pan_bin_path())
+  stop(
+    "Deprecated, as this violates CRAN policy.\n ",
+    " \n",
+    "Tip: use 'netmhc2paninstall' from \n",
+    "https://github.com/richelbilderbeek/netmhc2paninstall: \n",
+    " \n",
+    "remotes::install_github(\"richelbilderbeek/netmhc2paninstall\") \n",
+    "netmhc2paninstall::uninstall_netmhc2pan() \n"
   )
-  testit::assert(file.exists(bin_file_path))
-  unlink(x = netmhc2pan_folder_name, recursive = TRUE)
 }

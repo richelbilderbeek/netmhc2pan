@@ -4,6 +4,7 @@
 #' will stop if not.
 #' This URL link expires after 4 hours.
 #' @inheritParams default_params_doc
+#' @return Nothing
 #' @export
 check_netmhc2pan_bin_url <- function(
   netmhc2pan_bin_url = get_netmhc2pan_bin_url(),
@@ -58,4 +59,5 @@ check_netmhc2pan_bin_url <- function(
       )
   })
   file.remove(temp_local_file)
+  invisible(netmhc2pan_bin_url)
 }

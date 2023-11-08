@@ -22,6 +22,9 @@ Use \link{get_netmhc2pan_data_url} to get the default URL.}
 \item{temp_local_file}{path to the temporary file to store the URL to.
 This file will be deleted afterwards.}
 }
+\value{
+Nothing
+}
 \description{
 Check the URL of the NetMHCIIpan binary tarball is valid,
 will stop if not.

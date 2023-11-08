@@ -28,6 +28,9 @@ Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 \item{temp_local_file}{path to the temporary file to store the URL to.
 This file will be deleted afterwards.}
 }
+\value{
+TRUE if the download URL valid, FALSE otherwise
+}
 \description{
 The download link expires after 4 hours.
 }

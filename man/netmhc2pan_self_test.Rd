@@ -2,7 +2,7 @@
 % Please edit documentation in R/netmhc2pan_self_test.R
 \name{netmhc2pan_self_test}
 \alias{netmhc2pan_self_test}
-\title{Test NetMHCIIpan}
+\title{Test NetMHCIIpan by doing a minimal run.}
 \usage{
 netmhc2pan_self_test(
   netmhc2pan_folder_name = get_default_netmhc2pan_folder(),
@@ -19,8 +19,11 @@ of the default NetMHCIIpan subfolder.}
 
 \item{verbose}{set to TRUE for more output}
 }
+\value{
+Nothing. If the self-test fails, an error will be raised
+}
 \description{
-Test NetMHCIIpan
+Test NetMHCIIpan by doing a minimal run.
 }
 \author{
 Richèl J.C. Bilderbeek
