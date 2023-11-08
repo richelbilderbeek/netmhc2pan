@@ -3,10 +3,6 @@
 #' Install the NetMHCIIpan binary to a local folder.
 #' @inheritParams default_params_doc
 #' @return Nothing
-#' @examples
-#' \donttest{
-#'   install_netmhc2pan_bin()
-#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_netmhc2pan_bin <- function(
