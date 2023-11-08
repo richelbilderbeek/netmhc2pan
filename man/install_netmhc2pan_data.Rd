@@ -37,11 +37,6 @@ This data can be downloaded from
 \url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
 without filling in a contact form.
 }
-\examples{
-\donttest{
-  install_netmhc2pan_data()
-}
-}
 \author{
 Richèl J.C. Bilderbeek
 }
