@@ -14,6 +14,9 @@ of the default NetMHCIIpan folder.
 Use \link{get_default_netmhc2pan_subfolder} to see the location
 of the default NetMHCIIpan subfolder.}
 }
+\value{
+Nothing
+}
 \description{
 Uninstall NetMHCIIpan
 }

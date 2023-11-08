@@ -22,6 +22,9 @@ filename, for example \code{netMHCIIpan-3.2.Linux.tar.gz},
 which is used in installation of NetMHC2pan.
 Use \link{get_netmhc2pan_archive_filename} to get this filename.}
 }
+\value{
+the default path for the NetMHCIIpan binary tarball file
+}
 \description{
 Get the default path for the NetMHCIIpan binary tarball file.
 This is the location where it will be saved to after downloading.

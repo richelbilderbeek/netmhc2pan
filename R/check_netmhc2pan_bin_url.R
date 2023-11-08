@@ -4,6 +4,7 @@
 #' will stop if not.
 #' This URL link expires after 4 hours.
 #' @inheritParams default_params_doc
+#' @return Nothing
 #' @export
 check_netmhc2pan_bin_url <- function(
   netmhc2pan_bin_url = get_netmhc2pan_bin_url(),
@@ -38,7 +39,7 @@ check_netmhc2pan_bin_url <- function(
         "URL: ", url, "\n",
         "Request a download URL at the NetMHCIIpan request page at\n",
         "\n",
-        "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 ",
+        "https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/ ",
         "(under the Downloads tab, use version 3.2)\n",
         "\n",
         "Tips:\n",
@@ -58,4 +59,5 @@ check_netmhc2pan_bin_url <- function(
       )
   })
   file.remove(temp_local_file)
+  invisible(netmhc2pan_bin_url)
 }

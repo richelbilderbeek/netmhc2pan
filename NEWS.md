@@ -2,7 +2,27 @@
 
 Newest versions at top.
 
-## netmhc2pan 1.3.1 (unreleased)
+## netmhc2pan 1.3.2 (2023-11-08)
+
+### NEW FEATURES
+
+  * Update URLs
+  * Documentation always specifies the return values of a function
+  
+### MINOR IMPROVEMENTS
+
+  * Remove dependency on archived `assertive` package
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * All installation and setup functions, use 'netmhc2paninstall'
+    from https://github.com/richelbilderbeek/netmhc2paninstall instead
+
+## netmhc2pan 1.3.1 (2023-11-07)
 
 ### NEW FEATURES
 

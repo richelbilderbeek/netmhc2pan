@@ -4,5 +4,6 @@
 ^scripts$
 ^NEWS\.md$
 ^pics$
-LICENSE
-netMHCIIpan-3.2.Linux.tar.gz
+^LICENSE$
+^netMHCIIpan-3.2.Linux\.tar\.gz$
+^\.github$

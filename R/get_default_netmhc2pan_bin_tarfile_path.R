@@ -3,6 +3,7 @@
 #' Get the default path for the NetMHCIIpan binary tarball file.
 #' This is the location where it will be saved to after downloading.
 #' @inheritParams default_params_doc
+#' @return the default path for the NetMHCIIpan binary tarball file
 #' @examples
 #' get_default_netmhc2pan_bin_tarfile_path()
 #' @author Richèl J.C. Bilderbeek

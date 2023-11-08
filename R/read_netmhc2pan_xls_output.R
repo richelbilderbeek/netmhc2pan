@@ -3,6 +3,10 @@
 #' Read the output produced by MHC2pan,
 #' which is an \code{XLS} file by default.
 #' @inheritParams default_params_doc
+#' @return a table
+#' @examples
+#' xls_filename <- system.file("extdata", "example.xls", package = "netmhc2pan")
+#' read_netmhc2pan_xls_output(xls_filename)
 #' @export
 read_netmhc2pan_xls_output  <- function(
   xls_filename

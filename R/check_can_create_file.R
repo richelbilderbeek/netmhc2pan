@@ -6,6 +6,7 @@
 #' @param filename file that may or may not be created
 #' @param overwrite if TRUE, if \code{filename} already exists, it
 #' will be deleted by this function
+#' @return Nothing
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_can_create_file <- function(
@@ -48,4 +49,5 @@ check_can_create_file <- function(
       "Cannot delete the temporary file created at location ", filename
     )
   )
+  invisible(filename)
 }

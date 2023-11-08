@@ -2,6 +2,10 @@
 #'
 #' Convert a formal MHC-II haplotype name to the notation used by NetMHC2pan.
 #' @inheritParams default_params_doc
+#' @return the haplotype name in NetMHC2pan notation
+#' @examples
+#' to_netmhc2pan_name("HLA-DRB1*0101")
+#' to_netmhc2pan_name("HLA-DQA1*0501/DQB1*0201")
 #' @export
 to_netmhc2pan_name <- function(mhc_haplotype) {
   s <- stringr::str_replace_all(

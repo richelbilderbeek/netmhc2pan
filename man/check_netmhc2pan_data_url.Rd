@@ -14,13 +14,16 @@ check_netmhc2pan_data_url(
 \item{netmhc2pan_data_url}{URL to download the
 NetMHCIIpan data tarball file from,
 similar to, for example,
-\url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
+\url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
 Use \link{get_netmhc2pan_data_url} to get the default URL.}
 
 \item{verbose}{set to TRUE for more output}
 
 \item{temp_local_file}{path to the temporary file to store the URL to.
 This file will be deleted afterwards.}
+}
+\value{
+Nothing
 }
 \description{
 Check the URL of the NetMHCIIpan binary tarball is valid,

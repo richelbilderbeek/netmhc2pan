@@ -1,5 +1,7 @@
-#' Create a \code{netmhc2pan} report, to be used when reporting bugs
+#' Show a \code{netmhc2pan} report using \link{message},
+#' to be used when reporting bugs
 #' @inheritParams default_params_doc
+#' @return Nothing, it is called for its side effects
 #' @examples
 #' netmhc2pan_report()
 #' @author Richèl J.C. Bilderbeek
@@ -24,4 +26,5 @@ netmhc2pan_report <- function(
   kat("* session info *")
   kat("****************")
   message(paste0(devtools::session_info(), collapse = "\n"))
+  invisible(netmhc2pan_folder_name)
 }

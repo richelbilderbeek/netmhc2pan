@@ -33,7 +33,7 @@ check_netmhc2pan_installation <- function(
       "  with a (non-expired) download URL\n",
       "Tip 2: request a download URL at the NetMHCIIpan download page at\n",
       "\n",
-      "https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2 \n",
+      "https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/ \n",
       "(under the Downloads tab, use version 3.2)"
     )
   }

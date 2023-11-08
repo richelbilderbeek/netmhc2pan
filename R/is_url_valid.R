@@ -2,6 +2,7 @@
 #'
 #' The download link expires after 4 hours.
 #' @inheritParams default_params_doc
+#' @return TRUE if the download URL valid, FALSE otherwise
 #' @export
 is_url_valid <- function(
   netmhc2pan_bin_url = get_netmhc2pan_bin_url(),

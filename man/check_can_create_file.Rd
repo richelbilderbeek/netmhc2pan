@@ -12,6 +12,9 @@ check_can_create_file(filename, overwrite = TRUE)
 \item{overwrite}{if TRUE, if \code{filename} already exists, it
 will be deleted by this function}
 }
+\value{
+Nothing
+}
 \description{
 Will \link{stop} if not. Will \link{stop} if the file already exists.
 Does so by creating an empty file at the path,

@@ -9,7 +9,7 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `master` |![R-CMD-check](https://github.com/richelbilderbeek/netmhc2pan/workflows/R-CMD-check/badge.svg?branch=master) |[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/master)
 `develop`|![R-CMD-check](https://github.com/richelbilderbeek/netmhc2pan/workflows/R-CMD-check/badge.svg?branch=develop)|[![codecov.io](https://codecov.io/github/richelbilderbeek/netmhc2pan/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/netmhc2pan/branch/develop)
 
-R package for [NetMHCIIpan](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) [1].
+R package for [NetMHCIIpan](https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/) [1].
 
 > Please note that this page is intended for academic users only. Other users are requested
 > to contact the Software Package Manager at health-software@dtu.dk
@@ -33,7 +33,7 @@ library(netmhc2pan)
 Install NetMHCIIpan to a default folder using `netmhc2pan` and a download URL.
 The download URL can be obtained from the 
 NetMHCIIpan website at
-[https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2) (at the 'Downloads' tab)
+[https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/](https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/) (at the 'Downloads' tab)
 and expires after four hours.
 
 ```{r}

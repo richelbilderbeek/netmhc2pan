@@ -29,7 +29,7 @@ library(netmhc2pan)
 This demo assumes NetMHCIIpan is installed.
 Installation cannot be done `netmhc2pan`, as one needs
 to request a download link for version 3.2 at 
-[https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2](https://services.healthtech.dtu.dk/service.php?NetMHCIIpan-3.2).
+[https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/](https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/).
 
 To install `netmhc2pan`, use `install_netmhc2pan` with the download link:
 
