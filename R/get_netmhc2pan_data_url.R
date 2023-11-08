@@ -10,7 +10,7 @@
 #' @export
 get_netmhc2pan_data_url <- function() {
   file.path(
-    "https://www.cbs.dtu.dk/services",
+    "https://services.healthtech.dtu.dk/services",
     netmhc2pan::capitalize_first_char(
       basename(
         netmhc2pan::get_default_netmhc2pan_subfolder()
