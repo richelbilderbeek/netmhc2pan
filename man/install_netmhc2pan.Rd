@@ -60,11 +60,6 @@ These are three steps:
   \item Set up NetMHCIIpan, using \link{set_up_netmhc2pan}
 }
 }
-\examples{
-\donttest{
-  install_netmhc2pan()
-}
-}
 \author{
 Richèl J.C. Bilderbeek
 }
