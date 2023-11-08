@@ -25,11 +25,6 @@ Nothing
 \description{
 Install the NetMHCIIpan binary to a local folder
 }
-\examples{
-\donttest{
-  set_up_netmhc2pan()
-}
-}
 \author{
 Richèl J.C. Bilderbeek
 }
