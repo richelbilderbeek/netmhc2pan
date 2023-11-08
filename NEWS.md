@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## netmhc2pan 1.3.3 (unreleased)
+
+### NEW FEATURES
+
+  * None
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## netmhc2pan 1.3.2 (2023-11-08)
 
 ### NEW FEATURES
