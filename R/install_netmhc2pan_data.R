@@ -3,7 +3,7 @@
 #' Install the NetMHCIIpan data to a local folder.
 #'
 #' This data can be downloaded from
-#' \url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
+#' \url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
 #' without filling in a contact form.
 #' @inheritParams default_params_doc
 #' @return Nothing

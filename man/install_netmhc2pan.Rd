@@ -23,7 +23,7 @@ Use \link{get_netmhc2pan_bin_url} to get the default URL.}
 \item{netmhc2pan_data_url}{URL to download the
 NetMHCIIpan data tarball file from,
 similar to, for example,
-\url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
+\url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
 Use \link{get_netmhc2pan_data_url} to get the default URL.}
 
 \item{verbose}{set to TRUE for more output}

@@ -6,7 +6,7 @@
 #' The NetMHCIIpan data tarball file can be in any path.
 #'
 #' The data tarball file can be downloaded from
-#' \url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
+#' \url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
 #' without filling in a contact form.
 #' @inheritParams default_params_doc
 #' @return Nothing

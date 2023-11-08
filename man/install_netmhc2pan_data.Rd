@@ -14,7 +14,7 @@ install_netmhc2pan_data(
 \item{netmhc2pan_data_url}{URL to download the
 NetMHCIIpan data tarball file from,
 similar to, for example,
-\url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
+\url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz}.
 Use \link{get_netmhc2pan_data_url} to get the default URL.}
 
 \item{netmhc2pan_folder_name}{the folder (to be) used by NetMHCIIpan.
@@ -34,7 +34,7 @@ Install the NetMHCIIpan data to a local folder.
 }
 \details{
 This data can be downloaded from
-\url{https://www.cbs.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
+\url{https://services.healthtech.dtu.dk/services/NetMHCIIpan-3.2/data.Linux.tar.gz},
 without filling in a contact form.
 }
 \author{
