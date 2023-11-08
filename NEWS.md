@@ -22,5 +22,6 @@ Newest versions at top.
 
 ### DEPRECATED AND DEFUNCT
 
-  * None
+  * All installation and setup functions, use 'netmhc2paninstall'
+    from https://github.com/richelbilderbeek/netmhc2paninstall instead
 
