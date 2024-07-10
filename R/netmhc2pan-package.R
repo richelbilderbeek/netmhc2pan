@@ -15,6 +15,9 @@
 #'   )
 #' }
 #' @author Richèl J.C. Bilderbeek
-#' @docType package
-#' @name netmhc2pan
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+## usethis namespace: end
 NULL
