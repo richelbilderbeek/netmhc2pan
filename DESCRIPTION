@@ -18,11 +18,11 @@ Description: The field of immunology benefits from software that can
 License: GPL-3
 Encoding: UTF-8
 Imports:
-    devtools,
     dplyr,
     rappdirs,
     readr,
     seqinr,
+    sessioninfo,
     stringr,
     testit,
     tibble
